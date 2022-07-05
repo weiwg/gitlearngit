@@ -1,0 +1,12 @@
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\bin\Debug\LY.Mq.Message.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\bin\Debug\LY.Mq.Message.pdb
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\obj\Debug\LY.Mq.Message.csproj.AssemblyReference.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\obj\Debug\LY.Mq.Message.csproj.CoreCompileInputs.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\obj\Debug\LY.Mq.Message.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Mq.Message\obj\Debug\LY.Mq.Message.pdb
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\bin\Debug\LY.Mq.Message.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\bin\Debug\LY.Mq.Message.pdb
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.csproj.CoreCompileInputs.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.pdb
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.csproj.AssemblyReference.cache

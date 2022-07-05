@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
+    <Authors>LY</Authors>
+    <Company>LY</Company>
+    <Description>后端服务库</Description>
+    <AssemblyName>LY.Report.Core.Service</AssemblyName>
+    <RootNamespace>LY.Report.Core.Service</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <DocumentationFile>..\LY.Report.Core.Service\SwaggerDoc\LY.Report.Core.Service.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Admin\**" />
+    <Compile Remove="Article\**" />
+    <Compile Remove="Delivery\**" />
+    <Compile Remove="Driver\**" />
+    <Compile Remove="Fund\**" />
+    <Compile Remove="Order\**" />
+    <Compile Remove="Pay\**" />
+    <Compile Remove="Sales\**" />
+    <Compile Remove="System\Cache\Output\**" />
+    <Compile Remove="User\Coupon\**" />
+    <Compile Remove="User\RedPack\**" />
+    <Compile Remove="User\User\**" />
+    <EmbeddedResource Remove="Admin\**" />
+    <EmbeddedResource Remove="Article\**" />
+    <EmbeddedResource Remove="Delivery\**" />
+    <EmbeddedResource Remove="Driver\**" />
+    <EmbeddedResource Remove="Fund\**" />
+    <EmbeddedResource Remove="Order\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <EmbeddedResource Remove="Sales\**" />
+    <EmbeddedResource Remove="System\Cache\Output\**" />
+    <EmbeddedResource Remove="User\Coupon\**" />
+    <EmbeddedResource Remove="User\RedPack\**" />
+    <EmbeddedResource Remove="User\User\**" />
+    <None Remove="Admin\**" />
+    <None Remove="Article\**" />
+    <None Remove="Delivery\**" />
+    <None Remove="Driver\**" />
+    <None Remove="Fund\**" />
+    <None Remove="Order\**" />
+    <None Remove="Pay\**" />
+    <None Remove="Sales\**" />
+    <None Remove="System\Cache\Output\**" />
+    <None Remove="User\Coupon\**" />
+    <None Remove="User\RedPack\**" />
+    <None Remove="User\User\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Auth\UserRole\Output\UserAndRoleInfoOutput.cs" />
+    <Compile Remove="User\Info\Output\UserFundGetFullOutput.cs" />
+    <Compile Remove="User\Info\Output\UserFundGetOutput.cs" />
+    <Compile Remove="User\Info\Output\UserInfoAuthEctOutput.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.Business\LY.Report.Core.Business.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.CacheRepository\LY.Report.Core.CacheRepository.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.LYApiUtil\LY.Report.Core.LYApiUtil.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Model\LY.Report.Core.Model.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Repository\LY.Report.Core.Repository.csproj" />
+    <ProjectReference Include="..\LY.Mq.Message\LY.Mq.Message.csproj" />
+    <ProjectReference Include="..\LY.UnifiedAuth.Util.Api.Core\LY.UnifiedAuth.Util.Api.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Base\Input\" />
+    <Folder Include="Base\Output\" />
+  </ItemGroup>
+
+</Project>

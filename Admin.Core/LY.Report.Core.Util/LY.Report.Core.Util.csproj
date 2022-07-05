@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>LY.Report.Core.Util</AssemblyName>
+    <RootNamespace>LY.Report.Core.Util</RootNamespace>
+    <Nullable>annotations</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Verification\Captcha\**" />
+    <EmbeddedResource Remove="Verification\Captcha\**" />
+    <None Remove="Verification\Captcha\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\ConfigHelper1.cs" />
+    <Compile Remove="Common\IpScanerHelper.cs" />
+    <Compile Remove="Common\RequestHelper.cs" />
+    <Compile Remove="Common\SessionHelper.cs" />
+    <Compile Remove="Tool\CookieHelper.cs" />
+    <Compile Remove="Tool\IpScanerHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.10" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="ZXing.Net" Version="0.16.6" />
+  </ItemGroup>
+
+</Project>

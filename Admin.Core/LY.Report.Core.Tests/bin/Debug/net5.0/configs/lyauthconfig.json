@@ -1,0 +1,15 @@
+{
+  //是否使用EUA API
+  "IsUseEupApi": "true",
+  //是否使用EUA微信授权
+  "IsUseEupWxOauth2": "true",
+  //EUA登录模式:本地Local,单点SingleSign,共享StateServer
+  "LYLoginModel": "SingleSign",
+  //使用EUA共享Session登录,LYLoginModel为StateServer时有效
+  "LYStateServer": "LY.com",
+  "LYApiUrl": "https://ua.LY.com",
+  "LYAppId": "eupd0223092783af109c",
+  "LYAppSecret": "266411b5a7804e8e64a15ee1922b5f49d",
+  "LYAppToken": "d269ba6b33a423f144d3e76bc4e129b6b",
+  "LogFilePath": "Logs"
+}

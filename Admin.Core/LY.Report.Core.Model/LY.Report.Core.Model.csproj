@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
+    <Authors>LY</Authors>
+    <Company>LY</Company>
+    <Description>后端实体库</Description>
+    <AssemblyName>LY.Report.Core.Model</AssemblyName>
+    <RootNamespace>LY.Report.Core.Model</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\LY.Report.Core.Model\SwaggerDoc\LY.Report.Core.Model.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Admin\**" />
+    <Compile Remove="Article\**" />
+    <Compile Remove="Delivery\**" />
+    <Compile Remove="Driver\**" />
+    <Compile Remove="Fund\**" />
+    <Compile Remove="Order\**" />
+    <Compile Remove="Pay\**" />
+    <Compile Remove="Sales\**" />
+    <EmbeddedResource Remove="Admin\**" />
+    <EmbeddedResource Remove="Article\**" />
+    <EmbeddedResource Remove="Delivery\**" />
+    <EmbeddedResource Remove="Driver\**" />
+    <EmbeddedResource Remove="Fund\**" />
+    <EmbeddedResource Remove="Order\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <EmbeddedResource Remove="Sales\**" />
+    <None Remove="Admin\**" />
+    <None Remove="Article\**" />
+    <None Remove="Delivery\**" />
+    <None Remove="Driver\**" />
+    <None Remove="Fund\**" />
+    <None Remove="Order\**" />
+    <None Remove="Pay\**" />
+    <None Remove="Sales\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Auth\Enum\DataIsolationType.cs" />
+    <Compile Remove="Auth\Enum\T_Auth_Api.cs" />
+    <Compile Remove="User\Enum\T_User_Coupon.cs" />
+    <Compile Remove="User\Enum\T_User_RedPack.cs" />
+    <Compile Remove="User\T_User_Coupon.cs" />
+    <Compile Remove="User\T_User_RedPack.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LY.Report.Core.Model.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.Common\LY.Report.Core.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Demo\Enum\" />
+    <Folder Include="Record\Enum\" />
+    <Folder Include="System\Enum\" />
+  </ItemGroup>
+
+</Project>

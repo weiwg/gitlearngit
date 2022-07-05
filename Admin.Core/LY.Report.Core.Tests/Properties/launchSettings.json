@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2"
+    },
+    "LY.Report.Core.Tests": {
+      "commandName": "Executable"
+    }
+  }
+}

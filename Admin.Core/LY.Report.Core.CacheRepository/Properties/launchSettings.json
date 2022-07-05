@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "LY.Report.Core.CacheRepository": {
+      "commandName": "Executable"
+    }
+  }
+}

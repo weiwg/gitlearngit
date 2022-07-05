@@ -1,0 +1,26 @@
+2022-07-05 10:46:48
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'95AD354D-05E8-4427-8EA4-6D57131FA073', N'', getdate(), N'56dbfc8b-31d4-4a4e-b4e9-fa51b960c651', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 28556, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 10:47:26
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'ADFDF525-D01F-497E-AB66-CDE6713C3D30', N'', getdate(), N'a69ff8b3-620b-4262-b0af-ed62abf0c26b', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 1491, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 11:00:15
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'0B85E8EC-14BA-4F53-985D-B25671070876', N'', getdate(), N'ce828db2-86a1-47d0-83db-56063d538072', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 26398, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 11:08:40
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'CBAE2972-D9ED-41F4-BC43-C3D0E4C7BBF7', N'', getdate(), N'd5696b7c-9240-42c9-90d3-8ac80a426ebc', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 194459, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 11:37:51
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'46B471E7-15D9-4D9E-9AA1-C4CD858A5B4D', N'', getdate(), N'690024ac-b25b-4be7-a800-b6f1ba142eb4', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 40602, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 11:43:23
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'225CC73B-5488-47AA-9EF0-13D24FD1FF1B', N'', getdate(), N'74a69c8b-eb5a-4127-b6f9-3bda60170d24', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 317989, 0, N'验证码已过期！', NULL, 0)
+
+2022-07-05 11:45:27
+SELECT TOP 1 a.[Id], a.[CreateUserId], a.[CreateDate], a.[UpdateUserId], a.[UpdateDate], a.[IsDel], a.[Version], a.[UserId], a.[OpenId], a.[UserName], a.[Password], a.[PasswordSalt], a.[NickName], a.[Portrait], a.[Email], a.[Phone], a.[UserScore], a.[UserScoreSum], a.[UserEvaluationSum], a.[UserStatus], a.[LastLoginIp], a.[LastLoginDate] 
+FROM [T_User_Info] a 
+WHERE (a.[UserName] = N'admin') AND (a.[IsDel] = 0)
+
+2022-07-05 11:45:32
+INSERT INTO [T_Record_Login]([Id], [CreateUserId], [CreateDate], [LogId], [UserName], [IP], [Browser], [Os], [Device], [BrowserInfo], [ElapsedMilliseconds], [Status], [Msg], [Result], [IsDel]) VALUES(N'80F93891-C5A6-4C80-91EC-38A09DF7CBCD', N'', getdate(), N'cd248929-1435-43c4-abd4-1e2cb79a7adc', NULL, N'127.0.0.1', N'Chrome', N'Windows', N'', N'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', 15739, 0, N'账号输入有误!', NULL, 0)
+

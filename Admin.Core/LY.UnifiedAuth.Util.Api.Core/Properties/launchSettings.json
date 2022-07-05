@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "LY.UnifiedAuth.Util.Api.Core": {
+      "commandName": "Executable"
+    }
+  }
+}

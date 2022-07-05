@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>LY.Report.Core.LYApiUtil</AssemblyName>
+    <RootNamespace>LY.Report.Core.LYApiUtil</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Mall\**" />
+    <Compile Remove="Pay\**" />
+    <EmbeddedResource Remove="Mall\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <None Remove="Mall\**" />
+    <None Remove="Pay\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.CacheRepository\LY.Report.Core.CacheRepository.csproj" />
+    <ProjectReference Include="..\LY.UnifiedAuth.Util.Api.Core\LY.UnifiedAuth.Util.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>LY.Report.Core.CacheRepository</AssemblyName>
+    <RootNamespace>LY.Report.Core.CacheRepository</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.Common\LY.Report.Core.Common.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Model\LY.Report.Core.Model.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Repository\LY.Report.Core.Repository.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Util\LY.Report.Core.Util.csproj" />
+    <ProjectReference Include="..\LY.UnifiedAuth.Util.Api.Core\LY.UnifiedAuth.Util.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>

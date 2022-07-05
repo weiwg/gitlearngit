@@ -1,0 +1,12 @@
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.deps.json
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\bin\Debug\net5.0\ref\LY.Report.Core.Util.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.pdb
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\EonUp.Delivery.Core.Util.csproj.AssemblyReference.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\EonUp.Delivery.Core.Util.GeneratedMSBuildEditorConfig.editorconfig
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\EonUp.Delivery.Core.Util.AssemblyInfoInputs.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\EonUp.Delivery.Core.Util.AssemblyInfo.cs
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\EonUp.Delivery.Core.Util.csproj.CoreCompileInputs.cache
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\ref\LY.Report.Core.Util.dll
+D:\LingYiProject\GitProject\LYAdmin\Delivery.Core\EonUp.Delivery.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.pdb

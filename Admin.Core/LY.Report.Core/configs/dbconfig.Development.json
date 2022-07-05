@@ -1,0 +1,18 @@
+{
+  //"createDbConnectionString": "Data Source=.;Integrated Security=False;Initial Catalog=Delivery;User ID=delivery;Password=wuliu123.01;Pooling=true;Min Pool Size=1",
+  //"connectionString": "Data Source=.;Integrated Security=False;Initial Catalog=Delivery;User ID=delivery;Password=wuliu123.01;Pooling=true;Min Pool Size=1",
+
+  //"createDbConnectionString": "Data Source=10.108.120.40;Integrated Security=False;Initial Catalog=AdminReport;User ID=sa;Password=abcd.1234;Pooling=true;Min Pool Size=1",
+  //"connectionString": "Data Source=10.108.120.40;Integrated Security=False;Initial Catalog=AdminReport;User ID=sa;Password=abcd.1234;Pooling=true;Min Pool Size=1",
+  "createDbConnectionString": "Data Source=10.108.120.40;Integrated Security=False;Initial Catalog=AdminReportTest;User ID=sa;Password=abcd.1234;Pooling=true;Min Pool Size=1",
+  "connectionString": "Data Source=10.108.120.40;Integrated Security=False;Initial Catalog=AdminReportTest;User ID=sa;Password=abcd.1234;Pooling=true;Min Pool Size=1",
+
+  //同步结构
+  "syncStructure": true,
+  //同步数据
+  "syncData": false,
+  //监听所有操作
+  "monitorCommand": false,
+  //监听Curd操作
+  "curd": true
+}

@@ -1,0 +1,151 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\EonUp.Delivery.Core.Common\\EonUp.Delivery.Core.Common.csproj": {}
+  },
+  "projects": {
+    "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\EonUp.Delivery.Core.Common\\EonUp.Delivery.Core.Common.csproj": {
+      "version": "1.0.2",
+      "restore": {
+        "projectUniqueName": "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\EonUp.Delivery.Core.Common\\EonUp.Delivery.Core.Common.csproj",
+        "projectName": "LY.Report.Core.Common",
+        "projectPath": "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\EonUp.Delivery.Core.Common\\EonUp.Delivery.Core.Common.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1\\.nuget\\packages\\",
+        "outputPath": "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\EonUp.Delivery.Core.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj": {
+                "projectPath": "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj"
+              },
+              "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj": {
+                "projectPath": "D:\\LingYiProject\\GitProject\\LYAdmin\\Delivery.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "CSRedisCore": {
+              "target": "Package",
+              "version": "[3.6.8, )"
+            },
+            "FreeSql": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.MySql": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.Oracle": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.SqlServerForSystem": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.Sqlite": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Repository": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "IdleBus": {
+              "target": "Package",
+              "version": "[1.5.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeAnalysis": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.15.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.15.0, )"
+            },
+            "UAParser": {
+              "target": "Package",
+              "version": "[3.1.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

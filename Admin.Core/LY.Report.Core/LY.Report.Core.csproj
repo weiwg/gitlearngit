@@ -1,0 +1,296 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <!--<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>-->
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
+    <Authors>LY</Authors>
+    <Company>LY</Company>
+    <RepositoryType></RepositoryType>
+    <Description>后端WebApi</Description>
+    <PackageId>LY.Report.Core</PackageId>
+    <Product>LY.Report.Core</Product>
+    <UserSecretsId>729fff27-b925-4753-a8c8-f3e9c0e50a40</UserSecretsId>
+    <AssemblyName>LY.Report.Core</AssemblyName>
+    <RootNamespace>LY.Report.Core</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\LY.Report.Core\SwaggerDoc\LY.Report.Core.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\**" />
+    <Compile Remove="Areas\Article\**" />
+    <Compile Remove="Areas\Auth\**" />
+    <Compile Remove="Areas\Delivery\**" />
+    <Compile Remove="Areas\Demo\**" />
+    <Compile Remove="Areas\Driver\**" />
+    <Compile Remove="Areas\Fund\**" />
+    <Compile Remove="Areas\Mobile\V1\Article\**" />
+    <Compile Remove="Areas\Mobile\V1\Delivery\**" />
+    <Compile Remove="Areas\Mobile\V1\Driver\**" />
+    <Compile Remove="Areas\Mobile\V1\Fund\**" />
+    <Compile Remove="Areas\Mobile\V1\Order\**" />
+    <Compile Remove="Areas\Mobile\V1\Pay\**" />
+    <Compile Remove="Areas\Mobile\V1\Sales\**" />
+    <Compile Remove="Areas\Mq\**" />
+    <Compile Remove="Areas\Open\V1\Article\**" />
+    <Compile Remove="Areas\Open\V1\Auth\**" />
+    <Compile Remove="Areas\Open\V1\Delivery\**" />
+    <Compile Remove="Areas\Open\V1\Driver\**" />
+    <Compile Remove="Areas\Open\V1\Fund\**" />
+    <Compile Remove="Areas\Open\V1\Mq\**" />
+    <Compile Remove="Areas\Open\V1\Order\**" />
+    <Compile Remove="Areas\Open\V1\Pay\**" />
+    <Compile Remove="Areas\Open\V1\Personnel\**" />
+    <Compile Remove="Areas\Open\V1\Record\**" />
+    <Compile Remove="Areas\Open\V1\Resource\**" />
+    <Compile Remove="Areas\Open\V1\Sales\**" />
+    <Compile Remove="Areas\Open\V1\System\**" />
+    <Compile Remove="Areas\Open\V1\User\**" />
+    <Compile Remove="Areas\Order\**" />
+    <Compile Remove="Areas\Pay\**" />
+    <Compile Remove="Areas\Permission\**" />
+    <Compile Remove="Areas\Personnel\**" />
+    <Compile Remove="Areas\Record\**" />
+    <Compile Remove="Areas\Resource\**" />
+    <Compile Remove="Areas\Sales\**" />
+    <Compile Remove="Areas\System\**" />
+    <Compile Remove="Areas\Sys\V1\Article\**" />
+    <Compile Remove="Areas\Sys\V1\Delivery\**" />
+    <Compile Remove="Areas\Sys\V1\Driver\**" />
+    <Compile Remove="Areas\Sys\V1\Fund\**" />
+    <Compile Remove="Areas\Sys\V1\Order\**" />
+    <Compile Remove="Areas\Sys\V1\Pay\**" />
+    <Compile Remove="Areas\Sys\V1\Sales\**" />
+    <Compile Remove="Areas\User\**" />
+    <Compile Remove="AutoMapper\**" />
+    <Compile Remove="Controllers\Base\VersionCtr\**" />
+    <Compile Remove="Hubs\**" />
+    <Compile Remove="Logs\**" />
+    <Content Remove="Areas\Admin\**" />
+    <Content Remove="Areas\Article\**" />
+    <Content Remove="Areas\Auth\**" />
+    <Content Remove="Areas\Delivery\**" />
+    <Content Remove="Areas\Demo\**" />
+    <Content Remove="Areas\Driver\**" />
+    <Content Remove="Areas\Fund\**" />
+    <Content Remove="Areas\Mobile\V1\Article\**" />
+    <Content Remove="Areas\Mobile\V1\Delivery\**" />
+    <Content Remove="Areas\Mobile\V1\Driver\**" />
+    <Content Remove="Areas\Mobile\V1\Fund\**" />
+    <Content Remove="Areas\Mobile\V1\Order\**" />
+    <Content Remove="Areas\Mobile\V1\Pay\**" />
+    <Content Remove="Areas\Mobile\V1\Sales\**" />
+    <Content Remove="Areas\Mq\**" />
+    <Content Remove="Areas\Open\V1\Article\**" />
+    <Content Remove="Areas\Open\V1\Auth\**" />
+    <Content Remove="Areas\Open\V1\Delivery\**" />
+    <Content Remove="Areas\Open\V1\Driver\**" />
+    <Content Remove="Areas\Open\V1\Fund\**" />
+    <Content Remove="Areas\Open\V1\Mq\**" />
+    <Content Remove="Areas\Open\V1\Order\**" />
+    <Content Remove="Areas\Open\V1\Pay\**" />
+    <Content Remove="Areas\Open\V1\Personnel\**" />
+    <Content Remove="Areas\Open\V1\Record\**" />
+    <Content Remove="Areas\Open\V1\Resource\**" />
+    <Content Remove="Areas\Open\V1\Sales\**" />
+    <Content Remove="Areas\Open\V1\System\**" />
+    <Content Remove="Areas\Open\V1\User\**" />
+    <Content Remove="Areas\Order\**" />
+    <Content Remove="Areas\Pay\**" />
+    <Content Remove="Areas\Permission\**" />
+    <Content Remove="Areas\Personnel\**" />
+    <Content Remove="Areas\Record\**" />
+    <Content Remove="Areas\Resource\**" />
+    <Content Remove="Areas\Sales\**" />
+    <Content Remove="Areas\System\**" />
+    <Content Remove="Areas\Sys\V1\Article\**" />
+    <Content Remove="Areas\Sys\V1\Delivery\**" />
+    <Content Remove="Areas\Sys\V1\Driver\**" />
+    <Content Remove="Areas\Sys\V1\Fund\**" />
+    <Content Remove="Areas\Sys\V1\Order\**" />
+    <Content Remove="Areas\Sys\V1\Pay\**" />
+    <Content Remove="Areas\Sys\V1\Sales\**" />
+    <Content Remove="Areas\User\**" />
+    <Content Remove="AutoMapper\**" />
+    <Content Remove="Controllers\Base\VersionCtr\**" />
+    <Content Remove="Hubs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Areas\Admin\**" />
+    <EmbeddedResource Remove="Areas\Article\**" />
+    <EmbeddedResource Remove="Areas\Auth\**" />
+    <EmbeddedResource Remove="Areas\Delivery\**" />
+    <EmbeddedResource Remove="Areas\Demo\**" />
+    <EmbeddedResource Remove="Areas\Driver\**" />
+    <EmbeddedResource Remove="Areas\Fund\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Article\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Delivery\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Driver\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Fund\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Order\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Pay\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Sales\**" />
+    <EmbeddedResource Remove="Areas\Mq\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Article\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Auth\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Delivery\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Driver\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Fund\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Mq\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Order\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Pay\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Personnel\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Record\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Resource\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\Sales\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\System\**" />
+    <EmbeddedResource Remove="Areas\Open\V1\User\**" />
+    <EmbeddedResource Remove="Areas\Order\**" />
+    <EmbeddedResource Remove="Areas\Pay\**" />
+    <EmbeddedResource Remove="Areas\Permission\**" />
+    <EmbeddedResource Remove="Areas\Personnel\**" />
+    <EmbeddedResource Remove="Areas\Record\**" />
+    <EmbeddedResource Remove="Areas\Resource\**" />
+    <EmbeddedResource Remove="Areas\Sales\**" />
+    <EmbeddedResource Remove="Areas\System\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Article\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Delivery\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Driver\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Fund\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Order\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Pay\**" />
+    <EmbeddedResource Remove="Areas\Sys\V1\Sales\**" />
+    <EmbeddedResource Remove="Areas\User\**" />
+    <EmbeddedResource Remove="AutoMapper\**" />
+    <EmbeddedResource Remove="Controllers\Base\VersionCtr\**" />
+    <EmbeddedResource Remove="Hubs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Areas\Admin\**" />
+    <None Remove="Areas\Article\**" />
+    <None Remove="Areas\Auth\**" />
+    <None Remove="Areas\Delivery\**" />
+    <None Remove="Areas\Demo\**" />
+    <None Remove="Areas\Driver\**" />
+    <None Remove="Areas\Fund\**" />
+    <None Remove="Areas\Mobile\V1\Article\**" />
+    <None Remove="Areas\Mobile\V1\Delivery\**" />
+    <None Remove="Areas\Mobile\V1\Driver\**" />
+    <None Remove="Areas\Mobile\V1\Fund\**" />
+    <None Remove="Areas\Mobile\V1\Order\**" />
+    <None Remove="Areas\Mobile\V1\Pay\**" />
+    <None Remove="Areas\Mobile\V1\Sales\**" />
+    <None Remove="Areas\Mq\**" />
+    <None Remove="Areas\Open\V1\Article\**" />
+    <None Remove="Areas\Open\V1\Auth\**" />
+    <None Remove="Areas\Open\V1\Delivery\**" />
+    <None Remove="Areas\Open\V1\Driver\**" />
+    <None Remove="Areas\Open\V1\Fund\**" />
+    <None Remove="Areas\Open\V1\Mq\**" />
+    <None Remove="Areas\Open\V1\Order\**" />
+    <None Remove="Areas\Open\V1\Pay\**" />
+    <None Remove="Areas\Open\V1\Personnel\**" />
+    <None Remove="Areas\Open\V1\Record\**" />
+    <None Remove="Areas\Open\V1\Resource\**" />
+    <None Remove="Areas\Open\V1\Sales\**" />
+    <None Remove="Areas\Open\V1\System\**" />
+    <None Remove="Areas\Open\V1\User\**" />
+    <None Remove="Areas\Order\**" />
+    <None Remove="Areas\Pay\**" />
+    <None Remove="Areas\Permission\**" />
+    <None Remove="Areas\Personnel\**" />
+    <None Remove="Areas\Record\**" />
+    <None Remove="Areas\Resource\**" />
+    <None Remove="Areas\Sales\**" />
+    <None Remove="Areas\System\**" />
+    <None Remove="Areas\Sys\V1\Article\**" />
+    <None Remove="Areas\Sys\V1\Delivery\**" />
+    <None Remove="Areas\Sys\V1\Driver\**" />
+    <None Remove="Areas\Sys\V1\Fund\**" />
+    <None Remove="Areas\Sys\V1\Order\**" />
+    <None Remove="Areas\Sys\V1\Pay\**" />
+    <None Remove="Areas\Sys\V1\Sales\**" />
+    <None Remove="Areas\User\**" />
+    <None Remove="AutoMapper\**" />
+    <None Remove="Controllers\Base\VersionCtr\**" />
+    <None Remove="Hubs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Mobile\V1\User\Controllers\UserCouponController.cs" />
+    <Compile Remove="Areas\Mobile\V1\User\Controllers\UserRedPackController.cs" />
+    <Compile Remove="Db\DbHelper.cs" />
+    <Compile Remove="Db\TenantDbHelper.cs" />
+    <Compile Remove="Db\TenantDBServiceCollectionExtensions.cs" />
+    <Compile Remove="Helper\TimerJob\CouponStatusTimerJob.cs" />
+    <Compile Remove="Helper\TimerJob\OrderStatusTimerJob.cs" />
+    <Compile Remove="Helper\TimerJob\PayStatusTimerJob.cs" />
+    <Compile Remove="Helper\TimerJob\RedPackStatusTimerJob.cs" />
+    <Compile Remove="RegisterModules\BusinessModule.cs" />
+    <Compile Remove="RegisterModules\ControllerModule.cs" />
+    <Compile Remove="RegisterModules\RepositoryModule.cs" />
+    <Compile Remove="RegisterModules\ServiceModule.cs" />
+    <Compile Remove="RegisterModules\SingleInstanceModule.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LY.Report.Core.Repository.dll" />
+    <None Remove="admin.db" />
+    <None Remove="SwaggerDoc\EonUp.Delivery.Core.Common.xml" />
+    <None Remove="SwaggerDoc\EonUp.Delivery.Core.Model.xml" />
+    <None Remove="SwaggerDoc\EonUp.Delivery.Core.Service.xml" />
+    <None Remove="SwaggerDoc\EonUp.Delivery.Core.xml" />
+    <None Remove="SwaggerDoc\LY.Report.Core.Common.xml" />
+    <None Remove="SwaggerDoc\LY.Report.Core.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="4.0.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="Caching.CSRedis" Version="3.6.80" />
+    <PackageReference Include="Castle.Core.AsyncInterceptor" Version="2.0.0" />
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NLog" Version="4.7.13" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.CacheRepository\LY.Report.Core.CacheRepository.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Services\LY.Report.Core.Service.csproj" />
+    <ProjectReference Include="..\LY.Mq.Message\LY.Mq.Message.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LY.Report.Core.Common.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LY.Report.Core.Model.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LY.Report.Core.Service.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="SwaggerDoc\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

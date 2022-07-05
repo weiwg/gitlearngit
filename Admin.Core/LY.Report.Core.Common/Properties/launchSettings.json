@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "LY.Report.Core.Common": {
+      "commandName": "Executable"
+    }
+  }
+}

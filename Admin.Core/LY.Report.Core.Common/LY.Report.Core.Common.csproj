@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.2</Version>
+    <Authors>LY</Authors>
+    <Company>LY</Company>
+    <Description>后端通用库</Description>
+    <AssemblyName>LY.Report.Core.Common</AssemblyName>
+    <RootNamespace>LY.Report.Core.Common</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\LY.Report.Core\SwaggerDoc\LY.Report.Core.Common.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="RegisterModules\**" />
+    <EmbeddedResource Remove="RegisterModules\**" />
+    <None Remove="RegisterModules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Consts\AdminConsts.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSRedisCore" Version="3.6.8" />
+    <PackageReference Include="FreeSql" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Provider.MySql" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Provider.Oracle" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Provider.SqlServerForSystem" Version="3.0.100" />
+    <PackageReference Include="FreeSql.Repository" Version="3.0.100" />
+    <PackageReference Include="IdleBus" Version="1.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+    <PackageReference Include="UAParser" Version="3.1.47" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.Util\LY.Report.Core.Util.csproj" />
+    <ProjectReference Include="..\LY.UnifiedAuth.Util.Api.Core\LY.UnifiedAuth.Util.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>

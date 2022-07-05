@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>1.0.2</Version>
+    <Authors>LY</Authors>
+    <Company>LY</Company>
+    <Description>后端仓储库</Description>
+    <AssemblyName>LY.Report.Core.Repository</AssemblyName>
+    <RootNamespace>LY.Report.Core.Repository</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Admin\**" />
+    <Compile Remove="Article\**" />
+    <Compile Remove="Delivery\**" />
+    <Compile Remove="Driver\**" />
+    <Compile Remove="Fund\**" />
+    <Compile Remove="Order\**" />
+    <Compile Remove="Pay\**" />
+    <Compile Remove="Sales\**" />
+    <Compile Remove="User\Coupon\**" />
+    <Compile Remove="User\RedPack\**" />
+    <EmbeddedResource Remove="Admin\**" />
+    <EmbeddedResource Remove="Article\**" />
+    <EmbeddedResource Remove="Delivery\**" />
+    <EmbeddedResource Remove="Driver\**" />
+    <EmbeddedResource Remove="Fund\**" />
+    <EmbeddedResource Remove="Order\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <EmbeddedResource Remove="Sales\**" />
+    <EmbeddedResource Remove="User\Coupon\**" />
+    <EmbeddedResource Remove="User\RedPack\**" />
+    <None Remove="Admin\**" />
+    <None Remove="Article\**" />
+    <None Remove="Delivery\**" />
+    <None Remove="Driver\**" />
+    <None Remove="Fund\**" />
+    <None Remove="Order\**" />
+    <None Remove="Pay\**" />
+    <None Remove="Sales\**" />
+    <None Remove="User\Coupon\**" />
+    <None Remove="User\RedPack\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Auth\Api\Output\OrganizationDataOutput.cs" />
+    <Compile Remove="Base\BaseRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Yitter.IdGenerator" Version="1.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.Model\LY.Report.Core.Model.csproj" />
+  </ItemGroup>
+
+</Project>

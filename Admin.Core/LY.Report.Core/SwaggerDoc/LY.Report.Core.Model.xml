@@ -1,0 +1,4003 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LY.Report.Core.Model</name>
+    </assembly>
+    <members>
+        <member name="T:LY.Report.Core.Model.Article.Enum.ArticleStatus">
+            <summary>
+            文章状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleStatus.Unpublished">
+            <summary>
+            未发布
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleStatus.Published">
+            <summary>
+            已发布
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Article.Enum.ArticleSetting">
+            <summary>
+            文章设置
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleSetting.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleSetting.Top">
+            <summary>
+            置顶
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleSetting.Recommend">
+            <summary>
+            推荐
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleSetting.Hot">
+            <summary>
+            热门
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Article.Enum.ArticleCategory">
+            <summary>
+            分类类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleCategory.Article">
+            <summary>
+            文章
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleCategory.Notice">
+            <summary>
+            通知
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Article.Enum.ArticleCategory.Help">
+            <summary>
+            系统帮助
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Article.ArticleInfo">
+            <summary>
+            文章
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.ArticleId">
+            <summary>
+            文章Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.ArticleTypeId">
+            <summary>
+            分类Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.ArticleStatus">
+            <summary>
+            文章状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.ArticleSetting">
+            <summary>
+            文章设置
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.Abstract">
+            <summary>
+            内容摘要
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.ArticleContent">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.PublishDate">
+            <summary>
+            发布日期
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.Sequence">
+            <summary>
+            排序(越大越靠前)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleInfo.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Article.ArticleType">
+            <summary>
+            文章分类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.ArticleTypeId">
+            <summary>
+            分类Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.ArticleCategory">
+            <summary>
+            分类类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.ArticleTypeName">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.ParentId">
+            <summary>
+            父级Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.Sequence">
+            <summary>
+            排序(越大越靠前)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Article.ArticleType.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.Enum.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.DocumentType.Group">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.DocumentType.Markdown">
+            <summary>
+            Markdown文档
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.Enum.PermissionType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.PermissionType.Group">
+            <summary>
+            分组
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.PermissionType.Menu">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.PermissionType.Dot">
+            <summary>
+            权限点
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.Enum.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.Sex.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.Sex.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.Sex.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.Enum.RoleType">
+            <summary>
+            角色枚举
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.RoleType.SuperAdmin">
+            <summary>
+            超级管理员
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.RoleType.Admin">
+            <summary>
+            系统管理员
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Auth.Enum.RoleType.User">
+            <summary>
+            平台用户
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthApi">
+            <summary>
+            接口管理
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.ApiId">
+            <summary>
+            ApiId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.ParentId">
+            <summary>
+            所属模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.Name">
+            <summary>
+            接口命名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.Label">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.Path">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.HttpMethods">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthApi.ApiVersion">
+            <summary>
+            Api版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthPermission">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.PermissionId">
+            <summary>
+            权限id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.ViewId">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.ApiId">
+            <summary>
+            接口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Path">
+            <summary>
+            菜单访问地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Closable">
+            <summary>
+            可关闭
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Opened">
+            <summary>
+            打开组
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.NewWindow">
+            <summary>
+            打开新窗口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.External">
+            <summary>
+            链接外显
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermission.ApiVersion">
+            <summary>
+            Api版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthPermissionApi">
+            <summary>
+            权限接口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermissionApi.PermissionApiId">
+            <summary>
+            角色权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermissionApi.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermissionApi.Permission">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermissionApi.ApiId">
+            <summary>
+            接口Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthPermissionApi.Api">
+            <summary>
+            接口
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthRole">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.RoleType">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRole.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthRolePermission">
+            <summary>
+            角色权限
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRolePermission.RolePermissionId">
+            <summary>
+            角色权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRolePermission.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRolePermission.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRolePermission.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthRolePermission.Permission">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthTenantPermission">
+            <summary>
+            租户权限
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthTenantPermission.TenantPermissionId">
+            <summary>
+            租户权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthTenantPermission.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthTenantPermission.Tenant">
+            <summary>
+            租户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthTenantPermission.Permission">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthUserRole">
+            <summary>
+            用户角色
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthUserRole.UserRoleId">
+            <summary>
+            用户角色Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthUserRole.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthUserRole.RoleId">
+            <summary>
+            角色Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.AuthView">
+            <summary>
+            视图管理
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.ViewId">
+            <summary>
+            视图Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.ParentId">
+            <summary>
+            所属节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Name">
+            <summary>
+            视图命名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Label">
+            <summary>
+            视图名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Path">
+            <summary>
+            视图路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Auth.AuthView.ApiVersion">
+            <summary>
+            Api版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Auth.T_Sys_Dual">
+            <summary>
+            系统表，用于查询系统函数
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.BaseEnum.Del">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.Del.No">
+            <summary>
+            不删除
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.Del.Yes">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.BaseEnum.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.IsActive.Yes">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.IsActive.No">
+            <summary>
+            无效
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.BaseEnum.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.IsDefault.Yes">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.BaseEnum.IsDefault.No">
+            <summary>
+            非默认
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.Enum.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.MsgType.System">
+            <summary>
+            系统
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.MsgType.Order">
+            <summary>
+            订单
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.Enum.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.MsgStatus.Unread">
+            <summary>
+            未读
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.MsgStatus.Read">
+            <summary>
+            已读
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.Enum.RoomType">
+            <summary>
+            聊天室类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.RoomType.PrivateChat">
+            <summary>
+            私聊
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.RoomType.GroupChat">
+            <summary>
+            群聊
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.Enum.ChatMsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.ChatMsgType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.ChatMsgType.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.ChatMsgType.Voice">
+            <summary>
+            语音
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Chat.Enum.ChatMsgType.Video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatMsg">
+            <summary>
+            消息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsg.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsg.MsgDetailId">
+            <summary>
+            消息详情Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsg.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsg.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatMsgDetail">
+            <summary>
+            消息详情表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgDetailId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgTitle">
+            <summary>
+            消息标题
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgCover">
+            <summary>
+            消息封面图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatMsgDetail.MsgUrl">
+            <summary>
+            消息链接
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatRoom">
+            <summary>
+            聊天室
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoom.RoomId">
+            <summary>
+            聊天室Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoom.RoomName">
+            <summary>
+            聊天室名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoom.RoomType">
+            <summary>
+            聊天室类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoom.AdminUserId">
+            <summary>
+            聊天室管理员用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatRoomMsg">
+            <summary>
+            聊天消息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomMsg.RoomMsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomMsg.RoomId">
+            <summary>
+            聊天室Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomMsg.FromUserId">
+            <summary>
+            发送用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomMsg.ChatContent">
+            <summary>
+            聊天内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomMsg.ChatMsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatRoomUser">
+            <summary>
+            聊天室用户关联表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomUser.RoomUserId">
+            <summary>
+            聊天室用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomUser.RoomId">
+            <summary>
+            聊天室Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomUser.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatRoomUser.LastReadMsgDate">
+            <summary>
+            最后读取消息时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Chat.ChatUserList">
+            <summary>
+            用户聊天列表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatUserList.ListId">
+            <summary>
+            列表Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatUserList.RoomId">
+            <summary>
+            聊天室Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Chat.ChatUserList.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Delivery.Enum.CalcRuleType">
+            <summary>
+            计价类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Delivery.Enum.CalcRuleType.Distance">
+            <summary>
+            距离km
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Delivery.Enum.CalcRuleType.Weight">
+            <summary>
+            重量kg
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Delivery.Enum.CalcRuleType.Volume">
+            <summary>
+            体积m³
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Delivery.Enum.CalcRuleType.Area">
+            <summary>
+            面积㎡
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Delivery.DeliveryCarType">
+            <summary>
+            车型配置
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.CarId">
+            <summary>
+            车型Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.CarName">
+            <summary>
+            车型名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.CarImg">
+            <summary>
+            车型图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.LoadWeight">
+            <summary>
+            装载重量kg
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.LoadVolume">
+            <summary>
+            装载体积m³
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.LoadSize">
+            <summary>
+            装载尺寸长*宽*高(米)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryCarType.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule">
+            <summary>
+            计价规则
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.PriceRuleId">
+            <summary>
+            规则Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.RegionId">
+            <summary>
+            地区Id(全国,省,市)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.CarId">
+            <summary>
+            车型Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.CalcRuleType">
+            <summary>
+            计价类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.Condition">
+            <summary>
+            条件 距离/体积/面积
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.Freight">
+            <summary>
+            运费
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Delivery.DeliveryPriceCalcRule.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Demo.DemoTest">
+            <summary>
+            Test模板
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.TestId">
+            <summary>
+            TestId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.TestName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.TestImg">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.TestCount">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.TestPrice">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Demo.DemoTest.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.Enum.ApplyType">
+            <summary>
+            申请类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.ApplyType.Add">
+            <summary>
+            申请司机
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.ApplyType.Update">
+            <summary>
+            修改信息
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.Enum.DriverType">
+            <summary>
+            司机类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverType.All">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverType.Join">
+            <summary>
+            入驻
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverType.Store">
+            <summary>
+            商家
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.Enum.ApprovalStatus">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.ApprovalStatus.Applying">
+            <summary>
+            申请中
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.ApprovalStatus.Approval">
+            <summary>
+            通过
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.ApprovalStatus.UnApproval">
+            <summary>
+            未通过
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.Enum.DriverStatus">
+            <summary>
+            司机状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverStatus.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverStatus.Lock">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Driver.Enum.DriverStatus.Cancellation">
+            <summary>
+            注销
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.DriverApplyInfo">
+            <summary>
+            司机申请信息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.ApplyId">
+            <summary>
+            申请Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.ApplyType">
+            <summary>
+            申请类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.CarId">
+            <summary>
+            车型Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.DriverType">
+            <summary>
+            司机类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.TransactionRate">
+            <summary>
+            交易费率
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.IdCardNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.IdCardFrontImg">
+            <summary>
+            身份证正面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.IdCardBackImg">
+            <summary>
+            身份证反面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.DriverLicenseImg">
+            <summary>
+            驾驶证
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.LicensePlate">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.DrivingLicenseFrontImg">
+            <summary>
+            行驶证正面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.DrivingLicenseCarImg">
+            <summary>
+            行驶证车辆页
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.CarImg">
+            <summary>
+            车辆照片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.ApprovalStatus">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverApplyInfo.ApprovalResult">
+            <summary>
+            审核结果
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.DriverIdentityInfo">
+            <summary>
+            司机认证信息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.CarId">
+            <summary>
+            车型Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.IdCardNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.IdCardFrontImg">
+            <summary>
+            身份证正面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.IdCardBackImg">
+            <summary>
+            身份证反面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.DriverLicenseImg">
+            <summary>
+            驾驶证
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.LicensePlate">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.DrivingLicenseFrontImg">
+            <summary>
+            行驶证正面
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.DrivingLicenseCarImg">
+            <summary>
+            行驶证车辆页
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverIdentityInfo.CarImg">
+            <summary>
+            车辆照片
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Driver.DriverInfo">
+            <summary>
+            司机信息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverType">
+            <summary>
+            司机类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.BindStoreNo">
+            <summary>
+            关联店铺编号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.BindStoreName">
+            <summary>
+            关联店铺名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.TransactionRate">
+            <summary>
+            交易费率
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.RealName">
+            <summary>
+            司机姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.Balance">
+            <summary>
+            账户余额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverScore">
+            <summary>
+            司机评分
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverScoreSum">
+            <summary>
+            司机总评分
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverEvaluationSum">
+            <summary>
+            司机总评价数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.Credit">
+            <summary>
+            信用度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.DriverStatus">
+            <summary>
+            司机状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.LastLocationCoordinate">
+            <summary>
+            上次坐标位置(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Driver.DriverInfo.LastLocationDate">
+            <summary>
+            上次定位时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Mq.BaseMqMessage">
+            <summary>
+            mq消息基类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.Exchange">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.Queue">
+            <summary>
+            队列
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.RoutingKey">
+            <summary>
+            路由值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.MsgDate">
+            <summary>
+            消息时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.CallbackExchange">
+            <summary>
+            回调路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.BaseMqMessage.CallbackRoutingKey">
+            <summary>
+            回调路由值
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Mq.Enum.MqMsgStatus">
+            <summary>
+            处理状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Mq.Enum.MqMsgStatus.NotHandled">
+            <summary>
+            未处理
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Mq.Enum.MqMsgStatus.Handled">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Mq.Enum.MqMsgStatus.HandleFail">
+            <summary>
+            处理失败
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Mq.MqReceiveRecord">
+            <summary>
+            消息接收记录
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqReceiveRecord.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqReceiveRecord.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqReceiveRecord.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqReceiveRecord.MsgCallBackStatus">
+            <summary>
+            回调消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqReceiveRecord.MsgCallBackDate">
+            <summary>
+            回调消息时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Mq.MqSendRecord">
+            <summary>
+            消息推送记录
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.MsgCallBackStatus">
+            <summary>
+            回调消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.MsgCallBackResult">
+            <summary>
+            回调消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Mq.MqSendRecord.MsgCallBackDate">
+            <summary>
+            回调消息时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.Enum.DeductionType">
+            <summary>
+            抵扣类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.DeductionType.Coupon">
+            <summary>
+            优惠券
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.DeductionType.Integral">
+            <summary>
+            积分
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.DeductionType.RedPack">
+            <summary>
+            红包
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.Enum.OrderType">
+            <summary>
+            订单类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderType.User">
+            <summary>
+            用户发单
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderType.Store">
+            <summary>
+            商城发单
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderType.StoreDriver">
+            <summary>
+            商城发单(指定司机)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.Enum.OrderStatus">
+            <summary>
+            订单状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Unpaid">
+            <summary>
+            待支付
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Waiting">
+            <summary>
+            待接单
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Received">
+            <summary>
+            已接单
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Delivering">
+            <summary>
+            送货中
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Delivered">
+            <summary>
+            已送达
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Completed">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.Cancelled">
+            <summary>
+            已取消
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.OrderStatus.ReturnBack">
+            <summary>
+            原路退回
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.Enum.CancelStatus">
+            <summary>
+            订单取消状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.CancelStatus.NotCancelled">
+            <summary>
+            未取消
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Order.Enum.CancelStatus.Cancelled">
+            <summary>
+            已取消
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderDeduction">
+            <summary>
+            抵扣明细表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.DeductionId">
+            <summary>
+            抵扣Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.DeductionType">
+            <summary>
+            抵扣类别(1优惠券 2积分 3红包)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.DeductionAmount">
+            <summary>
+            抵扣金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.RefundedAmount">
+            <summary>
+            已退款金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.CouponId">
+            <summary>
+            优惠券Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.RedPackId">
+            <summary>
+            红包Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDeduction.IntegralAmount">
+            <summary>
+            积分
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderDelivery">
+            <summary>
+            订单配送信息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.DeliveryNo">
+            <summary>
+            配送序号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.OutTradeNo">
+            <summary>
+            商户单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.OutsideOrderNo">
+            <summary>
+            外部订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.CarLicensePlate">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.OrderStatus">
+            <summary>
+            订单状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.DeliveredOrderDate">
+            <summary>
+            送达时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.GoodsInfo">
+            <summary>
+            物品信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.GoodsCalcRuleType">
+            <summary>
+            物品计价类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.GoodsLoadCount">
+            <summary>
+            物品数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.StartBaseAddress">
+            <summary>
+            起始基本地址(省|市|区)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.StartDetailAddress">
+            <summary>
+            起始地址详情
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.StartAddressName">
+            <summary>
+            起始地址名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.StartCoordinate">
+            <summary>
+            起始地点坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.EndBaseAddress">
+            <summary>
+            终点基本地址(省|市|区)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.EndDetailAddress">
+            <summary>
+            终点地址详情
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.EndAddressName">
+            <summary>
+            终点地址名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.EndCoordinate">
+            <summary>
+            终点地点坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.ConsigneeName">
+            <summary>
+            收货人姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.ConsigneePhone">
+            <summary>
+            收货手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.UserRemark">
+            <summary>
+            用户备注
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.DriverRemark">
+            <summary>
+            司机备注
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderDelivery.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderEvaluation">
+            <summary>
+            订单评价
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.EvaluationId">
+            <summary>
+            评价Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.UserScore">
+            <summary>
+            用户评分(司机评价用户)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.UserEvaluationContent">
+            <summary>
+             评价用户内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.DriverScore">
+            <summary>
+            司机评分(用户评价司机)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderEvaluation.DriverEvaluationContent">
+            <summary>
+             评价司机内容
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderFreightCalc">
+            <summary>
+            订单运费计价
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.CalcId">
+            <summary>
+            计价Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.DriverId">
+             <summary>
+            司机ID
+             </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.CarId">
+             <summary>
+            车型Id
+             </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.CarName">
+             <summary>
+            车型名称
+             </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.CalcRuleType">
+            <summary>
+            计价类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.LoadCount">
+            <summary>
+            条件 距离/体积/面积
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.StartCoordinate">
+            <summary>
+            起始地点坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.WayCoordinates">
+            <summary>
+            途径地点坐标包括终点(经度,纬度,";"分隔)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.BaseFreight">
+            <summary>
+            基础运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.DistanceFreight">
+            <summary>
+            距离运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.LoadCountFreight">
+            <summary>
+            装载运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.TotalFreight">
+            <summary>
+            订单总运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.UserTipsAmount">
+            <summary>
+            用户小费金额(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.Distance">
+            <summary>
+            距离(千米)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.Duration">
+            <summary>
+            耗时(分钟),向上取整
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderFreightCalc.PriceCity">
+            <summary>
+            取价城市
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderInfo">
+            <summary>
+            订单表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OutTradeNo">
+            <summary>
+            商户单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OutsideOrderNo">
+            <summary>
+            外部订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CarLicensePlate">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CarName">
+            <summary>
+            车型名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OrderType">
+            <summary>
+            订单类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OrderStatus">
+            <summary>
+            订单状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.IsUserEvaluation">
+            <summary>
+            用户是否评价
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.IsDriverEvaluation">
+            <summary>
+            司机是否评价
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OrderDate">
+            <summary>
+            下单时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.ReceivedOrderDate">
+            <summary>
+            接单时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DeliveringOrderDate">
+            <summary>
+            送货时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DeliveredOrderDate">
+            <summary>
+            送达时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.PlanDeliveredOrderDate">
+            <summary>
+            预计送达时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.IsUserConfirm">
+            <summary>
+            用户是否确认送达
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.ConfirmOrderDate">
+            <summary>
+            确认送达时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CancelStatus">
+            <summary>
+            取消状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CancelDate">
+            <summary>
+            取消时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.OrderDescription">
+            <summary>
+            订单描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CarId">
+            <summary>
+            下单车型Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.GoodsInfo">
+            <summary>
+            物品信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.GoodsCalcRuleType">
+            <summary>
+            物品计价类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.GoodsLoadCount">
+            <summary>
+            物品数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.BaseFreight">
+            <summary>
+            基础运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DistanceFreight">
+            <summary>
+            距离运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.LoadCountFreight">
+            <summary>
+            装载运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.TotalFreight">
+            <summary>
+            订单总运费(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.UserTipsAmount">
+            <summary>
+            用户小费金额(元)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.ChangeAmount">
+            <summary>
+            改价金额, 可正可负(正为加价,负为减价)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.SystemDiscountAmount">
+            <summary>
+            系统优惠金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.CouponDiscountAmount">
+            <summary>
+            优惠券抵扣金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.RedPackDiscountAmount">
+            <summary>
+            红包抵扣金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.TotalAmount">
+            <summary>
+            订单总金额, 订单总运费+用户小费+改价
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.SettleCharge">
+            <summary>
+            结算手续费(交易服务费)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.SettleTotalAmount">
+            <summary>
+            结算总金额(结算给司机)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.AmountPayable">
+            <summary>
+            应付金额(用户), 订单总金额-系统优惠金额-优惠券-红包
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartBaseAddress">
+            <summary>
+            起始基本地址(省|市|区)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartDetailAddress">
+            <summary>
+            起始地址详情
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartAddressName">
+            <summary>
+            起始地址名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartCoordinate">
+            <summary>
+            起始地点坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartLongitude">
+            <summary>
+            起始地点坐标(经度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.StartLatitude">
+            <summary>
+            起始地点坐标(纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.EndBaseAddress">
+            <summary>
+            终点基本地址(省|市|区)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.EndDetailAddress">
+            <summary>
+            终点地址详情
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.EndAddressName">
+            <summary>
+            终点地址名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.EndCoordinate">
+            <summary>
+            终点地点坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.AddressDistance">
+            <summary>
+            地址距离km
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DeliveryWayCount">
+            <summary>
+            途经点数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.ConsigneeName">
+            <summary>
+            收货人姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.ConsigneePhone">
+            <summary>
+            收货手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.UserRemark">
+            <summary>
+            用户备注
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderInfo.DriverRemark">
+            <summary>
+            司机备注
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Model.Order.OrderInfo.GetAppSubsidyAmount">
+            <summary>
+            获取系统补贴金额
+            系统优惠+优惠券+红包抵扣
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Model.Order.OrderInfo.GetTotalAmount">
+            <summary>
+            获取订单总金额(不含红包抵扣)
+            订单总运费+用户小费+改价
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Model.Order.OrderInfo.GetSettleTotalAmount">
+            <summary>
+            获取结算金额
+            订单总金额-结算手续费
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Model.Order.OrderInfo.GetAmountPayable">
+            <summary>
+            获取应付金额
+            订单总金额-系统补贴优惠(系统优惠金额-优惠券-红包抵扣)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Model.Order.OrderReceiveRecord">
+            <summary>
+            司机接单记录
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.ReceivedOrderDate">
+            <summary>
+            接单时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.CancelStatus">
+            <summary>
+            取消状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.CancelDate">
+            <summary>
+            取消时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Order.OrderReceiveRecord.CancelReason">
+            <summary>
+            取消原因
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.FundPlatform">
+            <summary>
+            资金平台
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.FundPlatform.Unionpay">
+            <summary>
+            银联(银行卡)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.FundPlatform.UnionpayB2B">
+            <summary>
+            银联企业网银
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.FundPlatform.Alipay">
+            <summary>
+            支付宝
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.FundPlatform.WeChat">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.FundPlatform.Balance">
+            <summary>
+            余额
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.PayOrderType">
+            <summary>
+            支付订单类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayOrderType.Order">
+            <summary>
+            支付
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayOrderType.Recharge">
+            <summary>
+            余额充值
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayOrderType.Deposit">
+            <summary>
+            保证金
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.PayStatus">
+            <summary>
+            支付状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayStatus.Unpaid">
+            <summary>
+            待支付
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayStatus.Paid">
+            <summary>
+            已支付
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayStatus.Closed">
+            <summary>
+            已关闭
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayStatus.Failed">
+            <summary>
+            支付失败
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.PayStatus.Paying">
+            <summary>
+            支付中(除明确状态外的其他状态)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.AlipayTradeStatus">
+            <summary>
+            支付宝交易状态,该状态值与PayStatus一致
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.AlipayTradeStatus.WAIT_BUYER_PAY">
+            <summary>
+            交易创建，等待买家付款
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.AlipayTradeStatus.TRADE_SUCCESS">
+            <summary>
+            交易支付成功
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.AlipayTradeStatus.TRADE_FINISHED">
+            <summary>
+            交易结束，不可退款
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.AlipayTradeStatus.TRADE_CLOSED">
+            <summary>
+            未付款交易超时关闭，或支付完成后全额退款
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.SecuredTradeStatus">
+            <summary>
+            担保交易状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.SecuredTradeStatus.Normal">
+            <summary>
+            非担保交易
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.SecuredTradeStatus.Trading">
+            <summary>
+            交易中
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.SecuredTradeStatus.Finish">
+            <summary>
+            已完成(交易成功)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.SecuredTradeStatus.Closed">
+            <summary>
+            已关闭(交易退款/关闭)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.CallBack">
+            <summary>
+            回调状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.CallBack.NotCall">
+            <summary>
+            未回调
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.CallBack.CallSuccess">
+            <summary>
+            回调成功
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.CallBack.CallFail">
+            <summary>
+            回调失败
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.RefundStatus">
+            <summary>
+            退款状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.RefundStatus.Unpaid">
+            <summary>
+            待退款
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.RefundStatus.Paid">
+            <summary>
+            已退款
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.RefundStatus.Closed">
+            <summary>
+            已关闭
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.RefundStatus.Failed">
+            <summary>
+            退款失败
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.RefundStatus.Paying">
+            <summary>
+            支付中(除明确状态外的其他状态)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.TransferType">
+            <summary>
+            转账类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferType.Withdraw">
+            <summary>
+            提现
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferType.Transfer">
+            <summary>
+            转账
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferType.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.Enum.TransferStatus">
+            <summary>
+            转账状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferStatus.Unpaid">
+            <summary>
+            待转账
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferStatus.Paid">
+            <summary>
+            已转账(成功)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferStatus.Closed">
+            <summary>
+            已关闭
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferStatus.Failed">
+            <summary>
+            转账失败
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Pay.Enum.TransferStatus.Paying">
+            <summary>
+            转账中(除明确状态外的其他状态)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.PayIncome">
+            <summary>
+            支付表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayId">
+            <summary>
+            支付Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.OutTradeNo">
+            <summary>
+            商户单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.TradeNo">
+            <summary>
+            平台单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.FundPlatform">
+            <summary>
+            支付平台
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayOrderType">
+            <summary>
+            支付订单类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayDescription">
+            <summary>
+            支付描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayAmount">
+            <summary>
+            支付金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.RefundedAmount">
+            <summary>
+            已退款金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.AppSubsidyAmount">
+            <summary>
+            系统补贴金额
+            系统优惠券,系统红包,积分抵扣等,系统补贴给收款用户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.RefundedAppSubsidyAmount">
+            <summary>
+            已退款系统补贴金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayAppCharge">
+            <summary>
+            App交易手续费(包括平台手续费)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.ActualSettlePayAppCharge">
+            <summary>
+            实际App交易手续费(包括平台手续费)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayPlatformCharge">
+            <summary>
+            平台交易手续费, 用于计算支付平台扣除的手续费
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.ActualSettlePayPlatformCharge">
+            <summary>
+            实际结算平台交易手续费, 用于计算支付平台扣除的手续费
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.ActualPayAmount">
+            <summary>
+            实际支付金额(支付平台返回)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.ActualSettleAmount">
+            <summary>
+            实际结算金额(ActualPayAmount-ActualSettlePayPlatformCharge)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayDate">
+            <summary>
+            支付时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayStatus">
+            <summary>
+            支付状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayStatusCode">
+            <summary>
+            支付状态码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.PayStatusMsg">
+            <summary>
+            支付状态消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.IsCallBack">
+            <summary>
+            是否回写
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.IsSecuredTrade">
+            <summary>
+            是否担保交易(资金将冻结,直到发指令解冻)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.SecuredTradeUserId">
+            <summary>
+            担保交易收款用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.SecuredTradeStatus">
+            <summary>
+            担保交易状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.ExpireDate">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayIncome.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.PayRefund">
+            <summary>
+            退款记录表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundId">
+            <summary>
+            退款记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundOutTradeNo">
+            <summary>
+            商户退款单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.OutTradeNo">
+            <summary>
+            商户单号(原单号)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundTradeNo">
+            <summary>
+            平台退款单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.TradeNo">
+            <summary>
+            平台单号(原单号)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.FundPlatform">
+            <summary>
+            退款平台
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.PayAmount">
+            <summary>
+            支付金额(原订单金额)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.AppSubsidyAmount">
+            <summary>
+            系统补贴金额(原订单金额)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundDescription">
+            <summary>
+            退款说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundAmount">
+            <summary>
+            退款金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundAppSubsidyAmount">
+            <summary>
+            退款系统补贴金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundCharge">
+            <summary>
+            退款手续费
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.ActualRefundAmount">
+            <summary>
+            实际退款金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundDate">
+            <summary>
+            退款时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundStatus">
+            <summary>
+            退款状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundStatusCode">
+            <summary>
+            退款状态码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.RefundStatusMsg">
+            <summary>
+            退款状态消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.IsCallBack">
+            <summary>
+            是否回写(0未回写  1 已回写)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayRefund.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Pay.PayTransfer">
+            <summary>
+            平台转账记录
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferOutTradeNo">
+            <summary>
+            商户转账单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferTradeNo">
+            <summary>
+            平台转账单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferType">
+            <summary>
+            转账类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.FundPlatform">
+            <summary>
+            转账平台
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferDescription">
+            <summary>
+            转账说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferAmount">
+            <summary>
+            转账金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferCharge">
+            <summary>
+            转账手续费
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.ActualTransferAmount">
+            <summary>
+            实际转账金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferDate">
+            <summary>
+            转账时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferFinishDate">
+            <summary>
+            到账时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferStatus">
+            <summary>
+            转账状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferStatusCode">
+            <summary>
+            转账状态码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.TransferStatusMsg">
+            <summary>
+            转账状态消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.IsCallBack">
+            <summary>
+            是否回写状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.AccountNo">
+            <summary>
+            收款账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.AccountName">
+            <summary>
+            收款姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.BankName">
+            <summary>
+            开户行
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Pay.PayTransfer.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Personnel.PersonnelEmployee">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.EmployeeId">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.Code">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.OrganizationId">
+            <summary>
+            主属部门Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.PrimaryEmployeeId">
+            <summary>
+            主管Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.PrimaryEmployee">
+            <summary>
+            主管
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.PositionId">
+            <summary>
+            职位Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployee.HireDate">
+            <summary>
+            入职时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Personnel.PersonnelEmployeeOrganization">
+            <summary>
+            员工附属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployeeOrganization.EmployeeId">
+            <summary>
+            员工Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployeeOrganization.Employee">
+            <summary>
+            员工
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployeeOrganization.OrganizationId">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelEmployeeOrganization.Organization">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Personnel.PersonnelOrganization">
+            <summary>
+            组织机构
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.OrgId">
+            <summary>
+            组织Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.PrimaryEmployeeId">
+            <summary>
+            主管Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.PrimaryEmployee">
+            <summary>
+            主管
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.EmployeeCount">
+            <summary>
+            员工人数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelOrganization.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Personnel.PersonnelPosition">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.PositionId">
+            <summary>
+            职位Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Personnel.PersonnelPosition.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Record.BaseRecord">
+            <summary>
+            日志基类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.LogId">
+            <summary>
+            日志Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Os">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.BrowserInfo">
+            <summary>
+            浏览器信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.ElapsedMilliseconds">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Status">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Msg">
+            <summary>
+            操作消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.BaseRecord.IsDel">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Record.RecordLocation">
+            <summary>
+            定位表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordLocation.LocationId">
+            <summary>
+            坐标Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordLocation.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordLocation.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordLocation.Coordinate">
+            <summary>
+            坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordLocation.RecordDate">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Record.RecordLogin">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Record.RecordOperation">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordOperation.ApiLabel">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordOperation.ApiPath">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordOperation.ApiMethod">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Record.RecordOperation.Params">
+            <summary>
+            操作参数
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Resource.Enum.FileCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.FileCategory.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.FileCategory.Document">
+            <summary>
+            文档
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.FileCategory.Certificate">
+            <summary>
+            证件
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.FileCategory.Chat">
+            <summary>
+            聊天
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Resource.Enum.ImgSaveType">
+            <summary>
+            保存类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.ImgSaveType.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Resource.Enum.ImgSaveType.Database">
+            <summary>sss
+            数据库(Base64)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Resource.ResImgData">
+            <summary>
+            图片数据
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgData.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgData.ImgData">
+            <summary>
+            图片数据(Base64)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Resource.ResImgGallery">
+            <summary>
+            图库
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.ImgId">
+            <summary>
+            图片Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.ImgCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.FileExtension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Resource.ResImgGallery.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.Enum.BannerType">
+            <summary>
+            横幅类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.BannerType.HomePage">
+            <summary>
+            首页
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.BannerType.UserCenter">
+            <summary>
+            用户中心
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.Enum.CouponType">
+            <summary>
+            优惠券类型
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.CouponType.Reduction">
+            <summary>
+            满减
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.CouponType.CashCoupon">
+            <summary>
+            现金券
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.Enum.CouponEffectiveType">
+            <summary>
+            生效方式
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.CouponEffectiveType.TimeRange">
+            <summary>
+            时间范围
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.CouponEffectiveType.ReceiveTime">
+            <summary>
+            领取时间(分钟)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.Enum.RedPackEffectiveType">
+            <summary>
+            生效方式
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.RedPackEffectiveType.TimeRange">
+            <summary>
+            时间范围
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Sales.Enum.RedPackEffectiveType.ReceiveTime">
+            <summary>
+            领取时间(分钟)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.SalesBanner">
+            <summary>
+            横幅配置
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.BannerId">
+            <summary>
+            横幅Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.BannerName">
+            <summary>
+            横幅名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.BannerType">
+            <summary>
+            横幅类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.RegionId">
+            <summary>
+            地区Id(全国,省,市)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.BannerImg">
+            <summary>
+            横幅图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.BannerLink">
+            <summary>
+            横幅链接
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.StartDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.EndDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.ClickCount">
+            <summary>
+            点击次数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.Sequence">
+            <summary>
+            排序(越大越靠前)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesBanner.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.SalesCoupon">
+            <summary>
+            优惠券
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.CouponId">
+            <summary>
+            优惠券Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.CouponName">
+            <summary>
+             优惠券名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.CouponType">
+            <summary>
+            优惠券类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.CouponCondition">
+            <summary>
+            优惠券条件
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.CouponContent">
+            <summary>
+             优惠券内容(优惠金额)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.EffectiveType">
+            <summary>
+            生效方式
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.EffectiveDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.ExpiryDate">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.EffectiveTime">
+            <summary>
+            有效时间(分钟)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.PublishCount">
+            <summary>
+            发行数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.LimitCount">
+            <summary>
+            限领数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.RemainCount">
+            <summary>
+            可领数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesCoupon.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Sales.SalesRedPack">
+            <summary>
+            红包
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.RedPackId">
+            <summary>
+            红包Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.RedPackName">
+            <summary>
+            红包名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.RedPackAmount">
+            <summary>
+            红包金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.EffectiveType">
+            <summary>
+            生效方式
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.EffectiveDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.ExpiryDate">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.EffectiveTime">
+            <summary>
+            有效时间(分钟)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.PublishCount">
+            <summary>
+            发行数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.LimitCount">
+            <summary>
+            限领数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.RemainCount">
+            <summary>
+            可领数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Sales.SalesRedPack.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.System.SysParamConfig">
+            <summary>
+            系统参数配置表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.ConfigId">
+            <summary>
+            设置Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.ParamKey">
+            <summary>
+            参数Key
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.ParamName">
+            <summary>
+            参数名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.ParamValue">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysParamConfig.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.System.SysRegion">
+            <summary>
+            地区表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.RegionId">
+            <summary>
+            地区Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.ParentId">
+            <summary>
+            上级Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.FullId">
+            <summary>
+            完整Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.ShortName">
+            <summary>
+            省级简称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.PinYin">
+            <summary>
+            名称拼音
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.Depth">
+            <summary>
+            地区级别：1省，2市，3区
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysRegion.Sequence">
+            <summary>
+            地区排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Model.System.SysTenant">
+            <summary>
+            租户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.Email">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.UserId">
+            <summary>
+            授权用户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.RoleId">
+            <summary>
+            授权角色
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.DataIsolationType">
+            <summary>
+            数据隔离类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.DbType">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.IdleTime">
+            <summary>
+            空闲时间(分)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysTenant.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.System.SysWebConfig">
+            <summary>
+            系统参数配置表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.System.SysWebConfig.ConfigId">
+            <summary>
+            设置Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.Enum.UserCouponStatus">
+            <summary>
+            优惠券状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserCouponStatus.Unused">
+            <summary>
+            未使用(可使用)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserCouponStatus.Used">
+            <summary>
+            已使用
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserCouponStatus.UnActivated">
+            <summary>
+            未生效
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserCouponStatus.Expired">
+            <summary>
+            已过期
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.Enum.UserStatus">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserStatus.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserStatus.Lock">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.Enum.UserRedPackStatus">
+            <summary>
+            红包状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserRedPackStatus.Unused">
+            <summary>
+            未使用(可使用)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserRedPackStatus.Used">
+            <summary>
+            已使用
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserRedPackStatus.UnActivated">
+            <summary>
+            未生效
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.User.Enum.UserRedPackStatus.Expired">
+            <summary>
+            已过期
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.UserCoupon">
+            <summary>
+            用户优惠券
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponRecordId">
+            <summary>
+            优惠券记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponId">
+            <summary>
+            优惠券Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponName">
+            <summary>
+            优惠券名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponStatus">
+            <summary>
+            优惠券状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponType">
+            <summary>
+            优惠券类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponCondition">
+            <summary>
+            优惠券条件(付款金额)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.CouponContent">
+            <summary>
+            优惠券内容(优惠金额)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.EffectiveDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.ExpiryDate">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserCoupon.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.UserInfo">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.Password">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.PasswordSalt">
+            <summary>
+            用户密码盐值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.Portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserScore">
+            <summary>
+            用户评分
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserScoreSum">
+            <summary>
+            用户总评分
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserEvaluationSum">
+            <summary>
+            用户总评价数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.UserStatus">
+            <summary>
+            用户状态（1正常 2 锁定）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.LastLoginIp">
+            <summary>
+            上次登陆IP地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserInfo.LastLoginDate">
+            <summary>
+            上次登录日期
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.UserRedPack">
+            <summary>
+            用户红包
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RedPackRecordId">
+            <summary>
+            红包记录ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RedPackId">
+            <summary>
+            红包ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RedPackName">
+            <summary>
+            红包名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RedPackAmount">
+            <summary>
+            红包金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RemainAmount">
+            <summary>
+            剩余金额
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.EffectiveDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.ExpiryDate">
+            <summary>
+            失效时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.RedPackStatus">
+            <summary>
+            红包状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserRedPack.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.User.UserWeiXinInfo">
+            <summary>
+            微信信息表
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.Sex">
+            <summary>
+            性别,1男，2女，0未知
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.Province">
+            <summary>
+            省份
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.HeadImgUrl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.Privilege">
+            <summary>
+            特权信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.User.UserWeiXinInfo.UnionId">
+            <summary>
+            开放平台UnionId
+            </summary>
+        </member>
+    </members>
+</doc>

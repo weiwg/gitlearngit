@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>LY.Report.Core.Business</AssemblyName>
+    <RootNamespace>LY.Report.Core.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DeliveryPrice\**" />
+    <Compile Remove="Driver\**" />
+    <Compile Remove="Order\**" />
+    <Compile Remove="Pay\**" />
+    <Compile Remove="UaPay\**" />
+    <EmbeddedResource Remove="DeliveryPrice\**" />
+    <EmbeddedResource Remove="Driver\**" />
+    <EmbeddedResource Remove="Order\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <EmbeddedResource Remove="UaPay\**" />
+    <None Remove="DeliveryPrice\**" />
+    <None Remove="Driver\**" />
+    <None Remove="Order\**" />
+    <None Remove="Pay\**" />
+    <None Remove="UaPay\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LY.Report.Core.CacheRepository\LY.Report.Core.CacheRepository.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.LYApiUtil\LY.Report.Core.LYApiUtil.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Model\LY.Report.Core.Model.csproj" />
+    <ProjectReference Include="..\LY.Report.Core.Repository\LY.Report.Core.Repository.csproj" />
+    <ProjectReference Include="..\LY.Mq.Message\LY.Mq.Message.csproj" />
+    <ProjectReference Include="..\LY.UnifiedAuth.Util.Api.Core\LY.UnifiedAuth.Util.Api.Core.csproj" />
+  </ItemGroup>
+
+</Project>
