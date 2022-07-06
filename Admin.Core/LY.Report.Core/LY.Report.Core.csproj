@@ -281,6 +281,9 @@
     <None Update="LY.Report.Core.Service.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+	<None Update="LY.Report.Core.xml">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
   </ItemGroup>
 
   <ItemGroup>
