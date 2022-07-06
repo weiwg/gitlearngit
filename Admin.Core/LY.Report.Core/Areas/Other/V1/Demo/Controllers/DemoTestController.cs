@@ -79,6 +79,17 @@ namespace LY.Report.Core.Areas.Other.V1.Demo.Controllers
         {
             return await _demoTestService.GetPageListAsync(input);
         }
+
+        /// <summary>
+        /// 查询分页 （分库多链接测试）
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IResponseOutput> GetPageFenKu([FromQuery] PageInput<DemoTestGetFenKuInput> input)
+        {
+            return await _demoTestService.GetPageListFenKuAsync(input);
+        }
         #endregion
 
         #region 删除

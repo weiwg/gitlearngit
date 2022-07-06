@@ -245,8 +245,6 @@
     <None Remove="SwaggerDoc\EonUp.Delivery.Core.Model.xml" />
     <None Remove="SwaggerDoc\EonUp.Delivery.Core.Service.xml" />
     <None Remove="SwaggerDoc\EonUp.Delivery.Core.xml" />
-    <None Remove="SwaggerDoc\LY.Report.Core.Common.xml" />
-    <None Remove="SwaggerDoc\LY.Report.Core.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -287,7 +285,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="SwaggerDoc\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

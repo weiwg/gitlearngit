@@ -20,6 +20,11 @@ namespace LY.Report.Core.Enums
 
         #region V1版本
         /// <summary>
+        /// Ohter接口_版本1
+        /// </summary>
+        [Description("Other_V1")]
+        Other_V1 = 10,
+        /// <summary>
         /// 手机端接口_版本1
         /// </summary>
         [Description("M_V1")]

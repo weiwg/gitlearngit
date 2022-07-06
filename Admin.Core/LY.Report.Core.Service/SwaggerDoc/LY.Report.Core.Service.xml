@@ -1476,6 +1476,13 @@
             接口服务
             </summary>	
         </member>
+        <member name="M:LY.Report.Core.Service.Demo.Test.IDemoTestService.GetPageListFenKuAsync(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput">
             <summary>
             添加
@@ -1519,6 +1526,21 @@
         <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestDeleteInput.TestId">
             <summary>
             Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.ClassAB">
+            <summary>
+            TestId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.Line">
+            <summary>
+            名称
             </summary>
         </member>
         <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput">

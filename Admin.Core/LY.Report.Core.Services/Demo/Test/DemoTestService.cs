@@ -1,3 +1,4 @@
+using System.Data;
 using System.Threading.Tasks;
 using LY.Report.Core.Common.Input;
 using LY.Report.Core.Common.Output;
@@ -13,10 +14,12 @@ namespace LY.Report.Core.Service.Demo.Test
     public class DemoTestService : BaseService, IDemoTestService
     {
         private readonly IDemoTestRepository _repository;
-        
-        public DemoTestService(IDemoTestRepository repository)
+        private readonly IdleBus<IFreeSql> _ib;
+
+        public DemoTestService(IDemoTestRepository repository, IdleBus<IFreeSql> ib)
         {
             _repository = repository;
+            _ib = ib;
         }
 
         #region Ìí¼Ó
@@ -131,6 +134,17 @@ namespace LY.Report.Core.Service.Demo.Test
             };
 
             return ResponseOutput.Data(data);
+        }
+
+        public async Task<IResponseOutput> GetPageListFenKuAsync(PageInput<DemoTestGetFenKuInput> input)
+        {
+            var proName = User.ProName;
+            DataTable dt1 = await _ib.Get(proName).Select<object>()
+            .WithSql(string.Format("select * from T_MES_Shift where ClassAB='{0}' and Line='{1}'", input.Filter?.ClassAB, input.Filter.Line))
+            .ToDataTableAsync("*");
+
+            return ResponseOutput.Data(dt1);
+            //return (Task<IResponseOutput>)ResponseOutput.Data(dt1);
         }
         #endregion
 

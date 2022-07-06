@@ -181,6 +181,7 @@
             <summary>
             基础API控制器
             </summary>
+                [AllowEupApi]
         </member>
         <member name="T:LY.Report.Core.Areas.Other.V1.Demo.Demo.BaseAreaController">
             <summary>
@@ -223,6 +224,13 @@
         <member name="M:LY.Report.Core.Areas.Other.V1.Demo.Controllers.DemoTestController.GetPage(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput})">
             <summary>
             查询分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Other.V1.Demo.Controllers.DemoTestController.GetPageFenKu(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput})">
+            <summary>
+            查询分页 （分库多链接测试）
             </summary>
             <param name="input"></param>
             <returns></returns>
@@ -1415,6 +1423,11 @@
         <member name="T:LY.Report.Core.Enums.ApiVersion">
             <summary>
             接口版本
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Enums.ApiVersion.Other_V1">
+            <summary>
+            Ohter接口_版本1
             </summary>
         </member>
         <member name="F:LY.Report.Core.Enums.ApiVersion.M_V1">

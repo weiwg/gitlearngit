@@ -110,6 +110,11 @@ namespace LY.Report.Core.Attributes
                 }
                 //当前用户请求的接口版本
                 user.ApiVersion = (Common.BaseModel.Enum.ApiVersion)EnumHelper.GetEnumModel<ApiVersion>(strVersion);
+                var value = "";
+                if(context.HttpContext.Request.Cookies.TryGetValue("ProName",out value))
+                {
+                    user.ProName = value;
+                }
             }
             var isValid = await permissionHandler.ValidateAsync(api, httpMethod);
             if (!isValid)

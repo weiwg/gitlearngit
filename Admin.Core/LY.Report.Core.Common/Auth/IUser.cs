@@ -61,5 +61,10 @@ namespace LY.Report.Core.Common.Auth
         /// 接口版本号
         /// </summary>
         ApiVersion ApiVersion { get; set; }
+
+        /// <summary>
+        /// 项目名称
+        /// </summary>
+        string ProName { get; set; }
     }
 }

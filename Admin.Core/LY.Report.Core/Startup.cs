@@ -42,6 +42,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Yitter.IdGenerator;
+using FreeSql;
 
 namespace LY.Report.Core
 {
@@ -95,6 +96,11 @@ namespace LY.Report.Core
             var dbConfig = ConfigHelper.Get<DbConfig>("dbconfig", _env.EnvironmentName);
             var timeSpan = dbConfig.IdleTime > 0 ? TimeSpan.FromMinutes(dbConfig.IdleTime) : TimeSpan.MaxValue;
             IdleBus<IFreeSql> ib = new IdleBus<IFreeSql>(timeSpan);
+            //注册多数据库连接
+            ib.Register("HEB", () => new FreeSqlBuilder().UseConnectionString(FreeSql.DataType.SqlServer, "Data Source=192.168.3.52;Integrated Security=False;Initial Catalog=CNCPROHEB;User ID=cncpro;Password=cncpro;Pooling=true;Min Pool Size=1").Build());
+            ib.Register("HEC", () => new FreeSqlBuilder().UseConnectionString(FreeSql.DataType.SqlServer, "Data Source=192.168.3.52;Integrated Security=False;Initial Catalog=CNCPROHEC;User ID=cncpro;Password=cncpro;Pooling=true;Min Pool Size=1").Build());
+            ib.Register("HED", () => new FreeSqlBuilder().UseConnectionString(FreeSql.DataType.SqlServer, "Data Source=192.168.3.52;Integrated Security=False;Initial Catalog=CNCPROHED;User ID=cncpro;Password=cncpro;Pooling=true;Min Pool Size=1").Build());
+            ib.Register("HEF", () => new FreeSqlBuilder().UseConnectionString(FreeSql.DataType.SqlServer, "Data Source=192.168.3.52;Integrated Security=False;Initial Catalog=CNCPROHEF;User ID=cncpro;Password=cncpro;Pooling=true;Min Pool Size=1").Build());
             services.AddSingleton(ib);
             //数据库配置
             services.AddSingleton(dbConfig);
@@ -518,7 +524,12 @@ namespace LY.Report.Core
                             } else if (version.StartsWith("S"))
                             {
                                 tempVersion = string.Format("{0}_{1}", "Sys", arrVersion[1]);
-                            } else
+                            }
+                            else if (version.StartsWith("Ot"))
+                            {
+                                tempVersion = string.Format("{0}_{1}", "Other", arrVersion[1]);
+                            }
+                            else
                             {
                                 tempVersion = string.Format("{0}_{1}", "Open", arrVersion[1]);
                             }

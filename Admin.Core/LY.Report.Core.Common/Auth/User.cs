@@ -62,6 +62,11 @@ namespace LY.Report.Core.Common.Auth
         public ApiVersion ApiVersion { get; set; } = ApiVersion.M_V1;
 
         /// <summary>
+        /// 项目名称
+        /// </summary>
+        public string ProName { get; set; } = "HEB";
+
+        /// <summary>
         /// 租户类型
         /// </summary>
         public virtual TenantType? TenantType

@@ -149,6 +149,11 @@
             接口版本号
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Common.Auth.IUser.ProName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
         <member name="M:LY.Report.Core.Common.Auth.IUserToken.Create(System.Security.Claims.Claim[])">
             <summary>
             创建token
@@ -226,6 +231,11 @@
         <member name="P:LY.Report.Core.Common.Auth.User.ApiVersion">
             <summary>
             接口版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Common.Auth.User.ProName">
+            <summary>
+            项目名称
             </summary>
         </member>
         <member name="P:LY.Report.Core.Common.Auth.User.TenantType">
