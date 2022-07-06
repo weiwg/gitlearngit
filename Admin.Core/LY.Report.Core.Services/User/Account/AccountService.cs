@@ -475,6 +475,7 @@ namespace LY.Report.Core.Service.User.Account
             entity.Password = PasswordExtend.GetSaltPassword(entity.Password, entity.PasswordSalt);
             entity.UserStatus = UserStatus.Normal;
             entity.LastLoginIp = "";
+            entity.UserId = CommonHelper.GetGuid;
             var user = await _userInfoRepository.InsertAsync(entity);
             if (string.IsNullOrEmpty(user?.UserId))
             {

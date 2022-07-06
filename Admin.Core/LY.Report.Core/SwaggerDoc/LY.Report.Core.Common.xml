@@ -462,47 +462,47 @@
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.VerifyCodeKey">
             <summary>
-            验证码 delivery:verify:code:guid
+            验证码 report:verify:code:guid
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.VerifyRateKey">
             <summary>
-            验证码频率 delivery:verify:rate:phone/email
+            验证码频率 report:verify:rate:phone/email
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.VerifyTokenKey">
             <summary>
-            验证码凭据 delivery:verify:token:userId
+            验证码凭据 report:verify:token:userId
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.PassWordEncryptKey">
             <summary>
-            密码加密 delivery:password:encrypt:guid
+            密码加密 report:password:encrypt:guid
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.UserPermissions">
             <summary>
-            用户权限 delivery:user:用户主键:permissions
+            用户权限 report:user:用户主键:permissions
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.UserInfo">
             <summary>
-            用户信息 delivery:user:info:用户主键
+            用户信息 report:user:info:用户主键
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.UserToken">
             <summary>
-            用户Token delivery:user:token:用户主键
+            用户Token report:user:token:用户主键
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.TenantInfo">
             <summary>
-            租户信息 delivery:tenant:info:租户主键
+            租户信息 report:tenant:info:租户主键
             </summary>
         </member>
         <member name="F:LY.Report.Core.Common.Cache.CacheKey.NoCheckPermission">
             <summary>
-            特殊权限 delivery:permissions:role:用户id
+            特殊权限 report:permissions:role:用户id
             </summary>
         </member>
         <member name="T:LY.Report.Core.Common.Cache.CacheType">
