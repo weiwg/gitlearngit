@@ -3,4 +3,3 @@ D:\gitlearngit\Admin.Core\LY.Mq.Message\bin\Debug\LY.Mq.Message.pdb
 D:\gitlearngit\Admin.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.csproj.CoreCompileInputs.cache
 D:\gitlearngit\Admin.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.dll
 D:\gitlearngit\Admin.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.pdb
-D:\gitlearngit\Admin.Core\LY.Mq.Message\obj\Debug\LY.Mq.Message.csproj.AssemblyReference.cache

@@ -9,4 +9,3 @@ D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Ut
 D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.dll
 D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\ref\LY.Report.Core.Util.dll
 D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.pdb
-D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.csproj.AssemblyReference.cache
