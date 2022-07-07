@@ -1,0 +1,3081 @@
+{
+  "dictionaries": [],
+  "apis": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "label": "接口管理",
+      "path": "api",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "label": "授权管理",
+      "path": "auth",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "label": "数据字典",
+      "path": "dictionary",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "label": "权限管理",
+      "path": "permission",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000006",
+      "label": "角色管理",
+      "path": "role",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000007",
+      "label": "用户管理",
+      "path": "user",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000008",
+      "label": "视图管理",
+      "path": "view",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "查询单条接口",
+      "path": "/api/admin/api/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000011",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "查询全部接口",
+      "path": "/api/admin/api/getlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000012",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "查询分页接口",
+      "path": "/api/admin/api/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000013",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "新增接口",
+      "path": "/api/admin/api/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "修改接口",
+      "path": "/api/admin/api/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000015",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "删除接口",
+      "path": "/api/admin/api/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000016",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "批量删除接口",
+      "path": "/api/admin/api/batchsoftdelete",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000017",
+      "parentId": "00000000-0000-0000-0000-000000000001",
+      "label": "同步接口",
+      "path": "/api/admin/api/sync",
+      "httpMethods": "post",
+      "description": "支持新增和修改接口\r\n根据接口是否存在自动禁用和启用api"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000018",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "获取验证码",
+      "path": "/api/admin/auth/getverifycode",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000019",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "获取密钥",
+      "path": "/api/admin/auth/getpasswordencryptkey",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "查询用户信息",
+      "path": "/api/admin/auth/getuserinfo",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000021",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "用户登录",
+      "path": "/api/admin/auth/login",
+      "httpMethods": "post",
+      "description": "根据登录信息生成Token"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000022",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "查询单条数据字典",
+      "path": "/api/admin/dictionary/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000023",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "查询分页数据字典",
+      "path": "/api/admin/dictionary/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000024",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "新增数据字典",
+      "path": "/api/admin/dictionary/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000025",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "修改数据字典",
+      "path": "/api/admin/dictionary/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000026",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "删除数据字典",
+      "path": "/api/admin/dictionary/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000031",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询权限列表",
+      "path": "/api/admin/permission/getlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000032",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询单条分组",
+      "path": "/api/admin/permission/getgroup",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000033",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询单条菜单",
+      "path": "/api/admin/permission/getmenu",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000034",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询单条接口",
+      "path": "/api/admin/permission/getapi",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000035",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询角色权限-权限列表",
+      "path": "/api/admin/permission/getpermissionlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000036",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询角色权限",
+      "path": "/api/admin/permission/getrolepermissionlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000037",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "新增分组",
+      "path": "/api/admin/permission/addgroup",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000038",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "新增菜单",
+      "path": "/api/admin/permission/addmenu",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000039",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "新增接口",
+      "path": "/api/admin/permission/addapi",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000040",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "修改分组",
+      "path": "/api/admin/permission/updategroup",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000041",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "修改菜单",
+      "path": "/api/admin/permission/updatemenu",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000042",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "修改接口",
+      "path": "/api/admin/permission/updateapi",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000043",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "删除权限",
+      "path": "/api/admin/permission/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000044",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "保存角色权限",
+      "path": "/api/admin/permission/assign",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000045",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "查询单条角色",
+      "path": "/api/admin/role/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000046",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "查询分页角色",
+      "path": "/api/admin/role/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000047",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "新增角色",
+      "path": "/api/admin/role/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000048",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "修改角色",
+      "path": "/api/admin/role/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000049",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "删除角色",
+      "path": "/api/admin/role/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000050",
+      "parentId": "00000000-0000-0000-0000-000000000006",
+      "label": "批量删除角色",
+      "path": "/api/admin/role/batchsoftdelete",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000051",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "查询用户基本信息",
+      "path": "/api/admin/user/getbasic",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000052",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "查询单条用户",
+      "path": "/api/admin/user/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000053",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "查询分页用户",
+      "path": "/api/admin/user/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000054",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "新增用户",
+      "path": "/api/admin/user/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000055",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "修改用户",
+      "path": "/api/admin/user/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000056",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "删除用户",
+      "path": "/api/admin/user/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000057",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "批量删除用户",
+      "path": "/api/admin/user/batchsoftdelete",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000058",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "更新用户密码",
+      "path": "/api/admin/user/changepassword",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000059",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "更新用户基本信息",
+      "path": "/api/admin/user/updatebasic",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000060",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "查询单条视图",
+      "path": "/api/admin/view/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000061",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "查询全部视图",
+      "path": "/api/admin/view/getlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000062",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "查询分页视图",
+      "path": "/api/admin/view/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000063",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "新增视图",
+      "path": "/api/admin/view/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000064",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "修改视图",
+      "path": "/api/admin/view/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000065",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "删除视图",
+      "path": "/api/admin/view/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000066",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "批量删除视图",
+      "path": "/api/admin/view/batchsoftdelete",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000067",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "同步视图",
+      "path": "/api/admin/view/sync",
+      "httpMethods": "post",
+      "description": "支持新增和修改视图\r\n根据视图是否存在自动禁用和启用视图"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000070",
+      "label": "缓存管理",
+      "path": "cache",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000071",
+      "parentId": "00000000-0000-0000-0000-000000000070",
+      "label": "获取缓存列表",
+      "path": "/api/admin/cache/list",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000072",
+      "parentId": "00000000-0000-0000-0000-000000000070",
+      "label": "清除缓存",
+      "path": "/api/admin/cache/clear",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000073",
+      "label": "登录日志管理",
+      "path": "loginlog",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000074",
+      "label": "操作日志管理",
+      "path": "operationlog",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000075",
+      "parentId": "00000000-0000-0000-0000-000000000073",
+      "label": "查询分页登录日志",
+      "path": "/api/admin/loginlog/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000076",
+      "parentId": "00000000-0000-0000-0000-000000000074",
+      "label": "查询分页操作日志",
+      "path": "/api/admin/operationlog/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000078",
+      "label": "文档管理",
+      "path": "document",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000079",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询文档列表",
+      "path": "/api/admin/document/getlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000080",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询单条分组",
+      "path": "/api/admin/document/getgroup",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000081",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询单条菜单",
+      "path": "/api/admin/document/getmenu",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000082",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询精简文档列表",
+      "path": "/api/admin/document/getplainlist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000083",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "新增分组",
+      "path": "/api/admin/document/addgroup",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000084",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "新增菜单",
+      "path": "/api/admin/document/addmenu",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000085",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "修改分组",
+      "path": "/api/admin/document/updategroup",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000086",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "修改菜单",
+      "path": "/api/admin/document/updatemenu",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000087",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "删除文档",
+      "path": "/api/admin/document/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000088",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询单条文档内容",
+      "path": "/api/admin/document/getcontent",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000089",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "修改文档内容",
+      "path": "/api/admin/document/updatecontent",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000090",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "上传文档图片",
+      "path": "/api/admin/document/uploadimage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000091",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "查询文档图片列表",
+      "path": "/api/admin/document/getimagelist",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000092",
+      "parentId": "00000000-0000-0000-0000-000000000078",
+      "label": "删除图片",
+      "path": "/api/admin/document/deleteimage",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000093",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "上传头像",
+      "path": "/api/admin/user/avatarupload",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000094",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "查询单条权限点",
+      "path": "/api/admin/permission/getdot",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000095",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "新增权限点",
+      "path": "/api/admin/permission/adddot",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000096",
+      "parentId": "00000000-0000-0000-0000-000000000005",
+      "label": "修改权限点",
+      "path": "/api/admin/permission/updatedot",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000097",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "刷新Token",
+      "path": "/api/admin/auth/refresh",
+      "httpMethods": "get",
+      "description": "以旧换新"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000098",
+      "label": "租户管理",
+      "path": "tenant",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000099",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "查询单条租户",
+      "path": "/api/admin/tenant/get",
+      "httpMethods": "get",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000100",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "查询分页租户",
+      "path": "/api/admin/tenant/getpage",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000101",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "新增租户",
+      "path": "/api/admin/tenant/add",
+      "httpMethods": "post",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000102",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "修改租户",
+      "path": "/api/admin/tenant/update",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000103",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "删除租户",
+      "path": "/api/admin/tenant/softdelete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000104",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "批量删除租户",
+      "path": "/api/admin/tenant/batchsoftdelete",
+      "httpMethods": "put",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000105",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "彻底删除租户",
+      "path": "/api/admin/tenant/delete",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000106",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "查询租户权限",
+      "path": "/api/admin/permission/gettenantpermissionlist",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000107",
+      "parentId": "00000000-0000-0000-0000-000000000098",
+      "label": "保存租户权限",
+      "path": "/api/admin/permission/savetenantpermissions",
+      "httpMethods": "delete",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000099",
+      "label": "员工管理",
+      "path": "employee",
+      "description": "",
+      "childs": [
+        {
+          "id": "00000000-0000-0000-0000-000000000108",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "查询单条用户",
+          "path": "/api/personnel/employee/get",
+          "httpMethods": "get",
+          "description": ""
+        },
+        {
+          "id": "00000000-0000-0000-0000-000000000109",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "查询分页用户",
+          "path": "/api/personnel/employee/getpage",
+          "httpMethods": "post",
+          "description": ""
+        },
+        {
+          "id": "00000000-0000-0000-0000-000000000110",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "新增用户",
+          "path": "/api/personnel/employee/add",
+          "httpMethods": "post",
+          "description": ""
+        },
+        {
+          "id": "00000000-0000-0000-0000-000000000111",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "修改用户",
+          "path": "/api/personnel/employee/update",
+          "httpMethods": "put",
+          "description": ""
+        },
+        {
+          "id": "00000000-0000-0000-0000-000000000112",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "删除用户",
+          "path": "/api/personnel/employee/softdelete",
+          "httpMethods": "delete",
+          "description": ""
+        },
+        {
+          "id": "00000000-0000-0000-0000-000000000113",
+          "parentId": "00000000-0000-0000-0000-000000000099",
+          "label": "删除用户",
+          "path": "/api/personnel/employee/batchsoftdelete",
+          "httpMethods": "delete",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-0000-0000-0000000000100",
+      "label": "组织架构",
+      "path": "organization",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-0000000000101",
+      "label": "职位管理",
+      "path": "position",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-0000000000102",
+      "label": "数据字典类型",
+      "path": "dictionarytype",
+      "description": ""
+    }
+  ],
+  "views": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "首页",
+      "path": "/admin/home",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "label": "平台管理",
+      "path": "admin",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "user",
+      "label": "用户管理",
+      "path": "/admin/user",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "role",
+      "label": "角色管理",
+      "path": "/admin/role",
+      "sort": "2"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "api",
+      "label": "接口管理",
+      "path": "/admin/api",
+      "sort": "3"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000006",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "v",
+      "label": "视图管理",
+      "path": "/admin/view",
+      "sort": "4"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000007",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "permission",
+      "label": "权限管理",
+      "path": "/admin/permission",
+      "sort": "5"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000008",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "name": "assign",
+      "label": "角色权限",
+      "path": "/admin/role-permission",
+      "sort": "6"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000009",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "系统配置",
+      "path": "config",
+      "sort": "3"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "name": "dictonary",
+      "label": "数据字典",
+      "path": "/admin/dictionary",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000011",
+      "parentId": "00000000-0000-0000-0000-000000000015",
+      "name": "log",
+      "label": "操作日志",
+      "path": "/admin/opration-log",
+      "description": "",
+      "sort": "2"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000012",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "个人管理",
+      "path": "account",
+      "sort": "5"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000013",
+      "parentId": "00000000-0000-0000-0000-000000000012",
+      "name": "settings",
+      "label": "个人设置",
+      "path": "/account/settings",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "权限管理",
+      "path": "auth",
+      "description": "",
+      "sort": "2"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000015",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "日志管理",
+      "path": "logs",
+      "description": "",
+      "sort": "4"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000016",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "label": "缓存管理",
+      "path": "/admin/cache",
+      "description": "",
+      "sort": "7"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000017",
+      "parentId": "00000000-0000-0000-0000-000000000015",
+      "label": "登录日志",
+      "path": "/admin/login-log",
+      "description": "",
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000018",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "文档管理",
+      "path": "/admin/document",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000019",
+      "parentId": "00000000-0000-0000-0000-000000000014",
+      "label": "租户管理",
+      "path": "/admin/tenant",
+      "description": "",
+      "sort": "8"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "parentId": "00000000-0000-0000-0000-000000000065",
+      "label": "更新日志",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000001",
+      "path": "/",
+      "icon": "el-icon-notebook-2",
+      "closable": false,
+      "opened": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "parentId": "00000000-0000-0000-0000-000000000065",
+      "label": "权限管理",
+      "type": "1",
+      "path": "",
+      "icon": "fa fa-sitemap",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "parentId": "00000000-0000-0000-0000-000000000065",
+      "label": "系统配置",
+      "type": "1",
+      "path": "",
+      "icon": "el-icon-s-platform",
+      "closable": false,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "label": "个人管理",
+      "type": "1",
+      "path": "",
+      "icon": "el-icon-s-custom",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "parentId": "00000000-0000-0000-0000-000000000066",
+      "label": "Admin",
+      "type": "2",
+      "path": "https://zhontai.net",
+      "icon": "el-icon-s-promotion",
+      "closable": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000006",
+      "parentId": "00000000-0000-0000-0000-000000000066",
+      "label": "FreeSql",
+      "type": "2",
+      "path": "https://github.com/dotnetcore/FreeSql/wiki",
+      "icon": "el-icon-s-promotion",
+      "closable": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000007",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "用户管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000003",
+      "path": "/admin/user",
+      "closable": true,
+      "opened": false,
+      "newWindow": false,
+      "external": true,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000008",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "角色管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000004",
+      "path": "/admin/role",
+      "icon": "",
+      "closable": true,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000009",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "接口管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000005",
+      "path": "/admin/api",
+      "closable": true,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "视图管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000006",
+      "path": "/admin/view",
+      "icon": "",
+      "closable": true,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000011",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "权限管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000007",
+      "path": "/admin/permission",
+      "closable": true,
+      "opened": false,
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000012",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "角色权限",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000008",
+      "path": "/admin/role-permisson",
+      "closable": true,
+      "opened": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000013",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "查询",
+      "code": "api:admin:role:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000046",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "新增",
+      "code": "api:admin:role:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000047",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000015",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "修改",
+      "code": "api:admin:role:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000048",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000016",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "删除",
+      "code": "api:admin:role:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000049",
+      "path": " ",
+      "closable": true,
+      "opened": false,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000017",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "批量删除",
+      "code": "api:admin:role:batchsoftdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000050",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000018",
+      "parentId": "00000000-0000-0000-0000-000000000008",
+      "label": "查询单条角色",
+      "code": "api:admin:role:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000045",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000019",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "查询",
+      "code": "api:admin:user:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000053",
+      "path": "",
+      "closable": true,
+      "opened": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "新增",
+      "code": "api:admin:user:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000054",
+      "path": "",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000021",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "修改",
+      "code": "api:admin:user:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000055",
+      "path": "",
+      "closable": true,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000022",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "删除",
+      "code": "api:admin:user:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000056",
+      "path": "",
+      "closable": true,
+      "opened": false,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000023",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "批量删除",
+      "code": "api:admin:user:batchsoftdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000057",
+      "path": "",
+      "icon": "",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000024",
+      "parentId": "00000000-0000-0000-0000-000000000007",
+      "label": "查询单条用户",
+      "code": "api:admin:user:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000052",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000025",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "查询",
+      "code": "api:admin:api:getlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000011",
+      "path": "",
+      "icon": "",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000026",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "新增",
+      "code": "api:admin:api:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000013",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000027",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "修改",
+      "code": "api:admin:api:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000014",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000028",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "删除",
+      "code": "api:admin:api:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000015",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000029",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "批量删除",
+      "code": "api:admin:api:batchsoftdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000016",
+      "path": "",
+      "icon": "",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000030",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "同步",
+      "code": "api:admin:api:sync",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000017",
+      "path": "",
+      "icon": "",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000031",
+      "parentId": "00000000-0000-0000-0000-000000000009",
+      "label": "查询单条接口",
+      "code": "api:admin:api:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000010",
+      "sort": "7",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000032",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "查询",
+      "code": "api:admin:permission:getlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000031",
+      "path": "",
+      "icon": "",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000033",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "新增分组",
+      "code": "api:admin:permission:addgroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000037",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000034",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "新增菜单",
+      "code": "api:admin:permission:addmenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000038",
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000035",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "新增接口",
+      "code": "api:admin:permission:addapi",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000039",
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000036",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "修改分组",
+      "code": "api:admin:permission:updategroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000040",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000037",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "修改菜单",
+      "code": "api:admin:permission:updatemenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000041",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000038",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "修改接口",
+      "code": "api:admin:permission:updateapi",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000042",
+      "sort": "7",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000039",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "删除",
+      "code": "api:admin:permission:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000043",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "8",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000040",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "查询单条分组",
+      "code": "api:admin:permission:getgroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000032",
+      "sort": "9",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000041",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "查询单条菜单",
+      "code": "api:admin:permission:getmenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000033",
+      "sort": "10",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000042",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "查询单条接口",
+      "code": "api:admin:permission:getapi",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000034",
+      "sort": "11",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000043",
+      "parentId": "00000000-0000-0000-0000-000000000012",
+      "label": "查询角色",
+      "code": "api:admin:role:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000046",
+      "path": "",
+      "icon": "",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000044",
+      "parentId": "00000000-0000-0000-0000-000000000012",
+      "label": "查询权限",
+      "code": "api:admin:permission:getpermissionlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000035",
+      "path": "",
+      "icon": "",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000045",
+      "parentId": "00000000-0000-0000-0000-000000000012",
+      "label": "查询角色权限",
+      "code": "api:admin:permission:getrolepermissionlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000036",
+      "path": "",
+      "icon": "",
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000046",
+      "parentId": "00000000-0000-0000-0000-000000000012",
+      "label": "保存角色权限",
+      "code": "api:admin:permission:assign",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000044",
+      "path": " ",
+      "closable": false,
+      "opened": false,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000047",
+      "parentId": "00000000-0000-0000-0000-000000000004",
+      "label": "个人设置",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000013",
+      "path": "/account/settings",
+      "icon": "el-icon-setting",
+      "closable": true,
+      "opened": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000048",
+      "parentId": "00000000-0000-0000-0000-000000000047",
+      "label": "查询基本信息",
+      "code": "api:admin:user:getbasic",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000051",
+      "path": "",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000049",
+      "parentId": "00000000-0000-0000-0000-000000000047",
+      "label": "更新基本信息",
+      "code": "api:admin:user:updatebasic",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000059",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000050",
+      "parentId": "00000000-0000-0000-0000-000000000047",
+      "label": "更新密码",
+      "code": "api:admin:user:changepassword",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000058",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000051",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "基础数据",
+      "type": "1",
+      "icon": "fa fa-database",
+      "opened": false,
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000052",
+      "parentId": "00000000-0000-0000-0000-000000000064",
+      "label": "查询",
+      "code": "api:admin:dictionary:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000023",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000053",
+      "parentId": "00000000-0000-0000-0000-000000000064",
+      "label": "新增",
+      "code": "api:admin:dictionary:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000024",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000054",
+      "parentId": "00000000-0000-0000-0000-000000000064",
+      "label": "修改",
+      "code": "api:admin:dictionary:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000025",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000055",
+      "parentId": "00000000-0000-0000-0000-000000000064",
+      "label": "删除",
+      "code": "api:admin:dictionary:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000026",
+      "path": " ",
+      "icon": "",
+      "closable": false,
+      "opened": false,
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000056",
+      "parentId": "00000000-0000-0000-0000-000000000064",
+      "label": "查询单条数据字典",
+      "code": "api:admin:dictionary:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000022",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000057",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "查询",
+      "code": "api:admin:view:getlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000061",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000058",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "新增",
+      "code": "api:admin:view:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000063",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000059",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "修改",
+      "code": "api:admin:view:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000064",
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000060",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "删除",
+      "code": "api:admin:view:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000065",
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000061",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "批量删除",
+      "code": "api:admin:view:batchsoftdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000066",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000062",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "同步",
+      "code": "api:admin:view:sync",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000067",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000063",
+      "parentId": "00000000-0000-0000-0000-000000000010",
+      "label": "查询单条视图",
+      "code": "api:admin:view:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000060",
+      "sort": "7",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000064",
+      "parentId": "00000000-0000-0000-0000-000000000003",
+      "label": "树形字典",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000010",
+      "path": "/admin/dictionary",
+      "icon": "fa fa-database",
+      "closable": true,
+      "opened": false,
+      "newWindow": false,
+      "external": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000065",
+      "label": "平台管理",
+      "type": "1",
+      "icon": "el-icon-s-platform",
+      "opened": true,
+      "sort": "1"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000066",
+      "label": "帮助文档",
+      "type": "1",
+      "icon": "el-icon-question",
+      "opened": true,
+      "sort": "3"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000067",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "缓存管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000016",
+      "path": "/admin/cache",
+      "icon": "",
+      "closable": true,
+      "newWindow": false,
+      "external": false,
+      "sort": "7",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000068",
+      "parentId": "00000000-0000-0000-0000-000000000067",
+      "label": "获取缓存列表",
+      "code": "api:admin:cache:list",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000071",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000069",
+      "parentId": "00000000-0000-0000-0000-000000000067",
+      "label": "清除缓存",
+      "code": "api:admin:cache:clear",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000072",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000070",
+      "parentId": "00000000-0000-0000-0000-000000000065",
+      "label": "日志管理",
+      "type": "1",
+      "icon": "el-icon-notebook-2",
+      "opened": true,
+      "sort": "4"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000071",
+      "parentId": "00000000-0000-0000-0000-000000000070",
+      "label": "登录日志",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000017",
+      "path": "/admin/login-log",
+      "icon": "",
+      "closable": true,
+      "newWindow": false,
+      "external": false,
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000072",
+      "parentId": "00000000-0000-0000-0000-000000000070",
+      "label": "操作日志",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000011",
+      "path": "/admin/operation-log",
+      "icon": "",
+      "closable": true,
+      "newWindow": false,
+      "external": false,
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000073",
+      "parentId": "00000000-0000-0000-0000-000000000072",
+      "label": "查询分页操作日志",
+      "code": "api:admin:operationlog:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000076",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000074",
+      "parentId": "00000000-0000-0000-0000-000000000071",
+      "label": "查询分页登录日志",
+      "code": "api:admin:loginlog:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000075",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000075",
+      "parentId": "00000000-0000-0000-0000-000000000066",
+      "label": "文档管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000018",
+      "path": "/admin/document",
+      "icon": "el-icon-notebook-2",
+      "closable": true,
+      "newWindow": false,
+      "external": true,
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000076",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询精简文档列表",
+      "code": "api:admin:document:getplainlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000082",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000077",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "新增分组",
+      "code": "api:admin:document:addgroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000083",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000078",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "新增菜单",
+      "code": "api:admin:document:addmenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000084",
+      "sort": "6",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000079",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "修改分组",
+      "code": "api:admin:document:updategroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000085",
+      "sort": "7",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000080",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "修改菜单",
+      "code": "api:admin:document:updatemenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000086",
+      "sort": "8",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000081",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "删除文档",
+      "code": "api:admin:document:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000087",
+      "sort": "9",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000082",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询单条分组",
+      "code": "api:admin:document:getgroup",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000080",
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000083",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询单条菜单",
+      "code": "api:admin:document:getmenu",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000081",
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000090",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询文档列表",
+      "code": "api:admin:document:getlist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000079",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000091",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询单条文档内容",
+      "code": "api:admin:document:getcontent",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000088",
+      "sort": "10",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000092",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "修改文档内容",
+      "code": "api:admin:document:updatecontent",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000089",
+      "sort": "11",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000093",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "上传文档图片",
+      "code": "api:admin:document:uploadimage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000090",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000094",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "查询文档图片列表",
+      "code": "api:admin:document:getimagelist",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000091",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000095",
+      "parentId": "00000000-0000-0000-0000-000000000075",
+      "label": "删除图片",
+      "code": "api:admin:document:deleteimage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000092",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000096",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "查询单条权限点",
+      "code": "api:admin:permission:getdot",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000094",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000097",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "新增权限点",
+      "code": "api:admin:permission:adddot",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000095",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000098",
+      "parentId": "00000000-0000-0000-0000-000000000011",
+      "label": "修改权限点",
+      "code": "api:admin:permission:updatedot",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000096",
+      "sort": "0",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000099",
+      "parentId": "00000000-0000-0000-0000-000000000002",
+      "label": "租户管理",
+      "type": "2",
+      "viewId": "00000000-0000-0000-0000-000000000019",
+      "path": "/admin/tenant",
+      "icon": "",
+      "closable": true,
+      "newWindow": false,
+      "external": false,
+      "sort": "8",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000100",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "查询",
+      "code": "api:admin:tenant:getpage",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000100",
+      "sort": "1",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000101",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "新增",
+      "code": "api:admin:tenant:add",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000101",
+      "sort": "2",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000102",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "修改",
+      "code": "api:admin:tenant:update",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000102",
+      "sort": "3",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000103",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "删除",
+      "code": "api:admin:tenant:softdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000103",
+      "sort": "4",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000104",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "批量删除",
+      "code": "api:admin:tenant:batchsoftdelete",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000104",
+      "sort": "5",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000105",
+      "parentId": "00000000-0000-0000-0000-000000000099",
+      "label": "查询单条租户",
+      "code": "api:admin:tenant:get",
+      "type": "3",
+      "apiId": "00000000-0000-0000-0000-000000000099",
+      "sort": "6",
+      "description": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "userName": "user",
+      "password": "96E79218965EB72C92A549DD5A33112",
+      "nickName": "平台用户",
+      "avatar": "",
+      "remark": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "userName": "admin",
+      "password": "96E79218965EB72C92A549DD5A33112",
+      "nickName": "管理员",
+      "avatar": "",
+      "remark": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "userName": "jack",
+      "password": "96E79218965EB72C92A549DD5A33112",
+      "nickName": "杰克"
+    }
+  ],
+  "roles": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "name": "平台用户",
+      "description": "演示"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "name": "系统管理员",
+      "description": ""
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "name": "文档管理员",
+      "description": ""
+    }
+  ],
+  "userRoles": [
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "userId": "00000000-0000-0000-0000-000000000001",
+      "roleId": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "userId": "00000000-0000-0000-0000-000000000002",
+      "roleId": "00000000-0000-0000-0000-000000000002"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000009",
+      "userId": "00000000-0000-0000-0000-000000000003",
+      "roleId": "00000000-0000-0000-0000-000000000003"
+    }
+  ],
+  "rolePermissions": [
+    {
+      "id": "00000000-0000-0000-0000-000000000104",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000066",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000002"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000067",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000003"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000068",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000004"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000069",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000005"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000070",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000006"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000071",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000007"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000072",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000008"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000073",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000009"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000074",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000010"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000075",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000011"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000076",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000012"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000077",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000013"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000078",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000018"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000079",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000019"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000080",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000024"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000081",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000025"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000082",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000031"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000083",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000032"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000084",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000040"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000085",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000041"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000086",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000042"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000087",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000043"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000088",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000044"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000089",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000045"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000090",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000047"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000091",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000048"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000092",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000051"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000093",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000052"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000098",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000053"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000099",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000054"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000100",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000055"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000094",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000056"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000095",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000057"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000096",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000063"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000097",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000064"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000103",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000065"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000131",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000066"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000136",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000067"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000137",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000068"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000143",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000070"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000144",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000071"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000145",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000072"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000147",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000073"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000146",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000074"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000156",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000075"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000157",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000076"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000160",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000082"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000161",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000083"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000163",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000090"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000166",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000091"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000168",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000094"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000192",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000096"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000196",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000099"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000197",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000100"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000198",
+      "roleId": "00000000-0000-0000-0000-000000000001",
+      "permissionId": "00000000-0000-0000-0000-000000000105"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000102",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000002"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000003"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000004"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000005"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000006",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000006"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000007",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000007"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000008",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000008"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000009",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000009"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000010",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000010"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000011",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000011"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000012",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000012"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000013",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000013"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000014",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000014"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000015",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000015"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000016",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000016"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000017",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000017"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000018",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000018"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000019",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000019"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000020",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000020"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000021",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000021"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000022",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000022"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000023",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000023"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000024",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000024"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000025",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000025"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000026",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000026"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000027",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000027"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000028",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000028"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000029",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000029"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000030",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000030"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000031",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000031"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000032",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000032"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000033",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000033"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000034",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000034"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000035",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000035"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000036",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000036"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000037",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000037"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000038",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000038"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000039",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000039"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000040",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000040"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000041",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000041"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000042",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000042"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000043",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000043"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000044",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000044"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000045",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000045"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000046",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000046"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000047",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000047"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000048",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000048"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000049",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000049"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000050",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000050"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000051",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000051"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000052",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000052"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000053",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000053"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000054",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000054"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000055",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000055"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000056",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000056"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000057",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000057"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000058",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000058"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000059",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000059"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000060",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000060"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000061",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000061"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000062",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000062"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000063",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000063"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000064",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000064"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000101",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000065"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000132",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000066"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000133",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000067"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000134",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000068"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000135",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000069"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000138",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000070"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000139",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000071"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000140",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000072"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000142",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000073"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000141",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000074"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000148",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000075"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000150",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000076"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000151",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000077"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000152",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000078"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000153",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000079"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000154",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000080"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000155",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000081"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000158",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000082"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000159",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000083"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000162",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000090"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000165",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000091"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000164",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000092"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000167",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000093"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000169",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000094"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000170",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000095"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000194",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000096"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000193",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000097"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000195",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000098"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000199",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000099"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000200",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000100"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000201",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000101"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000202",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000102"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000203",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000103"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000204",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000104"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000205",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "permissionId": "00000000-0000-0000-0000-000000000105"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000173",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000004"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000174",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000047"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000189",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000048"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000190",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000049"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000191",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000050"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000171",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000066"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000172",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000075"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000179",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000076"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000182",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000077"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000183",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000078"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000184",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000079"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000185",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000080"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000186",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000081"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000180",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000082"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000181",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000083"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000178",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000090"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000187",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000091"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000188",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000092"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000176",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000093"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000177",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000094"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000175",
+      "roleId": "00000000-0000-0000-0000-000000000003",
+      "permissionId": "00000000-0000-0000-0000-000000000095"
+    }
+  ],
+  "tenants": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "userId": "00000000-0000-0000-0000-000000000002",
+      "roleId": "00000000-0000-0000-0000-000000000002",
+      "name": "admin",
+      "code": "wuliu",
+      "realName": "小雪",
+      "phone": "xiaoxue@zhontai.com",
+      "email": "18988889999",
+      "tenantType": 1,
+      "dataIsolationType": 4,
+      "dbType": 4,
+      "connectionString": "Server=localhost; Port=1433; Database=Delivery; Uid=delivery; Pwd=wuliu123.01; Charset=utf8mb4;",
+      "idleTime": 10,
+      "description": ""
+    }
+  ]
+}

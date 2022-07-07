@@ -1,0 +1,59 @@
+2022-07-06 18:16:15.5906 ||ERROR|LY.Report.Core.Filters.AdminExceptionFilter| System.NullReferenceException: Object reference not set to an instance of an object.
+   at LY.Report.Core.Service.Demo.Test.DemoTestService.GetPageListFenKuAsync(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core.Services\Demo\Test\DemoTestService.cs:line 142
+   at Castle.Proxies.Invocations.IDemoTestService_GetPageListFenKuAsync.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at LY.Report.Core.Aop.TransactionAsyncInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation) in D:\gitlearngit\Admin.Core\LY.Report.Core\Aop\TransactionAsyncInterceptor.cs:line 92
+   at LY.Report.Core.Areas.Other.V1.Demo.Controllers.DemoTestController.GetPageFenKu(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core\Areas\Other\V1\Demo\Controllers\DemoTestController.cs:line 91
+   at lambda_method861(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)|url: http://locar.api.ly.com/Api/Other/V1/Demo/DemoTest/GetPageFenKu|action: GetPageFenKu
+2022-07-06 18:16:54.2546 ||ERROR|LY.Report.Core.Filters.AdminExceptionFilter| System.Exception: 列名 '白班' 无效。
+ ---> System.Data.SqlClient.SqlException (0x80131904): 列名 '白班' 无效。
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at FreeSql.Internal.CommonProvider.AdoProvider.ExecuteReaderMultiple(Int32 multipleResult, DbConnection connection, DbTransaction transaction, Action`2 fetchHandler, Action`2 schemaHandler, CommandType cmdType, String cmdText, Int32 cmdTimeout, DbParameter[] cmdParms)
+ClientConnectionId:b243c4da-245a-4c7f-bfb2-4dd019310dbc
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at FreeSql.Internal.CommonProvider.AdoProvider.LoggerException(IObjectPool`1 pool, PrepareCommandResult pc, Exception ex, DateTime dt, StringBuilder logtxt, Boolean isThrowException)
+   at FreeSql.Internal.CommonProvider.AdoProvider.ExecuteReaderMultiple(Int32 multipleResult, DbConnection connection, DbTransaction transaction, Action`2 fetchHandler, Action`2 schemaHandler, CommandType cmdType, String cmdText, Int32 cmdTimeout, DbParameter[] cmdParms)
+   at FreeSql.Internal.CommonProvider.AdoProvider.ExecuteDataTable(DbConnection connection, DbTransaction transaction, CommandType cmdType, String cmdText, Int32 cmdTimeout, DbParameter[] cmdParms)
+   at FreeSql.Internal.CommonProvider.Select0Provider`2.ToDataTable(String field)
+   at LY.Report.Core.Service.Demo.Test.DemoTestService.GetPageListFenKuAsync(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core.Services\Demo\Test\DemoTestService.cs:line 142
+   at Castle.Proxies.Invocations.IDemoTestService_GetPageListFenKuAsync.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at LY.Report.Core.Aop.TransactionAsyncInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation) in D:\gitlearngit\Admin.Core\LY.Report.Core\Aop\TransactionAsyncInterceptor.cs:line 92
+   at LY.Report.Core.Areas.Other.V1.Demo.Controllers.DemoTestController.GetPageFenKu(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core\Areas\Other\V1\Demo\Controllers\DemoTestController.cs:line 91
+   at lambda_method861(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)|url: http://locar.api.ly.com/Api/Other/V1/Demo/DemoTest/GetPageFenKu|action: GetPageFenKu
+2022-07-06 18:19:38.2315 ||ERROR|LY.Report.Core.Filters.AdminExceptionFilter| System.InvalidCastException: Unable to cast object of type 'LY.Report.Core.Common.Output.ResponseOutput`1[System.Data.DataTable]' to type 'System.Threading.Tasks.Task`1[LY.Report.Core.Common.Output.IResponseOutput]'.
+   at LY.Report.Core.Service.Demo.Test.DemoTestService.GetPageListFenKuAsync(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core.Services\Demo\Test\DemoTestService.cs:line 146
+   at Castle.Proxies.Invocations.IDemoTestService_GetPageListFenKuAsync.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at LY.Report.Core.Aop.TransactionAsyncInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation) in D:\gitlearngit\Admin.Core\LY.Report.Core\Aop\TransactionAsyncInterceptor.cs:line 92
+   at LY.Report.Core.Areas.Other.V1.Demo.Controllers.DemoTestController.GetPageFenKu(PageInput`1 input) in D:\gitlearngit\Admin.Core\LY.Report.Core\Areas\Other\V1\Demo\Controllers\DemoTestController.cs:line 91
+   at lambda_method849(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)|url: http://locar.api.ly.com/Api/Other/V1/Demo/DemoTest/GetPageFenKu|action: GetPageFenKu

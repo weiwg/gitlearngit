@@ -1,0 +1,12 @@
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.deps.json
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.dll
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\bin\Debug\net5.0\ref\LY.Report.Core.Util.dll
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\bin\Debug\net5.0\LY.Report.Core.Util.pdb
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.GeneratedMSBuildEditorConfig.editorconfig
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.AssemblyInfoInputs.cache
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.AssemblyInfo.cs
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.csproj.CoreCompileInputs.cache
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.dll
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\ref\LY.Report.Core.Util.dll
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.pdb
+D:\gitlearngit\Admin.Core\LY.Report.Core.Util\obj\Debug\net5.0\LY.Report.Core.Util.csproj.AssemblyReference.cache

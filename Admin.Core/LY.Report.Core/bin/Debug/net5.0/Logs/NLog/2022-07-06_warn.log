@@ -1,0 +1,27 @@
+2022-07-06 10:25:19.4094 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 10:31:54.1059 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 10:58:07.9900 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 10:58:45.5749 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:01:42.6821 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:02:28.1046 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:03:49.6387 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:08:28.7363 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 11:12:42.9109 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:28:03.9710 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:29:02.8554 |13|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was forbidden. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 11:30:54.2525 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 14:06:11.0178 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 14:24:16.4044 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 14:27:29.4471 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 15:57:46.4003 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 15:58:50.6446 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 15:59:10.6299 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 16:13:14.6987 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 16:13:57.2873 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 17:14:48.6783 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 17:33:34.6635 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 17:35:07.9338 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 18:08:06.1335 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 18:11:50.2907 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/GetPage|action: GetPage
+2022-07-06 18:17:33.7260 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
+2022-07-06 18:22:45.8271 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 

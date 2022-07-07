@@ -1,0 +1,433 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Repository\\LY.Report.Core.Repository.csproj": {}
+  },
+  "projects": {
+    "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\LY.Report.Core.Common.csproj": {
+      "version": "1.0.2",
+      "restore": {
+        "projectUniqueName": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\LY.Report.Core.Common.csproj",
+        "projectName": "LY.Report.Core.Common",
+        "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\LY.Report.Core.Common.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1.N14278\\.nuget\\packages\\",
+        "outputPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1.N14278\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj": {
+                "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj"
+              },
+              "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj": {
+                "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "CSRedisCore": {
+              "target": "Package",
+              "version": "[3.6.8, )"
+            },
+            "FreeSql": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.MySql": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.Oracle": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.SqlServerForSystem": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Provider.Sqlite": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "FreeSql.Repository": {
+              "target": "Package",
+              "version": "[3.0.100, )"
+            },
+            "IdleBus": {
+              "target": "Package",
+              "version": "[1.5.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeAnalysis": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.15.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.15.0, )"
+            },
+            "UAParser": {
+              "target": "Package",
+              "version": "[3.1.47, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\LY.Report.Core.Model.csproj": {
+      "version": "1.0.2",
+      "restore": {
+        "projectUniqueName": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\LY.Report.Core.Model.csproj",
+        "projectName": "LY.Report.Core.Model",
+        "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\LY.Report.Core.Model.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1.N14278\\.nuget\\packages\\",
+        "outputPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1.N14278\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\LY.Report.Core.Common.csproj": {
+                "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Common\\LY.Report.Core.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Repository\\LY.Report.Core.Repository.csproj": {
+      "version": "1.0.2",
+      "restore": {
+        "projectUniqueName": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Repository\\LY.Report.Core.Repository.csproj",
+        "projectName": "LY.Report.Core.Repository",
+        "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Repository\\LY.Report.Core.Repository.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1.N14278\\.nuget\\packages\\",
+        "outputPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1.N14278\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\LY.Report.Core.Model.csproj": {
+                "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Model\\LY.Report.Core.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Yitter.IdGenerator": {
+              "target": "Package",
+              "version": "[1.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj",
+        "projectName": "LY.Report.Core.Util",
+        "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\LY.Report.Core.Util.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1.N14278\\.nuget\\packages\\",
+        "outputPath": "D:\\gitlearngit\\Admin.Core\\LY.Report.Core.Util\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1.N14278\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj",
+        "projectName": "LY.UnifiedAuth.Util.Api.Core",
+        "projectPath": "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\LY.UnifiedAuth.Util.Api.Core.csproj",
+        "packagesPath": "C:\\Users\\wei.gang1.N14278\\.nuget\\packages\\",
+        "outputPath": "D:\\gitlearngit\\Admin.Core\\LY.UnifiedAuth.Util.Api.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wei.gang1.N14278\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

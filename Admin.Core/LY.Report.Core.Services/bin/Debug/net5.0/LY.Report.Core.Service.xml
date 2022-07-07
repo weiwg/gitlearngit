@@ -1,0 +1,4491 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LY.Report.Core.Service</name>
+    </assembly>
+    <members>
+        <member name="T:LY.Report.Core.Service.Auth.Api.IApiService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Api.IApiService.ListAsync(System.String,System.String)">
+            <summary>
+            获取全部接口
+            </summary>
+            <param name="key"></param>
+            <param name="apiVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Api.IApiService.SyncAsync(LY.Report.Core.Service.Auth.Api.Input.ApiSyncInput)">
+            <summary>
+            同步
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.ParentId">
+            <summary>
+            所属模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.Label">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.Path">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.HttpMethods">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.CreateUserId">
+            <summary>
+            创建者用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiAddInput.ApiVersion">
+            <summary>
+            接口所属版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiDeleteInput.ApiId">
+            <summary>
+            接口ID
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.Input.ApiGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiGetInput.Label">
+            <summary>
+            接口或者地址名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiGetInput.ApiVersion">
+            <summary>
+            Api版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.Input.ApiSyncDto">
+            <summary>
+            接口同步Dto
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiSyncDto.Label">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiSyncDto.Path">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiSyncDto.ParentPath">
+            <summary>
+            父级路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiSyncDto.HttpMethods">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.Input.ApiSyncInput">
+            <summary>
+            接口同步
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.Input.ApiUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiUpdateInput.ApiId">
+            <summary>
+            接口Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Input.ApiUpdateInput.UpdateUserId">
+            <summary>
+            更新者用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiGetOutput.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.Id">
+            <summary>
+            接口Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.ApiId">
+            <summary>
+            ApiId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.ParentId">
+            <summary>
+            接口父级
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.Name">
+            <summary>
+            接口命名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.Label">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.Path">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.HttpMethods">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Api.Output.ApiListOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Api.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Auth.IAuthService">
+            <summary>
+            权限服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.PasswordKey">
+            <summary>
+            密码键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.VerifyCodeKey">
+            <summary>
+            验证码键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.AuthLoginInput.Captcha">
+            <summary>
+            验证数据
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.ValidatePermissionsInput.Api">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Input.ValidatePermissionsInput.HttpMethod">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthGetVerifyCodeOutput.Key">
+            <summary>
+            缓存键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthGetVerifyCodeOutput.Img">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.NickName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthLoginOutput.DataIsolationType">
+            <summary>
+            数据隔离
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserInfoOutput.User">
+            <summary>
+            用户个人信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserInfoOutput.Menus">
+            <summary>
+            用户菜单
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserInfoOutput.Permissions">
+            <summary>
+            用户权限点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Path">
+            <summary>
+            访问地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.ViewPath">
+            <summary>
+            视图地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Opened">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Closable">
+            <summary>
+            可关闭
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.NewWindow">
+            <summary>
+            打开新窗口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserMenuDto.External">
+            <summary>
+            链接外显
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserProfileDto.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserProfileDto.NickName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Auth.Output.AuthUserProfileDto.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Auth.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.ApiId">
+            <summary>
+            接口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput.ApiVersion">
+            <summary>
+            接口所属版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.ApiIds">
+            <summary>
+            关联接口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput.ApiVersion">
+            <summary>
+            接口所属版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.Opened">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput.ApiVersion">
+            <summary>
+            接口所属版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.ViewId">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Path">
+            <summary>
+            访问地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.Closable">
+            <summary>
+            可关闭
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.NewWindow">
+            <summary>
+            打开新窗口
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.External">
+            <summary>
+            链接外显
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput.ApiVersion">
+            <summary>
+            接口所属版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Permission.Input.PermissionPointMenuInput">
+            <summary>
+            获取用户权限点和菜单
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateApiInput.Id">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateApiInput.PermissionId">
+            <summary>
+            权限Id（主键）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateDotInput.Id">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateDotInput.PermissionId">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateGroupInput.Id">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateGroupInput.PermissionId">
+            <summary>
+            权限Id(主键)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateMenuInput.Id">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateMenuInput.PermissionId">
+            <summary>
+            权限Id（主键）
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetGroupAsync(System.String)">
+            <summary>
+            获取分组
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetMenuAsync(System.String)">
+            <summary>
+            获取菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetApiAsync(System.String)">
+            <summary>
+            获取Api
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetDotAsync(System.String)">
+            <summary>
+            获取权限点
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetPermissionList">
+            <summary>
+            获取权限列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetRolePermissionList(System.String)">
+            <summary>
+            获取角色权限列表
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetTenantPermissionList(System.String)">
+            <summary>
+            获取租户权限列表
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetListAsync(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            获取权限列表
+            </summary>
+            <param name="key"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <param name="apiVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.AddGroupAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionAddGroupInput)">
+            <summary>
+            新增分组
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.AddMenuAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionAddMenuInput)">
+            <summary>
+            新增菜单
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.AddApiAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionAddApiInput)">
+            <summary>
+            新增Api
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.AddDotAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionAddDotInput)">
+            <summary>
+            新增权限点
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.UpdateGroupAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateGroupInput)">
+            <summary>
+            修改分组
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.UpdateMenuAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateMenuInput)">
+            <summary>
+            修改菜单
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.UpdateApiAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateApiInput)">
+            <summary>
+            修改Api
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.UpdateDotAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionUpdateDotInput)">
+            <summary>
+            修改权限点
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.AssignAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionAssignInput)">
+            <summary>
+            保存权限
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.SaveTenantPermissionsAsync(LY.Report.Core.Service.Auth.Permission.Input.PermissionSaveTenantPermissionsInput)">
+            <summary>
+            保存租户权限
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.IPermissionService.GetPermissionsPointMenuAsync">
+            <summary>
+            获取权限点和菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Id">
+            <summary>
+            权限Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.PermissionId">
+            <summary>
+            权限Id(自定义主键)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.ParentId">
+            <summary>
+            父级节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Label">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Path">
+            <summary>
+            访问地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.ApiPaths">
+            <summary>
+            接口路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Opened">
+            <summary>
+            组打开
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionListOutput.ApiVersion">
+            <summary>
+            api版本号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Permission.Output.PermissionPointMenuOutput">
+            <summary>
+            权限点和菜单信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionPointMenuOutput.Menus">
+            <summary>
+            用户菜单
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Permission.Output.PermissionPointMenuOutput.Permissions">
+            <summary>
+            用户权限点
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.Permission.PermissionService.ClearUserPermissionsAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            清除权限下关联的用户权限缓存
+            </summary>
+            <param name="permissionIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Permission.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput.RoleType">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleAddInput.CreateUserId">
+            <summary>
+            创建用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleGetListInput.Name">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Role.Input.RoleUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleUpdateInput.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Input.RoleUpdateInput.UpdateUserId">
+            <summary>
+            更新用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.RoleType">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.Role.Output.RoleGetOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.Role.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleAddInput.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleAddInput.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleAddInput.CreateUserId">
+            <summary>
+            创建用户角色人id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleDeleteInput.UserRoleId">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleGetListInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleGetListInput.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleGetListInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleGetListInput.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleGetListInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleUpdateInput.UserRoleId">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Input.UserRoleUpdateInput.UpdateUserId">
+            <summary>
+            更新用户角色人id
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.UserRole.IUserRoleService.GetRoleInfoAsync">
+            <summary>
+            获取角色数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.UserRole.IUserRoleService.GetUserInfoAsync(System.String)">
+            <summary>
+            获取用户数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.Id">
+            <summary>
+            Id(普通字段)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.UserRoleId">
+            <summary>
+            UserRoleId(主键)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.NickName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.RoleName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.RoleType">
+            <summary>
+            角色类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.CreateUserId">
+            <summary>
+            创建人id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.UpdateUserId">
+            <summary>
+            更新人id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.UserRole.Output.UserRoleGetOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.UserRoleService">
+            <summary>
+            用户角色管理
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.UserRole.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.View.Input.ViewAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.ParentId">
+            <summary>
+            所属节点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.Name">
+            <summary>
+            视图命名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.Label">
+            <summary>
+            视图名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.Path">
+            <summary>
+            视图路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewAddInput.CreateUserId">
+            <summary>
+            创建用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.View.Input.ViewGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewGetInput.Label">
+            <summary>
+            视图名/地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewGetInput.ApiVersion">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewSyncDto.Name">
+            <summary>
+            视图命名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewSyncDto.Path">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewSyncDto.Label">
+            <summary>
+            视图名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewSyncDto.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewSyncDto.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.View.Input.ViewUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewUpdateInput.ViewId">
+            <summary>
+            ViewId(主键)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Auth.View.Input.ViewUpdateInput.UpdateUserId">
+            <summary>
+            更新用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.View.IViewService">
+            <summary>
+            视图服务
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.View.IViewService.ListAsync(LY.Report.Core.Service.Auth.View.Input.ViewGetInput)">
+            <summary>
+            获取全部视图
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Auth.View.IViewService.SyncAsync(LY.Report.Core.Service.Auth.View.Input.ViewSyncInput)">
+            <summary>
+            同步视图
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Auth.View.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IAddFullService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IAddService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IAddService`1.AddAsync(`0)">
+            <summary>
+            添加
+            </summary>
+            <param name="addInput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IBatchAddService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IBatchAddService`1.BatchAddAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            批量添加
+            </summary>
+            <param name="addInputs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IBaseService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IDeleteBaseService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IDeleteFullService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IDeleteService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IDeleteService.DeleteAsync(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IDeleteService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IDeleteService`1.DeleteAsync(`0)">
+            <summary>
+            删除
+            </summary>
+            <param name="deleteInput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IBatchDeleteService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IBatchDeleteService.BatchDeleteAsync(System.String[])">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IGetFullService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IGetService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetService.GetOneAsync(System.String)">
+            <summary>
+            获得一条记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IGetPageListService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetPageListService`1.GetPageListAsync(LY.Report.Core.Common.Input.PageInput{`0})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IGetService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetService`1.GetOneAsync(System.String)">
+            <summary>
+            获得一条记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetService`1.GetOneAsync(`0)">
+            <summary>
+            获得一条记录
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetService`1.GetPageListAsync(LY.Report.Core.Common.Input.PageInput{`0})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IGetExtendService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IGetExtendService`1.GetListAsync(`0)">
+            <summary>
+            获得列表
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.ISoftDeleteBaseService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.ISoftDeleteFullService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.ISoftDeleteService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.ISoftDeleteService.SoftDeleteAsync(System.String)">
+            <summary>
+            软删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.ISoftDeleteService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.ISoftDeleteService`1.SoftDeleteAsync(`0)">
+            <summary>
+            软删除
+            </summary>
+            <param name="deleteInput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IBatchSoftDeleteService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IBatchSoftDeleteService.BatchSoftDeleteAsync(System.String[])">
+            <summary>
+            批量软删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IUpdateFullService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IUpdateService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IUpdateService`1.UpdateAsync(`0)">
+            <summary>
+            修改
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Base.IService.IUpdateEntityService`1">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.IService.IUpdateEntityService`1.UpdateEntityAsync(`0)">
+            <summary>
+            修改实体
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Base.Service.BaseService.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Base.Service.BaseService.LoggerFactory">
+            <summary>
+            日志工厂
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Base.Service.BaseService.Mapper">
+            <summary>
+            映射
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Base.Service.BaseService.User">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Base.Service.BaseService.Logger">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.Service.BaseService.Validator``1">
+            <summary>
+            validator
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.Service.BaseService.Validate``1(``0)">
+            <summary>
+            输入验证
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.Service.BaseService.Validate``1(``0,System.Action{FluentValidation.Internal.ValidationStrategy{``0}})">
+            <summary>
+            输入验证
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.Service.BaseService.LazyGetRequiredService``1">
+            <summary>
+            获得懒加载服务
+            </summary>
+            <typeparam name="TService">服务接口</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Base.Service.BaseService.LazyGetRequiredService(System.Type)">
+            <summary>
+            根据服务类型获得懒加载服务
+            </summary>
+            <param name="serviceType">服务类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.IDemoTestService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Demo.Test.IDemoTestService.GetPageListFenKuAsync(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput.TestName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput._testImg">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput.TestCount">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput.TestPrice">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestAddInput.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestDeleteInput.TestId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.ClassAB">
+            <summary>
+            班别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.Line">
+            <summary>
+            线别
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput.TestId">
+            <summary>
+            TestId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput.TestName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestUpdateInput.TestId">
+            <summary>
+            TestId
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.Valid.DemoTestAddInputValidator">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.Input.Valid.DeliveryCarTypeUpdateInputValidator">
+            <summary>
+            验证规则
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.TestId">
+            <summary>
+            TestId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.TestName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput._testImg">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.TestImgUrl">
+            <summary>
+            图片Url
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.TestCount">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.TestPrice">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.IsActiveDescribe">
+            <summary>
+            是否有效描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestGetOutput.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Demo.Test.Output.DemoTestListOutput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Demo.Test.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.MqService.IMqService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Mq.MqService.IMqService.ConsumeHandleMallAsync(LY.Mq.Message.MqMessage)">
+            <summary>
+            处理订阅消息(商城)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Mq.MqService.IMqService.ConsumeHandlePayGatewayAsync(LY.Mq.Message.MqMessage)">
+            <summary>
+            处理订阅消息(支付)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Mq.MqService.IMqService.ConsumeHandleXerpAsync(LY.Mq.Message.MqMessage)">
+            <summary>
+            处理订阅消息(Xerp)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Mq.MqService.IMqService.ConsumeHandleCallBackAsync(LY.Mq.Message.MqMessageCallback)">
+            <summary>
+            处理订阅消息(回调)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Mq.MqService.IMqService.HandleReceiveAsync(LY.Mq.Message.MqMessage)">
+            <summary>
+            处理接收发送消息
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.IMqReceiveRecordService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.Exchange">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.Queue">
+            <summary>
+            队列
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.RoutingKey">
+            <summary>
+            路由值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.MsgDate">
+            <summary>
+            消息时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordAddInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordDeleteInput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordGetInput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordGetInput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordGetInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordUpdateInput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordUpdateInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Input.MqReceiveRecordUpdateInput.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.Exchange">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.Queue">
+            <summary>
+            队列
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.RoutingKey">
+            <summary>
+            路由值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgDate">
+            <summary>
+            消息时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgStatusDescribe">
+            <summary>
+            消息状态描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordGetOutput.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.ReceiveRecord.Output.MqReceiveRecordListOutput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.ReceiveRecord.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.IMqSendRecordService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.Exchange">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.Queue">
+            <summary>
+            队列
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.RoutingKey">
+            <summary>
+            路由值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.MsgDate">
+            <summary>
+            消息时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordAddInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordDeleteInput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordGetInput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordGetInput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordGetInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordUpdateInput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordUpdateInput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Input.MqSendRecordUpdateInput.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.Exchange">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.Queue">
+            <summary>
+            队列
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.RoutingKey">
+            <summary>
+            路由值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgAction">
+            <summary>
+            消息模块
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgContent">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgDate">
+            <summary>
+            消息时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgStatusDescribe">
+            <summary>
+            消息状态描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordGetOutput.MsgResult">
+            <summary>
+            消息结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Mq.SendRecord.Output.MqSendRecordListOutput.RecordId">
+            <summary>
+            记录Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Mq.SendRecord.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Employee.EmployeeService">
+            <summary>
+            员工服务
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Employee.IEmployeeService">
+            <summary>
+            员工服务
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Personnel.Employee.IEmployeeService.PageAsync(LY.Report.Core.Common.Input.PageDynamicInput{LY.Report.Core.Model.Personnel.PersonnelEmployee})">
+            <summary>
+            查询分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.Code">
+            <summary>
+            工号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.OrganizationId">
+            <summary>
+            主属部门Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.OrganizationIds">
+            <summary>
+            附属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.PositionId">
+            <summary>
+            职位Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeAddInput.EntryTime">
+            <summary>
+            入职时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Input.EmployeeUpdateInput.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeGetOutput.OrganizationName">
+            <summary>
+            主属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeGetOutput.OrganizationNames">
+            <summary>
+            附属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeGetOutput.PositionName">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.OrganizationName">
+            <summary>
+            主属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.OrganizationNames">
+            <summary>
+            附属部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.PositionName">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Employee.Output.EmployeeListOutput.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Employee.MapConfig">
+            <summary>
+            映射配置
+            双向映射 .ReverseMap()
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.PrimaryUserId">
+            <summary>
+            主管
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.EmployeeCount">
+            <summary>
+            员工人数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationUpdateInput.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Input.OrganizationUpdateInput.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Personnel.Organization.IOrganizationService.GetListAsync(System.String)">
+            <summary>
+            查询组织列表
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.ParentId">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Organization.Output.OrganizationListOutput.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Organization.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Position.Input.PositionAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Input.PositionAddInput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Input.PositionAddInput.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Input.PositionAddInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Input.PositionAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Position.Input.PositionUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Input.PositionUpdateInput.Id">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Personnel.Position.Output.PositionListOutput.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Personnel.Position.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Location.Input.RecordLocationAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Input.RecordLocationAddInput.Coordinate">
+            <summary>
+            坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Location.Input.RecordLocationDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Input.RecordLocationDeleteInput.LocationId">
+            <summary>
+            坐标Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Location.Input.RecordLocationGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Input.RecordLocationGetInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Input.RecordLocationGetInput.DriverId">
+            <summary>
+            司机Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Location.IRecordLocationService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Location.IRecordLocationService.GetLatestOneAsync(LY.Report.Core.Service.Record.Location.Input.RecordLocationGetInput)">
+            <summary>
+            获得最新一条记录
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Location.IRecordLocationService.GetPageListAsync(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Record.Location.Input.RecordLocationGetInput})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Output.RecordLocationGetOutput.Coordinate">
+            <summary>
+            坐标(经度,纬度)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Output.RecordLocationGetOutput.RecordDate">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Location.Output.RecordLocationListOutput.LocationId">
+            <summary>
+            坐标Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Location.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Os">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.BrowserInfo">
+            <summary>
+            浏览器信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.ElapsedMilliseconds">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Status">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Msg">
+            <summary>
+            操作消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginAddInput.CreateUserId">
+            <summary>
+            创建用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Login.Input.RecordLoginDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginDeleteInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Login.Input.RecordLoginGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginGetInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginGetInput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Input.RecordLoginGetInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Login.IRecordLoginService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Login.IRecordLoginService.GetOneAsync(System.String)">
+            <summary>
+            获得一条记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Login.IRecordLoginService.GetPageListAsync(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Record.Login.Input.RecordLoginGetInput})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.Os">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.BrowserInfo">
+            <summary>
+            浏览器信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.ElapsedMilliseconds">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.Status">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginGetOutput.Msg">
+            <summary>
+            操作消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginListOutput.LogId">
+            <summary>
+            日志Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginListOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Login.Output.RecordLoginListOutput.UpdateDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Login.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.ApiLabel">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.ApiPath">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.ApiMethod">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Os">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.BrowserInfo">
+            <summary>
+            浏览器信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.ElapsedMilliseconds">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Status">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Msg">
+            <summary>
+            操作消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Params">
+            <summary>
+            操作参数
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationAddInput.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Operation.Input.RecordOperationDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationDeleteInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Operation.Input.RecordOperationGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationGetInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationGetInput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Input.RecordOperationGetInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Operation.IRecordOperationService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Operation.IRecordOperationService.GetOneAsync(System.String)">
+            <summary>
+            获得一条记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Record.Operation.IRecordOperationService.GetPageListAsync(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Record.Operation.Input.RecordOperationGetInput})">
+            <summary>
+            获得分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.ApiLabel">
+            <summary>
+            接口名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.ApiPath">
+            <summary>
+            接口地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.ApiMethod">
+            <summary>
+            接口提交方法
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.IP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.Os">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.Device">
+            <summary>
+            设备
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.ElapsedMilliseconds">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.Status">
+            <summary>
+            操作状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationGetOutput.Msg">
+            <summary>
+            操作消息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationListOutput.LogId">
+            <summary>
+            日志Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationListOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Record.Operation.Output.RecordOperationListOutput.UpdateDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Record.Operation.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataAddInput.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataAddInput.ImgData">
+            <summary>
+            图片数据(Base64)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataDeleteInput.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataUpdateInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Input.ResImgDataUpdateInput.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.IResImgDataService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgData.Output.ResImgDataListOutput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgData.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResFileUploadInput.File">
+            <summary>
+            上传文件
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResFileUploadInput.FileCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.ImgCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.FileExtension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryAddInput.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryDeleteInput.ImgId">
+            <summary>
+            图片Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryGetInput.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryGetInput.ImgCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryGetInput.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Input.ResImgGalleryGetInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgGallery.IResImgGalleryService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.ImgId">
+            <summary>
+            图片Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.ImgMd5">
+            <summary>
+            图片Md5
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.ImgCategory">
+            <summary>
+            图片分类
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.ImgCategoryDescribe">
+            <summary>
+            图片分类描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.FileExtension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.FilePath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Resource.ImgGallery.Output.ResImgGalleryGetOutput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Resource.ImgGallery.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Cache.ICacheService">
+            <summary>
+            缓存服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.System.Cache.ICacheService.List">
+            <summary>
+            缓存列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.System.Cache.ICacheService.ClearAsync(System.String)">
+            <summary>
+            清除缓存
+            </summary>
+            <param name="cacheKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.ConfigId">
+            <summary>
+            设置Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.ParamKey">
+            <summary>
+            参数Key
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.ParamName">
+            <summary>
+            参数名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.ParamValue">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.IsActive">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigAddInput.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigDeleteInput.ParamKey">
+            <summary>
+            参数key
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigUpdateInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Input.SysParamConfigUpdateInput.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.ISysParamConfigService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Output.SysParamConfigListOutput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Output.SysParamConfigListOutput.ParamKey">
+            <summary>
+            参数Key
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.ParamConfig.Output.SysParamConfigListOutput.ParamValue">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.ParamConfig.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.ParentId">
+            <summary>
+            上级ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.ShortName">
+            <summary>
+            省级简称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.PinYin">
+            <summary>
+            名称拼音
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionAddInput.Sequence">
+            <summary>
+            地区排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.Input.SysRegionDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionDeleteInput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.ProvinceId">
+            <summary>
+            省份ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.ProvinceName">
+            <summary>
+            省份名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.CityId">
+            <summary>
+            城市ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.CityName">
+            <summary>
+            城市名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.Input.SysRegionGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetInput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Input.SysRegionGetInput.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.Input.SysRegionUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.ISysRegionService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.System.Region.ISysRegionService.GetRegionDetailOneAsync(LY.Report.Core.Service.System.Region.Input.SysRegionGetDetailInput)">
+            <summary>
+            获取地区详情
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.System.Region.ISysRegionService.GetSelectListAsync(System.Int32)">
+            <summary>
+            获取下拉菜单数据
+            </summary>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.ProvinceId">
+            <summary>
+            省份ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.ProvinceName">
+            <summary>
+            省份名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.ProvinceDepth">
+            <summary>
+            地区级别：1省，2市，3区
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.CityId">
+            <summary>
+            城市ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.CityName">
+            <summary>
+            城市名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.CityDepth">
+            <summary>
+            地区级别：1省，2市，3区
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.RegionDepth">
+            <summary>
+            地区级别：1省，2市，3区
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.FullId">
+            <summary>
+            完整Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.ShortName">
+            <summary>
+            省级简称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.PinYin">
+            <summary>
+            名称拼音
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetDetailOutput.Sequence">
+            <summary>
+            地区排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.RegionId">
+            <summary>
+            地区ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.ParentId">
+            <summary>
+            上级ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.FullId">
+            <summary>
+            完整Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.RegionName">
+            <summary>
+            地区名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.ShortName">
+            <summary>
+            省级简称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.PinYin">
+            <summary>
+            名称拼音
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.Depth">
+            <summary>
+            地区级别：1省，2市，3区
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Region.Output.SysRegionGetOutput.Sequence">
+            <summary>
+            地区排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Region.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.Email">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.DataIsolationType">
+            <summary>
+            数据隔离类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.DbType">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.IdleTime">
+            <summary>
+            空闲时间(分)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantAddInput.CreateUserId">
+            <summary>
+            创建者id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Tenant.Input.TenantGetInput">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantGetInput.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Tenant.Input.TenantUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantUpdateInput.TenantId">
+            <summary>
+            接口Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Input.TenantUpdateInput.UpdateUserId">
+            <summary>
+            更新者id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.TenantId">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.UserId">
+            <summary>
+            授权用户
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.RoleId">
+            <summary>
+            授权角色
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.Code">
+            <summary>
+            企业编码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.Name">
+            <summary>
+            企业名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.RealName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.Email">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.DataIsolationType">
+            <summary>
+            数据隔离类型
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.DataIsolationTypeName">
+            <summary>
+            数据隔离类型名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.DbType">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.DbTypeName">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.IdleTime">
+            <summary>
+            空闲时间(分)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.IsActive">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.Description">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.Tenant.Output.TenantListOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.Tenant.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigAddInput.ConfigId">
+            <summary>
+            配置Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigDeleteInput.ConfigId">
+            <summary>
+            配置Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.Input.SysWebConfigUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.ISysWebConfigService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="P:LY.Report.Core.Service.System.WebConfig.Output.SysWebConfigListOutput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.System.WebConfig.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.GetUserVerifyCodeAsync(System.String)">
+            <summary>
+            获取用户手机/邮箱验证码
+            </summary>
+            <param name="action">phone/email</param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.GetVerifyCodeAsync(System.String,System.String)">
+            <summary>
+            获取手机邮箱验证码
+            </summary>
+            <param name="account"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.GetImgVerifyCodeAsync(System.String)">
+            <summary>
+            获取验证码图片
+            </summary>
+            <param name="lastKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.CheckUserVerifyCodeAsync(LY.Report.Core.Service.User.Account.Input.VerifyCodeInput)">
+            <summary>
+            校验用户账号验证码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.CheckVerifyCodeAsync(System.String,System.String)">
+            <summary>
+            校验验证码
+            </summary>
+            <param name="code"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.AccountService.GetToken(LY.Report.Core.Service.User.Account.Output.LoginOutput)">
+            <summary>
+            获得token
+            </summary>
+            <param name="userOutput"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.IAccountService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.GetUserVerifyCodeAsync(System.String)">
+            <summary>
+            获取用户手机/邮箱验证码
+            </summary>
+            <param name="action">phone/email</param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.GetVerifyCodeAsync(System.String,System.String)">
+            <summary>
+            获取手机/邮箱验证码
+            </summary>
+            <param name="account">手机/邮箱</param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.CheckUserVerifyCodeAsync(LY.Report.Core.Service.User.Account.Input.VerifyCodeInput)">
+            <summary>
+            校验账户验证码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.GetImgVerifyCodeAsync(System.String)">
+            <summary>
+            获取图片验证码
+            </summary>
+            <param name="lastKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.GetCheckUserAccount(LY.Report.Core.Service.User.Account.Input.CheckAcountInput)">
+            <summary>
+            判断登录名,手机号,邮箱是否存在
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.LoginAsync(LY.Report.Core.Service.User.Account.Input.LYUaLoginInput,System.Boolean)">
+            <summary>
+            登录验证
+            </summary>
+            <param name="input"></param>
+            <param name="isAutoLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.LYUaLoginAsync(LY.Report.Core.Service.User.Account.Input.LYUaLoginInput)">
+            <summary>
+            统一登录验证
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.Register(LY.Report.Core.Service.User.Info.Input.UserInfoAddInput)">
+            <summary>
+            注册
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.GetToken(LY.Report.Core.Service.User.Account.Output.LoginOutput)">
+            <summary>
+            获得token
+            </summary>
+            <param name="output"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Account.IAccountService.RefreshToken(System.String)">
+            <summary>
+            刷新Token
+            以旧换新
+            </summary>
+            <param name="oldToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.Input.AccountGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.AccountGetInput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.Input.CheckAcountInput">
+            <summary>
+            检查账号信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.CheckAcountInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.CheckAcountInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.CheckAcountInput.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.Input.LoginInput">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LoginInput.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LoginInput.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LoginInput.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LoginInput.VerifyCodeKey">
+            <summary>
+            验证码键
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.Input.LYUaLoginInput">
+            <summary>
+            统一登录信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LYUaLoginInput.LoginToken">
+            <summary>
+            统一登录登录Token
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LYUaLoginInput.SessionId">
+            <summary>
+            身份Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LYUaLoginInput.Captcha">
+            <summary>
+            验证数据
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.LYUaLoginInput.WeChatOpenId">
+            <summary>
+            微信OpenId(当前微信浏览器的OpenId,不一定是登录用户的OpenId)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Input.VerifyCodeInput.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.SessionId">
+            <summary>
+            身份Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.OpenId">
+            <summary>
+            OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.UserName">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.NickName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Account.Output.LoginOutput.WeChatOpenId">
+            <summary>
+            微信OpenId(当前微信浏览器的OpenId,不一定是登录用户的OpenId)
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Account.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.Password">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.Portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoAddInput.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoDeleteInput">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoDeleteInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput.UserName">
+            <summary>
+            用户名(模糊)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput.NickName">
+            <summary>
+            昵称(模糊)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput.Phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetEmailInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetEmailInput.Email">
+            <summary>
+            用户新手机号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoResetPasswordInput">
+            <summary>
+            重置密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPasswordInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPasswordInput.NewPassword">
+            <summary>
+            用户新密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPayPasswordInput.NewPassword">
+            <summary>
+            新密码
+            Md5混合加密后的密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPayPasswordInput.VerifyCodeTokenKey">
+            <summary>
+            验证凭据
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPaySysPasswordInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPaySysPasswordInput.NewPassword">
+            <summary>
+            用户新密码
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoResetPhoneInput">
+            <summary>
+            重置手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPhoneInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoResetPhoneInput.Phone">
+            <summary>
+            用户新手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput.NewAccount">
+            <summary>
+            新 手机/邮箱
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput.VerifyCodeKey">
+            <summary>
+            验证码键
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput.VerifyCodeTokenKey">
+            <summary>
+            验证凭据键
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput._portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePasswordInput">
+            <summary>
+            修改密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePasswordInput.OldPassword">
+            <summary>
+            用户旧密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePasswordInput.NewPassword">
+            <summary>
+            用户新密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePayPasswordInput.OldPassword">
+            <summary>
+            旧密码
+            Md5混合加密后的密码
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePayPasswordInput.NewPassword">
+            <summary>
+            新密码
+            Md5混合加密后的密码
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePortraitInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePortraitInput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePortraitInput._portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfResetPasswordAccountInput.VerifyCodeTokenKey">
+            <summary>
+            验证凭据
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Input.UserInfResetPasswordAccountInput.NewPassword">
+            <summary>
+            新密码
+            Md5混合加密后的密码
+            限制为32个字符,必填
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.IUserInfoService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.GetCurrUserInfoAsync">
+            <summary>
+            获取登录用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.UpdatePasswordAsync(LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePasswordInput)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.ResetPasswordAsync(LY.Report.Core.Service.User.Info.Input.UserInfoResetPasswordInput)">
+            <summary>
+            重置用户密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.UpdatePortraitAsync(LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePortraitInput)">
+            <summary>
+            修改用户头像
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.UpdateUserUntieWeChatAsync">
+            <summary>
+            解绑微信
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.UpdateAccountAsync(LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput)">
+            <summary>
+            修改手机/邮箱
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.ResetPhoneAsync(LY.Report.Core.Service.User.Info.Input.UserInfoResetPhoneInput)">
+            <summary>
+            重置手机
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.ResetEmailAsync(LY.Report.Core.Service.User.Info.Input.UserInfoResetEmailInput)">
+            <summary>
+            重置邮箱
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.GetSelectListAsync(LY.Report.Core.Service.User.Info.Input.UserInfoGetSelectInput)">
+            <summary>
+            获取用户下拉
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.GetPermissionsAsync(System.String)">
+            <summary>
+            获取权限
+            </summary>
+            <param name="apiVersion">版本号</param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.IUserInfoService.GetSpecialPermissionsAsync">
+            <summary>
+            获取特殊权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput">
+            <summary>
+            用户基础信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput._portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.PortraitUrl">
+            <summary>
+            头像Url
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput._email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput._phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.WeChatNickName">
+            <summary>
+            微信昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput._portrait">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput.PortraitUrl">
+            <summary>
+            头像Url
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput._email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput._phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetOutput.UserStatus">
+            <summary>
+            用户状态（1正常 2 锁定）
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetSelectOutput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetSelectOutput.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoGetSelectOutput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoGetSelectOutput._email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Service.User.Info.Output.UserInfoGetSelectOutput._phone">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoListOutput.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoListOutput.LastLoginIp">
+            <summary>
+            上次登陆IP地址
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoListOutput.LastLoginDate">
+            <summary>
+            上次登录日期
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoListOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoListOutput.UpdateDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserIsNoCheckPermissionsOutput.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.UserInfoService.CheckVerifyCodeAsync(System.String,System.String)">
+            <summary>
+            校验验证码
+            </summary>
+            <param name="code"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.UserInfoService.CheckVerifyCodeTokenAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            校验验证码凭据
+            </summary>
+            <param name="userId"></param>
+            <param name="key"></param>
+            <param name="isDel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.User.Info.UserInfoService.DeleteVerifyCodeTokenAsync(System.String)">
+            <summary>
+            校验验证码凭据
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.Info.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.Sex">
+            <summary>
+            性别,1男，2女，0未知
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.Province">
+            <summary>
+            省份
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.HeadImgUrl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.Privilege">
+            <summary>
+            特权信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoAddInput.UnionId">
+            <summary>
+            开放平台UnionId
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoUpdateInput">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Input.UserWeiXinInfoUpdateInput.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.WeiXinInfo.IUserWeiXinInfoService">
+            <summary>
+            接口服务
+            </summary>	
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.OpenId">
+            <summary>
+            微信OpenId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.Sex">
+            <summary>
+            性别,1男，2女，0未知
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.Province">
+            <summary>
+            省份
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.Country">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.HeadImgUrl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.Privilege">
+            <summary>
+            特权信息
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoGetOutput.UnionId">
+            <summary>
+            开放平台UnionId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoListOutput.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoListOutput.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.User.WeiXinInfo.Output.UserWeiXinInfoListOutput.UpdateDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.User.WeiXinInfo.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
+    </members>
+</doc>
