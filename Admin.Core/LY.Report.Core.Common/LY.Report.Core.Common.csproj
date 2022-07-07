@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>..\LY.Report.Core\SwaggerDoc\LY.Report.Core.Common.xml</DocumentationFile>
+    <DocumentationFile>..\LY.Report.Core.Common\SwaggerDoc\LY.Report.Core.Common.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
     <OutputPath></OutputPath>
   </PropertyGroup>
