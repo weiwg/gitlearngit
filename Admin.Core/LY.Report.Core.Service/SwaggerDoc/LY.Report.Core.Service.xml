@@ -1535,12 +1535,12 @@
         </member>
         <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.ClassAB">
             <summary>
-            TestId
+            班别
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetFenKuInput.Line">
             <summary>
-            名称
+            线别
             </summary>
         </member>
         <member name="T:LY.Report.Core.Service.Demo.Test.Input.DemoTestGetInput">

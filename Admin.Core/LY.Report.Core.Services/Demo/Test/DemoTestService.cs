@@ -139,12 +139,11 @@ namespace LY.Report.Core.Service.Demo.Test
         public async Task<IResponseOutput> GetPageListFenKuAsync(PageInput<DemoTestGetFenKuInput> input)
         {
             var proName = User.ProName;
-            DataTable dt1 = await _ib.Get(proName).Select<object>()
+            DataTable dt = await _ib.Get(proName).Select<object>()
             .WithSql(string.Format("select * from T_MES_Shift where ClassAB='{0}' and Line='{1}'", input.Filter?.ClassAB, input.Filter?.Line))
             .ToDataTableAsync("*");
 
-            return ResponseOutput.Data(dt1);
-            //return (Task<IResponseOutput>)ResponseOutput.Data(dt1);
+            return ResponseOutput.Data(dt);
         }
         #endregion
 
