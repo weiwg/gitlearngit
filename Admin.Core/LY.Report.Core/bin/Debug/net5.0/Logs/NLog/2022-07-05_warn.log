@@ -1,6 +1,0 @@
-2022-07-05 17:14:17.1995 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
-2022-07-05 17:21:10.8193 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
-2022-07-05 17:28:25.7245 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
-2022-07-05 17:29:42.2613 |12|INFO|LY.Report.Core.Auth.ResponseAuthenticationHandler|AuthenticationScheme: ResponseAuthenticationHandler was challenged. |url: http://locar.api.ly.com/Api/S/V1/Auth/Role/Add|action: Add
-2022-07-05 17:30:05.9554 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
-2022-07-05 17:33:32.2319 ||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://[::]:18001 |url: |action: 
