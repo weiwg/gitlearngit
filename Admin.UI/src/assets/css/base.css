@@ -1,0 +1,316 @@
+@charset "utf-8";
+*{margin: 0; padding: 0;}
+
+html,body,#app,.wrapper {width: 100%;height: 100%;/* overflow: hidden; */}
+body{font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;}
+
+#app{min-width: 1024px;}
+
+/* 超链接 */
+a {text-decoration: none}
+
+/* height */
+.h-per{height: 100%;}
+.h-p10{height: 10%;}
+.h-p20{height: 20%;}
+.h-p50{height: 50%;}
+.h-p100{height: 100%;}
+.h100{height: 100px;}
+.h200{height: 200px;}
+.h300{height: 300px;}
+.h400{height: 400px;}
+.h500{height: 500px;}
+.h600{height: 600px;}
+.h700{height: 700px;}
+.h800{height: 800px;}
+.h900{height: 900px;}
+.h1000{height: 1000px;}
+.h1100{height: 1100px;}
+.h1200{height: 1200px;}
+.h1300{height: 1300px;}
+.h1400{height: 1400px;}
+.h1500{height: 1500px;}
+.h2000{height: 2000px;}
+.h2500{height: 2500px;}
+.h3000{height: 3000px;}
+
+/* weight */
+.w-per{width: 100%;}
+.w-p10{width: 10%;}
+.w-p20{width: 20%;}
+.w-p50{width: 50%;}
+.w-p100{width: 100%;}
+.w100{width: 100px;}
+.w200{width: 200px;}
+.w300{width: 300px;}
+.w400{width: 400px;}
+.w500{width: 500px;}
+.w600{width: 600px;}
+.w700{width: 700px;}
+.w800{width: 800px;}
+.w900{width: 900px;}
+.w1000{width: 1000px;}
+.w1100{width: 1100px;}
+.w1200{width: 1200px;}
+.w1300{width: 1300px;}
+.w1400{width: 1400px;}
+.w1500{width: 1500px;}
+.w2000{width: 2000px;}
+.w2500{width: 2500px;}
+.w3000{width: 3000px;}
+
+/* margin */
+.mt1r {margin-top: 1rem;}
+.m10{margin:10px}
+.m15{margin:15px}
+.m30{margin:30px}
+.mt1{margin-top: 1px;}
+.mt2{margin-top: 2px;}
+.mt3{margin-top: 3px;}
+.mt4{margin-top: 4px;}
+.mt5{margin-top: 5px;}
+.mt6{margin-top: 6px;}
+.mt7{margin-top: 7px;}
+.mt8{margin-top: 8px;}
+.mt9{margin-top: 9px;}
+.mt10{margin-top: 10px;}
+.mt11{margin-top: 11px;}
+.mt12{margin-top: 12px;}
+.mt13{margin-top: 13px;}
+.mt14{margin-top: 14px;}
+.mt15{margin-top: 15px;}
+.mt20{margin-top: 20px;}
+.mt25{margin-top: 25px;}
+.mt30{margin-top: 30px;}
+.mt40{margin-top: 40px;}
+.mt50{margin-top: 50px;}
+.mr1{margin-right: 1px;}
+.mr2{margin-right: 2px;}
+.mr3{margin-right: 3px;}
+.mr4{margin-right: 4px;}
+.mr5{margin-right: 5px;}
+.mr6{margin-right: 6px;}
+.mr7{margin-right: 7px;}
+.mr8{margin-right: 8px;}
+.mr9{margin-right: 9px;}
+.mr10{margin-right: 10px;}
+.mr11{margin-right: 11px;}
+.mr12{margin-right: 12px;}
+.mr13{margin-right: 13px;}
+.mr14{margin-right: 14px;}
+.mr15{margin-right: 15px;}
+.mr20{margin-right: 20px;}
+.mr25{margin-right: 25px;}
+.mr30{margin-right: 30px;}
+.mr40{margin-right: 40px;}
+.mb1r{margin-bottom: 1rem;}
+.ml1{margin-left: 1px;}
+.ml2{margin-left: 2px;}
+.ml3{margin-left: 3px;}
+.ml4{margin-left: 4px;}
+.ml5{margin-left: 5px;}
+.ml6{margin-left: 6px;}
+.ml7{margin-left: 7px;}
+.ml8{margin-left: 8px;}
+.ml9{margin-left: 9px;}
+.ml10{margin-left: 10px;}
+.ml11{margin-left: 11px;}
+.ml12{margin-left: 12px;}
+.ml13{margin-left: 13px;}
+.ml14{margin-left: 14px;}
+.ml15{margin-left: 15px;}
+.ml20{margin-left: 20px;}
+.ml25{margin-left: 25px;}
+.ml30{margin-left: 30px;}
+.ml40{margin-left: 40px;}
+.mb1{margin-bottom: 1px;}
+.mb2{margin-bottom: 2px;}
+.mb3{margin-bottom: 3px;}
+.mb4{margin-bottom: 4px;}
+.mb5{margin-bottom: 5px;}
+.mb6{margin-bottom: 6px;}
+.mb7{margin-bottom: 7px;}
+.mb8{margin-bottom: 8px;}
+.mb9{margin-bottom: 9px;}
+.mb10{margin-bottom: 10px;}
+.mb11{margin-bottom: 11px;}
+.mb12{margin-bottom: 12px;}
+.mb13{margin-bottom: 13px;}
+.mb14{margin-bottom: 14px;}
+.mb15{margin-bottom: 15px;}
+.mb20{margin-bottom: 20px;}
+.mb25{margin-bottom: 25px;}
+.mb30{margin-bottom: 30px;}
+.mb40{margin-bottom: 40px;}
+
+/* border */
+.bd-s-red{border: 1px solid red;}
+
+/* padding */
+.prl5{padding: 0 5px;}
+.prl10{padding: 0 10px;}
+.ptl{padding: 5px 0 0 10px;}
+.p10{padding:10px}
+.p15{padding:15px}
+.p30{padding:30px}
+.pt1{padding-top: 1px;}
+.pt2{padding-top: 2px;}
+.pt3{padding-top: 3px;}
+.pt4{padding-top: 4px;}
+.pt5{padding-top: 5px;}
+.pt6{padding-top: 6px;}
+.pt7{padding-top: 7px;}
+.pt8{padding-top: 8px;}
+.pt9{padding-top: 9px;}
+.pt10{padding-top: 10px;}
+.pt11{padding-top: 11px;}
+.pt12{padding-top: 12px;}
+.pt13{padding-top: 13px;}
+.pt14{padding-top: 14px;}
+.pt15{padding-top: 15px;}
+.pt20{padding-top: 20px;}
+.pt25{padding-top: 25px;}
+.pt30{padding-top: 30px;}
+.pt40{padding-top: 40px;}
+.pt50{padding-top: 50px;}
+.pr1{padding-right: 1px;}
+.pr2{padding-right: 2px;}
+.pr3{padding-right: 3px;}
+.pr4{padding-right: 4px;}
+.pr5{padding-right: 5px;}
+.pr6{padding-right: 6px;}
+.pr7{padding-right: 7px;}
+.pr8{padding-right: 8px;}
+.pr9{padding-right: 9px;}
+.pr10{padding-right: 10px;}
+.pr11{padding-right: 11px;}
+.pr12{padding-right: 12px;}
+.pr13{padding-right: 13px;}
+.pr14{padding-right: 14px;}
+.pr15{padding-right: 15px;}
+.pr20{padding-right: 20px;}
+.pr25{padding-right: 25px;}
+.pr30{padding-right: 30px;}
+.pr40{padding-right: 40px;}
+.pb1r{padding-bottom: 1rem;}
+.pl1{padding-left: 1px;}
+.pl2{padding-left: 2px;}
+.pl3{padding-left: 3px;}
+.pl4{padding-left: 4px;}
+.pl5{padding-left: 5px;}
+.pl6{padding-left: 6px;}
+.pl7{padding-left: 7px;}
+.pl8{padding-left: 8px;}
+.pl9{padding-left: 9px;}
+.pl10{padding-left: 10px;}
+.pl11{padding-left: 11px;}
+.pl12{padding-left: 12px;}
+.pl13{padding-left: 13px;}
+.pl14{padding-left: 14px;}
+.pl15{padding-left: 15px;}
+.pl20{padding-left: 20px;}
+.pl25{padding-left: 25px;}
+.pl30{padding-left: 30px;}
+.pl40{padding-left: 40px;}
+.pb1{padding-bottom: 1px;}
+.pb2{padding-bottom: 2px;}
+.pb3{padding-bottom: 3px;}
+.pb4{padding-bottom: 4px;}
+.pb5{padding-bottom: 5px;}
+.pb6{padding-bottom: 6px;}
+.pb7{padding-bottom: 7px;}
+.pb8{padding-bottom: 8px;}
+.pb9{padding-bottom: 9px;}
+.pb10{padding-bottom: 10px;}
+.pb11{padding-bottom: 11px;}
+.pb12{padding-bottom: 12px;}
+.pb13{padding-bottom: 13px;}
+.pb14{padding-bottom: 14px;}
+.pb15{padding-bottom: 15px;}
+.pb20{padding-bottom: 20px;}
+.pb25{padding-bottom: 25px;}
+.pb30{padding-bottom: 30px;}
+.pb40{padding-bottom: 40px;}
+
+/*单行溢出，超出部分显示...或者截取。前提必须有宽度*/
+.text-overflow-hidden {white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+
+/*因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；*/
+.text-overflow-hidden {
+    display: -webkit-box;/* 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 */
+    -webkit-orient: vertical;/*必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: bleak-word;/*word-wrap 属性允许长单词或 URL 地址换行到下一行。*/
+    -webkit-line-clamp: 3;/*用来限制在一个块元素显示的文本的行数。*/
+}
+
+/* 跨浏览器兼容的方案 */
+/* .text-overflow-hidden {
+    line-height: 1.2em;
+    height: 3.6em;/*超出n行省略号表示，那height必须为line-height的n倍*/
+    /* position: relative;
+    overflow: hidden;
+}  */
+
+/*======万能Float清除浮动1======*/
+.clear:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clear {display: inline-block;} /* for IE/Mac */
+
+/*======万能Float清除浮动2======*/
+.overflow-hidden{overflow:hidden;} /*控制背景溢出*/
+.equal-height{margin-bottom:-32800px;padding-bottom:32800px;} /*控制高度足够小*/
+
+/*======万能Float清除浮动3======*/
+/* .clear{height:0px;clear:both;font-size:0px;line-height:0px;zoom: 1;} */
+
+/*css定义超链接四个状态也有顺序的。*/
+a:link, a:visited {text-decoration: none;color: #1F376D;}
+a:hover, a:active {text-decoration: underline;color: #BD0A01;border: none;}
+
+/*文字排版、颜色*/
+.f12{font-size:12px}
+.f13{font-size:13px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f20{font-size:20px}
+.fb{font-weight:bold}
+.fn{font-weight:normal}
+.t2{text-indent:2em}
+.red,a.red{color:#cc0031}
+.darkblue,a.darkblue{color:#039}
+.gray,a.gray{color:#878787}
+.lh150{line-height:150%}
+.lh180{line-height:180%}
+.lh200{line-height:200%}
+.unl{text-decoration:underline;}
+.no_unl{text-decoration:none;}
+
+/*定位*/
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.fl{float:left;display:inline}
+.fr{float:right;display:inline}
+.cb{clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.vm{vertical-align:middle}
+.pr{position:relative}
+.pa{position:absolute}
+.abs-right{position:absolute;right:0}
+.zoom{zoom:1}
+.hidden{visibility:hidden}
+.none{display:none}
+
+/* display */
+.show{display: block;}
+.hide{display: none;}
+
+/* color */
+.green{color: #85ce61}
+.red{color:#F56C6C;}
+
+/* 清理浮动 */
+.clearfix:before,.clearfix:after {display: table;content: "";}
+.clearfix:after {clear: both;}
