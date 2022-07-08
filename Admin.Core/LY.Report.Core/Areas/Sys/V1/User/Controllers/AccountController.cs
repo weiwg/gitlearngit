@@ -68,7 +68,7 @@ namespace LY.Report.Core.Areas.Sys.V1.User.Controllers
             }
             else
             {
-                res = await _accountService.LoginAsync(input, true);
+                res = await _accountService.LoginAsync(input);
             }
             sw.Stop();
 
@@ -122,10 +122,11 @@ namespace LY.Report.Core.Areas.Sys.V1.User.Controllers
         [HttpGet]
         [AllowAnonymous]
         [NoPermission]
-        public IResponseOutput Logout(string returnUrl)
+        public async Task<IResponseOutput> Logout(string returnUrl)
         {
-            _cacheService.ClearAsync(string.Format(CacheKey.UserPermissions, _user.UserId, _user.ApiVersion));
-            return ResponseOutput.Data(UaApiHelper.GetUrlLogout(HttpUtility.UrlEncode(returnUrl), _user?.SessionId));
+             //_cacheService.ClearAsync(string.Format(CacheKey.UserPermissions, _user.UserId, _user.ApiVersion));
+            return await _cacheService.ClearAsync(string.Format(CacheKey.UserPermissions, _user.UserId, _user.ApiVersion));
+            //return ResponseOutput.Data(UaApiHelper.GetUrlLogout(HttpUtility.UrlEncode(returnUrl), _user?.SessionId));
         }
 
         /// <summary>

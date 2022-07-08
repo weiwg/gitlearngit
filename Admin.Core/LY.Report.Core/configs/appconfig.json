@@ -31,7 +31,7 @@
     //有效时间(分钟)
     "ExpireTime": 10,
     //启用
-    "Enable": true,
+    "Enable": false,
     //字体列表
     "Fonts": [ "Times New Roman", "Verdana", "Arial", "Gungsuh", "Impact" ]
   },

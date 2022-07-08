@@ -27,7 +27,7 @@ namespace LY.Report.Core.Service.User.Info.Input
         /// <summary>
         /// 用户密码
         /// </summary>
-        [Required(ErrorMessage = "密码不能为空！"), StringLength(16, ErrorMessage = "{0} 限制为{2}-{1} 个字符。", MinimumLength = 6)]
+        [Required(ErrorMessage = "密码不能为空！"), StringLength(32, ErrorMessage = "{0} 限制为{2}-{1} 个字符。", MinimumLength = 6)]
         public string Password { get; set; }
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace LY.Report.Core.Service.User.Info.Input
         /// <summary>
         /// 邮箱
         /// </summary>
+        [Required(ErrorMessage = "邮箱不能为空！"), StringLength(32, ErrorMessage = "{0} 限制为{2}-{1} 个字符。", MinimumLength = 6)]
         public string Email { get; set; }
 
         /// <summary>
