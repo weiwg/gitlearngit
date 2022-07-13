@@ -1084,6 +1084,281 @@
             排序
             </summary>
         </member>
+        <member name="T:LY.Report.Core.Model.Product.Enum.AbnormalStatus">
+            <summary>
+            异常状态
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalStatus.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalStatus.Processed">
+            <summary>
+            已处理
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalStatus.Unhandled">
+            <summary>
+            未处理
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.Enum.AbnormalType">
+            <summary>
+            异常大类(异常/停线)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalType.Abnormal">
+            <summary>
+            异常
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalType.StopLine">
+            <summary>
+            停线
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.Enum.AbnormalItemType">
+            <summary>
+            小类(机器故障/物料异常/停电等)
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.MechanicalFailure">
+            <summary>
+            机械故障
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.MaterialAbnormality">
+            <summary>
+            物料异常
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.PowerFailure">
+            <summary>
+            停电
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.Enum.ProNameType">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ProNameType.HEB">
+            <summary>
+            HEB
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ProNameType.HEC">
+            <summary>
+            HEC
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ProNameType.HED">
+            <summary>
+            HED
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ProNameType.HEF">
+            <summary>
+            HEF
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.Enum.ResponDepart">
+            <summary>
+            责任部门
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.ProductiveDepartment">
+            <summary>
+            生产部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.QualityDepartment">
+            <summary>
+            品质部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.EngineerDepartment">
+            <summary>
+            工程部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.PMCDepartment">
+            <summary>
+            PMC部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.RELDepartment">
+            <summary>
+            REL部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.IEDepartment">
+            <summary>
+            IE部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.EquipmentDepartment">
+            <summary>
+            设备部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.StorageDepartment">
+            <summary>
+            仓储部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.FactoryAffairsDepartment">
+            <summary>
+            厂务部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.OrderDepartment">
+            <summary>
+            采购部
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.ITDepartment">
+            <summary>
+            IT部
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.Abnormal">
+            <summary>
+            异常实体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.ProjectNo">
+            <summary>
+            项目编号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.LineName">
+            <summary>
+            线体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.ClassAB">
+            <summary>
+            班别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.FProcess">
+            <summary>
+            站点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.Type">
+            <summary>
+            大类(异常/停线)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.ItemType">
+            <summary>
+            小类(机器故障/物料异常/停电等)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.Description">
+            <summary>
+            异常描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.ResponDepart">
+            <summary>
+            责任部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.ResponBy">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.Reason">
+            <summary>
+            原因分析
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.TempMeasures">
+            <summary>
+            临时对策
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.FundaMeasures">
+            <summary>
+            根本对策
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.Abnormal.Status">
+            <summary>
+            异常状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.AbnormalPerson">
+            <summary>
+            责任人实体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.PersonLiableId">
+            <summary>
+            责任人Id
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Position">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Model.Product.ProductInfo">
+            <summary>
+            项目实体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.ProductInfo.ProId">
+            <summary>
+            项目ID
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.ProductInfo.ProNO">
+            <summary>
+            项目编号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.ProductInfo.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
         <member name="T:LY.Report.Core.Model.Record.BaseRecord">
             <summary>
             日志基类

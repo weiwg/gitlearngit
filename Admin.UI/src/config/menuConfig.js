@@ -55,42 +55,53 @@ export const menu = [
         title: "权限管理",
         children:[
             {
-                index: `/Permission/Admin/UserRole`,
+                index: `/Permission/UserRole`,
                 title: "用户角色",
             },
             {
-                index: `/Permission/Admin/Role`,
+                index: `/Permission/Role`,
                 title: "角色管理",
             },
             {
-                index: `/Permission/Admin/Interface`,
+                index: `/Permission/Interface`,
                 title: "接口管理",
             },
             {
-                index: `/Permission/Admin/ViewManage`,
+                index: `/Permission/ViewManage`,
                 title: "视图管理",
             },
             {
-                index: `/Permission/Admin/PermissionManage`,
+                index: `/Permission/PermissionManage`,
                 title: "权限管理",
             },
             // {
-            //     index: `/Permission/Admin/Role-Permission`,
+            //     index: `/Permission/Role-Permission`,
             //     title: "角色权限",
             // },
         ]
     },
     {   
         icon: "el-icon-picture-outline",
-            index: "2-4",
-            title: "资源管理",
-            children:[
-                {
-                    index: `/Image/Image`,
-                    title: "图片中心",
-                },
-            ]
-        },
+        index: "2-4",
+        title: "资源管理",
+        children:[
+            {
+                index: `/Image/Image`,
+                title: "图片中心",
+            },
+        ]
+    },
+    {   
+        icon: "el-icon-bangzhu",
+        index: "2-5",
+        title: "异常管理",
+        children:[
+            {
+                index: `/Abnormal/List`,
+                title: "异常列表",
+            },
+        ]
+    },
 
     // {   
     //   icon: "el-icon-star-off",

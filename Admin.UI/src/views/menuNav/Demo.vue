@@ -7,8 +7,8 @@
 -->
 <template>
   <div>  
-    <div @click="clickText">{{text}}</div>
-    <div @click="clickName">{{name}}</div>
+    <div @click="clickText">谈{{text}}</div>  
+    <div @click="clickName">{{name}}</div> 
   </div>
 </template>
 

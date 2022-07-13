@@ -222,6 +222,7 @@ export default {
         sels: [],
         userRoleCondition: false,
         EnumConfig: Enum,
+        timeoutId: null
 
     });
     onBeforeMount(() => {});

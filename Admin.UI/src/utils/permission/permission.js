@@ -19,14 +19,20 @@
   import store from '@/store'
   import {IsNullOrEmpty} from "@/common/js/comm"
   import EnumConfig from "@/enum/EnumConfig"
+  import router from '../../router/index'
   
   /**
    * 检查权限
    * @param {Array} value
+   * @returns{Boolean}
    */
   export default function checkPermission(value) {
     const permissions = store.getters && store.getters.permissions;
     var userInfo = sessionStorage.getItem("userInfo");
+    if (IsNullOrEmpty(userInfo)){
+      router.push({name:"Login"});
+      return false;
+    }
     var objUserInfo = JSON.parse(userInfo);
     if (!IsNullOrEmpty(objUserInfo.userName)){
       //超级管理员

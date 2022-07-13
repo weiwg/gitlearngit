@@ -91,7 +91,7 @@ export const routes = [
                 caseSensitive: false
             },
             {
-                path: `/Permission/Admin/Role`,
+                path: `/Permission/Role`,
                 name: "Role",
                 meta: {
                     title: '角色管理',
@@ -102,7 +102,7 @@ export const routes = [
                 caseSensitive: false
             }, 
             {
-                path: `/Permission/Admin/UserRole`,
+                path: `/Permission/UserRole`,
                 name: "UserRole",
                 meta: {
                     title: '用户角色',
@@ -112,7 +112,7 @@ export const routes = [
                 caseSensitive: false
             },
             {
-                path: `/Permission/Admin/Interface`,
+                path: `/Permission/Interface`,
                 name: "Interface",
                 meta: {
                     title: '接口管理',
@@ -122,7 +122,7 @@ export const routes = [
                 caseSensitive: false
             },
             {
-                path: `/Permission/Admin/ViewManage`,
+                path: `/Permission/ViewManage`,
                 name: "ViewManage",
                 meta: {
                     title: '视图管理',
@@ -132,7 +132,7 @@ export const routes = [
                 caseSensitive: false
             },
             {
-                path: `/Permission/Admin/PermissionManage`,
+                path: `/Permission/PermissionManage`,
                 name: "PermissionManage",
                 meta: {
                     title: '权限管理',
@@ -142,7 +142,7 @@ export const routes = [
                 caseSensitive: false
             },
             // {
-            //     path: `/Permission/Admin/Role-Permission`,
+            //     path: `/Permission/Role-Permission`,
             //     name: "RolePermission",
             //     meta: {
             //         title: '角色权限',
@@ -156,6 +156,16 @@ export const routes = [
                 component: () => import ("../views/menuNav/Image/Image.vue"),
                 meta:{
                     title:'图片中心',
+                    permission: true
+                },
+                caseSensitive: false
+             },
+             {
+                path:`/Abnormal/List`,
+                name:"AbnormalList",
+                component: () => import ("../views/menuNav/Abnormal/List.vue"),
+                meta:{
+                    title:'异常列表',
                     permission: true
                 },
                 caseSensitive: false

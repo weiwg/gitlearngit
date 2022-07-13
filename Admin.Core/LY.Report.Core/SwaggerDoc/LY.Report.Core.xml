@@ -995,6 +995,58 @@
             基础API控制器
             </summary>
         </member>
+        <member name="T:LY.Report.Core.Areas.Sys.V1.Product.BaseAreaController">
+            <summary>
+            域控制器
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController">
+            <summary>
+            异常管理
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Add(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput)">
+            <summary>
+            新增
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Delete(System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.BatchDelete(System.String[])">
+            <summary>
+            批量删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Get(System.String)">
+            <summary>
+            查询单条
+            </summary>
+            <param name="testId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Get(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput)">
+            <summary>
+            查询单条(实体)
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.GetPage(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput})">
+            <summary>
+            查询分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="T:LY.Report.Core.Areas.Sys.V1.Record.BaseAreaController">
             <summary>
             域控制器

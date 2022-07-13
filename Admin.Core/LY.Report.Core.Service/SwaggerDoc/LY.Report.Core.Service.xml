@@ -2328,6 +2328,206 @@
             映射配置
             </summary>
         </member>
+        <member name="T:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ProjectNo">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.LineName">
+            <summary>
+            线体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ClassAB">
+            <summary>
+            班别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.FProcess">
+            <summary>
+            站点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.Type">
+            <summary>
+            异常大类(异常/停线)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ItemType">
+            <summary>
+            小类(机器故障/物料异常/停电等)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.Description">
+            <summary>
+            异常描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.CreateUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.UpdateUserId">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ResponBy">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ResponDepart">
+            <summary>
+            责任部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.Status">
+            <summary>
+            异常状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalDeleteInput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.ProName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.LineName">
+            <summary>
+            线体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.AbnomalStatus">
+            <summary>
+            异常处理状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.ResponDepart">
+            <summary>
+            责任部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.ResponBy">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalUpdateInput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ProjectNo">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.LineName">
+            <summary>
+            线体
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ClassAB">
+            <summary>
+            班别
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.FProcess">
+            <summary>
+            站点
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Type">
+            <summary>
+            异常大类(异常/停线)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ItemType">
+            <summary>
+            小类(机器故障/物料异常/停电等)
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Description">
+            <summary>
+            异常描述
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.BeginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ResponBy">
+            <summary>
+            责任人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ResponDepart">
+            <summary>
+            责任部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Status">
+            <summary>
+            异常状态
+            </summary>
+        </member>
+        <member name="T:LY.Report.Core.Service.Product.Abnormals.MapConfig">
+            <summary>
+            映射配置
+            </summary>
+        </member>
         <member name="T:LY.Report.Core.Service.Record.Location.Input.RecordLocationAddInput">
             <summary>
             添加

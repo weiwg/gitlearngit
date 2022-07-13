@@ -219,11 +219,11 @@ const requestAxios = {
 function handleData(res, errorCallBack, otherCallBack){
     return new Promise((resolve, reject)=>{
         if (res.status === 200){//接口请求正常  
-          if (res.data.msg == "login token is expiredlogin token is expired" && res.data.msgCode=="FAIL"){
+          if (res.msg == "login token is expiredlogin token is expired" && res.msgCode=="FAIL"){
             ElMessage.error(res.data.msg);
             router.push({ name: "Login" });
-          } else if (res.data.msg == "login token not exist" && res.data.msgCode == "FATL"){
-            ElMessage.error(res.data.msg);
+          } else if (res.msg == "login token not exist" && res.msgCode == "FATL"){
+            ElMessage.error(res.msg);
             router.push({ name: "Login" });
           } else {
             resolve(res.data);
