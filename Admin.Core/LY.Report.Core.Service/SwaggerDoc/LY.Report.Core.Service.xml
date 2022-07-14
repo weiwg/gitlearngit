@@ -2360,7 +2360,7 @@
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ItemType">
             <summary>
-            小类(机器故障/物料异常/停电等)
+            异常小类(机器故障/物料异常/停电等)
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.Description">
@@ -2371,11 +2371,6 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.BeginTime">
             <summary>
             开始时间
-            </summary>
-        </member>
-        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.EndTime">
-            <summary>
-            结束时间
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.CreateUserId">
@@ -2396,11 +2391,6 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.ResponDepart">
             <summary>
             责任部门
-            </summary>
-        </member>
-        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput.Status">
-            <summary>
-            异常状态
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalDeleteInput.AbnormalNo">
@@ -2443,19 +2433,31 @@
             责任人
             </summary>
         </member>
-        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.BeginTime">
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.StartDate">
             <summary>
-            开始时间
+            开始日期
             </summary>
         </member>
-        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.EndTime">
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.EndDate">
             <summary>
-            结束时间
+            结束日期
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalUpdateInput.AbnormalNo">
             <summary>
             异常单号
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetAbnormalPerson(System.String)">
+            <summary>
+            查询责任人信息
+            </summary>
+            <param name="condition">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Id">
+            <summary>
+            Id
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.AbnormalNo">
@@ -2521,6 +2523,31 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Status">
             <summary>
             异常状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.PersonLiableId">
+            <summary>
+            PersonLiableId
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.Position">
+            <summary>
+            职位
             </summary>
         </member>
         <member name="T:LY.Report.Core.Service.Product.Abnormals.MapConfig">

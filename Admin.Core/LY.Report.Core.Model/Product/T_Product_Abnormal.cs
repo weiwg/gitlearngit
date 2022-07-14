@@ -75,7 +75,7 @@ namespace LY.Report.Core.Model.Product
         /// 责任部门
         /// </summary>
         [Description("责任部门")]
-        [Column(StringLength = 100, IsNullable = false)]
+        [Column(IsNullable = false)]
         public ResponDepart ResponDepart { get; set; }
         /// <summary>
         /// 责任人
@@ -106,6 +106,6 @@ namespace LY.Report.Core.Model.Product
         /// </summary>
         [Description("异常状态")]
         [Column(IsNullable = false)]
-        public AbnormalStatus Status { get; set; } = AbnormalStatus.Other;
+        public AbnormalStatus Status { get; set; } = AbnormalStatus.Unhandled;
     }
 }

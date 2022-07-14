@@ -28,150 +28,6 @@
             基础API控制器
             </summary>
         </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.Record.BaseAreaController">
-            <summary>
-            域控制器
-            </summary>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.Record.Controllers.RecordLocationController">
-            <summary>
-            定位记录
-            </summary>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.Record.Controllers.RecordLocationController.Add(LY.Report.Core.Service.Record.Location.Input.RecordLocationAddInput)">
-            <summary>
-            新增
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.Resource.BaseAreaController">
-            <summary>
-            域控制器
-            </summary>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.Resource.Controllers.CommonController">
-            <summary>
-            资源管理
-            </summary>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.Resource.Controllers.CommonController.GetIp">
-            <summary>
-            获取Ip
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.Resource.Controllers.ImageController">
-            <summary>
-            图片管理
-            </summary>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.Resource.Controllers.ImageController.UploadImage(LY.Report.Core.Service.Resource.ImgGallery.Input.ResFileUploadInput)">
-            <summary>
-            上传图片
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.User.BaseAreaController">
-            <summary>
-            域控制器
-            </summary>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController">
-            <summary>
-            账号管理
-            </summary>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.GetUserVerifyCode(System.String)">
-            <summary>
-            获取用户手机/邮箱验证码
-            </summary>
-            <param name="action">phone/email</param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.CheckUserVerifyCode(LY.Report.Core.Service.User.Account.Input.VerifyCodeInput)">
-            <summary>
-            校验用户账号验证码
-            </summary>
-            <param name="input">验证码</param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.GetVerifyCode(System.String)">
-            <summary>
-            获取手机/邮箱验证码
-            </summary>
-            <param name="account">手机/邮箱</param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.Login(LY.Report.Core.Service.User.Account.Input.LYUaLoginInput)">
-            <summary>
-            用户登录
-            根据登录信息生成Token
-            </summary>
-            <param name="input">登录信息</param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.Refresh(System.String)">
-            <summary>
-            刷新Token
-            以旧换新
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.AccountController.Logout(System.String)">
-            <summary>
-            统一登录退出
-            </summary>
-            <param name="returnUrl"></param>
-            <returns></returns>
-        </member>
-        <member name="T:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController">
-            <summary>
-            用户信息
-            </summary>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.GetCurrUserInfo">
-            <summary>
-            获取当前用户信息
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.Update(LY.Report.Core.Service.User.Info.Input.UserInfoUpdateInput)">
-            <summary>
-            修改
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.UpdatePassword(LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePasswordInput)">
-            <summary>
-            修改密码
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.UpdatePortrait(LY.Report.Core.Service.User.Info.Input.UserInfoUpdatePortraitInput)">
-            <summary>
-            修改头像
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.UntieWeChat">
-            <summary>
-            解绑微信
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:LY.Report.Core.Areas.Mobile.V1.User.Controllers.UserInfoController.UpdateAccount(LY.Report.Core.Service.User.Info.Input.UserInfoUpdateAccountInput)">
-            <summary>
-            修改手机/邮箱
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
-        </member>
         <member name="T:LY.Report.Core.Areas.Open.V1.BaseApiController">
             <summary>
             基础API控制器
@@ -1016,21 +872,21 @@
             <summary>
             删除
             </summary>
-            <param name="id"></param>
+            <param name="abnormalNo">异常单号</param>
             <returns></returns>
         </member>
         <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.BatchDelete(System.String[])">
             <summary>
             批量删除
             </summary>
-            <param name="ids"></param>
+            <param name="abnormalNos">异常单号集合</param>
             <returns></returns>
         </member>
         <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Get(System.String)">
             <summary>
             查询单条
             </summary>
-            <param name="testId"></param>
+            <param name="abnormalNo">异常单号</param>
             <returns></returns>
         </member>
         <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Get(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput)">
@@ -1043,6 +899,20 @@
         <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.GetPage(LY.Report.Core.Common.Input.PageInput{LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput})">
             <summary>
             查询分页
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.GetAbnormalPersonInfo(System.String)">
+            <summary>
+            查询责任人信息
+            </summary>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Update(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalUpdateInput)">
+            <summary>
+            修改
             </summary>
             <param name="input"></param>
             <returns></returns>

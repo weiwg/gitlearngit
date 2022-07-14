@@ -1169,59 +1169,54 @@
             责任部门
             </summary>
         </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.All">
+            <summary>
+            全部
+            </summary>
+        </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.ProductiveDepartment">
             <summary>
-            生产部
+            ME部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.QualityDepartment">
             <summary>
-            品质部
+            生产部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.EngineerDepartment">
             <summary>
-            工程部
+            QE部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.PMCDepartment">
             <summary>
-            PMC部
+            厂务部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.RELDepartment">
             <summary>
-            REL部
+            仓库部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.IEDepartment">
             <summary>
-            IE部
+            IQC部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.EquipmentDepartment">
             <summary>
-            设备部
+            REL部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.StorageDepartment">
             <summary>
-            仓储部
+            PD部
             </summary>
         </member>
         <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.FactoryAffairsDepartment">
             <summary>
-            厂务部
-            </summary>
-        </member>
-        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.OrderDepartment">
-            <summary>
-            采购部
-            </summary>
-        </member>
-        <member name="F:LY.Report.Core.Model.Product.Enum.ResponDepart.ITDepartment">
-            <summary>
-            IT部
+            IE部
             </summary>
         </member>
         <member name="T:LY.Report.Core.Model.Product.Abnormal">
@@ -1319,6 +1314,11 @@
             责任人Id
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.EnName">
+            <summary>
+            英文名字
+            </summary>
+        </member>
         <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Name">
             <summary>
             名字
@@ -1337,6 +1337,16 @@
         <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.Phone">
             <summary>
             手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.DumpPhone">
+            <summary>
+            NPI小手机号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Model.Product.AbnormalPerson.JobNo">
+            <summary>
+            工号
             </summary>
         </member>
         <member name="T:LY.Report.Core.Model.Product.ProductInfo">

@@ -83,7 +83,6 @@
   <ItemGroup>
     <Folder Include="Base\Input\" />
     <Folder Include="Base\Output\" />
-    <Folder Include="Product\Abnormals\Input\Valid\" />
   </ItemGroup>
 
 </Project>

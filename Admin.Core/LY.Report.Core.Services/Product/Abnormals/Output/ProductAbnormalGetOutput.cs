@@ -6,6 +6,10 @@ namespace LY.Report.Core.Service.Product.Abnormals.Output
     public class ProductAbnormalGetOutput
     {
         /// <summary>
+        /// Id
+        /// </summary>
+        public string Id { get; set; }
+        /// <summary>
         /// 异常单号
         /// </summary>
         public string AbnormalNo { get; set; }

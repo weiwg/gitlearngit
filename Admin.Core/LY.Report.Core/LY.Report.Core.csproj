@@ -36,7 +36,10 @@
     <Compile Remove="Areas\Mobile\V1\Fund\**" />
     <Compile Remove="Areas\Mobile\V1\Order\**" />
     <Compile Remove="Areas\Mobile\V1\Pay\**" />
+    <Compile Remove="Areas\Mobile\V1\Record\**" />
+    <Compile Remove="Areas\Mobile\V1\Resource\**" />
     <Compile Remove="Areas\Mobile\V1\Sales\**" />
+    <Compile Remove="Areas\Mobile\V1\User\**" />
     <Compile Remove="Areas\Mq\**" />
     <Compile Remove="Areas\Open\V1\Article\**" />
     <Compile Remove="Areas\Open\V1\Auth\**" />
@@ -85,7 +88,10 @@
     <Content Remove="Areas\Mobile\V1\Fund\**" />
     <Content Remove="Areas\Mobile\V1\Order\**" />
     <Content Remove="Areas\Mobile\V1\Pay\**" />
+    <Content Remove="Areas\Mobile\V1\Record\**" />
+    <Content Remove="Areas\Mobile\V1\Resource\**" />
     <Content Remove="Areas\Mobile\V1\Sales\**" />
+    <Content Remove="Areas\Mobile\V1\User\**" />
     <Content Remove="Areas\Mq\**" />
     <Content Remove="Areas\Open\V1\Article\**" />
     <Content Remove="Areas\Open\V1\Auth\**" />
@@ -134,7 +140,10 @@
     <EmbeddedResource Remove="Areas\Mobile\V1\Fund\**" />
     <EmbeddedResource Remove="Areas\Mobile\V1\Order\**" />
     <EmbeddedResource Remove="Areas\Mobile\V1\Pay\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Record\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\Resource\**" />
     <EmbeddedResource Remove="Areas\Mobile\V1\Sales\**" />
+    <EmbeddedResource Remove="Areas\Mobile\V1\User\**" />
     <EmbeddedResource Remove="Areas\Mq\**" />
     <EmbeddedResource Remove="Areas\Open\V1\Article\**" />
     <EmbeddedResource Remove="Areas\Open\V1\Auth\**" />
@@ -183,7 +192,10 @@
     <None Remove="Areas\Mobile\V1\Fund\**" />
     <None Remove="Areas\Mobile\V1\Order\**" />
     <None Remove="Areas\Mobile\V1\Pay\**" />
+    <None Remove="Areas\Mobile\V1\Record\**" />
+    <None Remove="Areas\Mobile\V1\Resource\**" />
     <None Remove="Areas\Mobile\V1\Sales\**" />
+    <None Remove="Areas\Mobile\V1\User\**" />
     <None Remove="Areas\Mq\**" />
     <None Remove="Areas\Open\V1\Article\**" />
     <None Remove="Areas\Open\V1\Auth\**" />
@@ -222,8 +234,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\Mobile\V1\User\Controllers\UserCouponController.cs" />
-    <Compile Remove="Areas\Mobile\V1\User\Controllers\UserRedPackController.cs" />
     <Compile Remove="Db\DbHelper.cs" />
     <Compile Remove="Db\TenantDbHelper.cs" />
     <Compile Remove="Db\TenantDBServiceCollectionExtensions.cs" />

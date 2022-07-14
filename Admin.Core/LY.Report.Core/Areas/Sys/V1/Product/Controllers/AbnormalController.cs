@@ -36,23 +36,23 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         /// <summary>
         /// 删除
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="abnormalNo">异常单号</param>
         /// <returns></returns>
         [HttpDelete]
-        public async Task<IResponseOutput> Delete(string id)
+        public async Task<IResponseOutput> Delete(string abnormalNo)
         {
-            return await _productAbnormalService.SoftDeleteAsync(id);
+            return await _productAbnormalService.SoftDeleteAsync(abnormalNo);
         }
 
         /// <summary>
         /// 批量删除
         /// </summary>
-        /// <param name="ids"></param>
+        /// <param name="abnormalNos">异常单号集合</param>
         /// <returns></returns>
         [HttpPut]
-        public async Task<IResponseOutput> BatchDelete(string[] ids)
+        public async Task<IResponseOutput> BatchDelete(string[] abnormalNos)
         {
-            return await _productAbnormalService.BatchSoftDeleteAsync(ids);
+            return await _productAbnormalService.BatchSoftDeleteAsync(abnormalNos);
         }
         #endregion
 
@@ -60,12 +60,12 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         /// <summary>
         /// 查询单条
         /// </summary>
-        /// <param name="testId"></param>
+        /// <param name="abnormalNo">异常单号</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IResponseOutput> Get(string testId)
+        public async Task<IResponseOutput> Get(string abnormalNo)
         {
-            return await _productAbnormalService.GetOneAsync(testId);
+            return await _productAbnormalService.GetOneAsync(abnormalNo);
         }
 
         /// <summary>
@@ -89,9 +89,30 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         {
             return await _productAbnormalService.GetPageListAsync(input);
         }
+
+        /// <summary>
+        /// 查询责任人信息
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IResponseOutput> GetAbnormalPersonInfo(string condition)
+        {
+            return await _productAbnormalService.GetAbnormalPerson(condition);
+        }
         #endregion
 
         #region 修改
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IResponseOutput> Update(ProductAbnormalUpdateInput input)
+        {
+            return await _productAbnormalService.UpdateAsync(input);
+        }
         #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using LY.Report.Core.Model.Product;
 using LY.Report.Core.Service.Product.Abnormals.Input;
+using LY.Report.Core.Service.Product.Abnormals.Output;
 
 namespace LY.Report.Core.Service.Product.Abnormals
 {
@@ -13,6 +14,7 @@ namespace LY.Report.Core.Service.Product.Abnormals
         {
             CreateMap<ProductAbnormalAddInput, Abnormal>();
             CreateMap<ProductAbnormalUpdateInput, Abnormal>();
+            CreateMap<Abnormal, ProductAbnormalListOutput>();
         }
     }
 }

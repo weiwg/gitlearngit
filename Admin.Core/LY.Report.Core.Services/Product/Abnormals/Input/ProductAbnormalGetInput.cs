@@ -38,13 +38,13 @@ namespace LY.Report.Core.Service.Product.Abnormals.Input
         public string ResponBy { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 开始日期
         /// </summary>
-        public DateTime? BeginTime { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// 结束时间
+        /// 结束日期
         /// </summary>
-        public DateTime? EndTime { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }

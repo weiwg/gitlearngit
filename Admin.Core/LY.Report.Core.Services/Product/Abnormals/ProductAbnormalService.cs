@@ -18,10 +18,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
     public class ProductAbnormalService : BaseService, IProductAbnormalService
     {
         private readonly IProductAbnormalRepository _productAbnormalRepository;
+        private readonly IProductAbnormalPersonRepository _productAbnormalPersonRepository;
 
-        public ProductAbnormalService(IProductAbnormalRepository repository)
+        public ProductAbnormalService(IProductAbnormalRepository repository, IProductAbnormalPersonRepository productAbnormalPersonRepository)
         {
             _productAbnormalRepository = repository;
+            _productAbnormalPersonRepository = productAbnormalPersonRepository;
         }
 
         #region 新增
@@ -111,11 +113,9 @@ namespace LY.Report.Core.Service.Product.Abnormals
             .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
             .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
             .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
-            .WhereIf(input.BeginTime != null, t => t.BeginTime == input.BeginTime)
-            .WhereIf(input.EndTime != null, t => t.EndTime == input.EndTime);
+            .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate);
             var data = await _productAbnormalRepository.GetListAsync<ProductAbnormalListOutput>(whereSelect);
             return ResponseOutput.Data(data);
-            throw new NotImplementedException();
         }
 
         public async Task<IResponseOutput> GetOneAsync(string id)
@@ -131,8 +131,7 @@ namespace LY.Report.Core.Service.Product.Abnormals
             .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
             .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
             .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
-            .WhereIf(input.BeginTime != null, t => t.BeginTime == input.BeginTime)
-            .WhereIf(input.EndTime != null, t => t.EndTime == input.EndTime);
+            .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate);
             var result = await _productAbnormalRepository.GetOneAsync<ProductAbnormalGetOutput>(whereSelect);
             return ResponseOutput.Data(result);
         }
@@ -147,8 +146,7 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
                 .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
                 .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
-                .WhereIf(input.BeginTime != null, t => t.BeginTime == input.BeginTime)
-                .WhereIf(input.EndTime != null, t => t.EndTime == input.EndTime)
+                .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate)
                 .Count(out var total)
                 .OrderByDescending(true, c => c.CreateDate)
                 .Page(pageInput.CurrentPage, pageInput.PageSize)
@@ -169,6 +167,14 @@ namespace LY.Report.Core.Service.Product.Abnormals
             var result = await _productAbnormalRepository.GetOneAsync<ProductAbnormalGetOutput>(whereSelect);
             return ResponseOutput.Data(result);
         }
+
+        public async Task<IResponseOutput> GetAbnormalPerson(string condition)
+        {
+            var whereSelect = _productAbnormalPersonRepository.Select
+            .WhereIf(condition.IsNotNull(), t => t.Name.Contains(condition) || t.Phone == condition || t.DumpPhone == condition);
+            var data = await _productAbnormalPersonRepository.GetListAsync<ProductAbnormalPersonListOutput>(whereSelect);
+            return ResponseOutput.Data(data);
+        }
         #endregion
 
         #region 修改
@@ -187,10 +193,10 @@ namespace LY.Report.Core.Service.Product.Abnormals
             .SetIf(input.ItemType > 0, t => t.ItemType, input.ItemType)
             .SetIf(input.Description.IsNotNull(), t => t.Description, input.Description)
             .Set(t => t.BeginTime, input.BeginTime)
-            .Set(t => t.EndTime, input.EndTime)
             .SetIf(input.ResponBy.IsNotNull(), t => t.ResponBy, input.ResponBy)
             .SetIf(input.ResponDepart > 0, t => t.ResponDepart, input.ResponDepart)
             .SetIf(input.UpdateUserId.IsNotNull(), t => t.UpdateUserId, input.UpdateUserId)
+            .Set(t => t.UpdateDate, DateTime.Now)
             .Where(t => t.AbnormalNo == input.AbnormalNo)
             .ExecuteAffrowsAsync();
 
