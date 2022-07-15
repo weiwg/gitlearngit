@@ -121,7 +121,7 @@ export default {
             });
         }
         // 多选操作
-       const handleSelectionChange =(val)=> {
+        const handleSelectionChange =(val)=> {
             state.multipleSelection = val;
         }
         // 触发搜索按钮

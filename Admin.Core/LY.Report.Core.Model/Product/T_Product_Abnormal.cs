@@ -69,8 +69,8 @@ namespace LY.Report.Core.Model.Product
         /// 结束时间
         /// </summary>
         [Description("结束时间")]
-        [Column(CanUpdate = false, ServerTime = DateTimeKind.Local, IsNullable = false)]
-        public DateTime EndTime { get; set; }
+        [Column(CanUpdate = false, ServerTime = DateTimeKind.Local)]
+        public DateTime? EndTime { get; set; }
         /// <summary>
         /// 责任部门
         /// </summary>
@@ -81,7 +81,7 @@ namespace LY.Report.Core.Model.Product
         /// 责任人
         /// </summary>
         [Description("责任人")]
-        [Column(StringLength = 100, IsNullable = false)]
+        [Column(StringLength = 36, IsNullable = false)]
         public string ResponBy { get; set; }
         /// <summary>
         /// 原因分析

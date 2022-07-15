@@ -55,7 +55,7 @@ namespace LY.Report.Core.Service.Product.Abnormals.Input
         /// 异常描述
         /// </summary>
         [Display(Name = "异常描述")]
-        [StringLength(400, ErrorMessage = "{0} 限制为{2}-{1} 个字符。", MinimumLength = 2)]
+        [Required(ErrorMessage = "请输入异常描述"),StringLength(400, ErrorMessage = "{0} 限制为{2}-{1} 个字符。", MinimumLength = 2)]
         public string Description { get; set; }
 
         /// <summary>

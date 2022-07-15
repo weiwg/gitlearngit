@@ -92,21 +92,19 @@
                 <el-table-column prop="lineName" label="线体" align="center"></el-table-column>
                 <el-table-column prop="classAB" label="班别" align="center"></el-table-column>
                 <el-table-column prop="fProcess" label="站点" width="120" align="center"/>
-                <!-- <el-table-column prop="type" label="异常大类" width="120" align="center"/>
-                <el-table-column prop="itemType" label="异常小类" width="120" align="center"/> -->
-                <el-table-column prop="responDepart" label="责任部门" width="120" align="center"/>
-                <el-table-column prop="responBy" label="责任人" align="center"></el-table-column>
+                <el-table-column prop="responDepart" label="责任部门" width="120" align="center" :formatter="responDepartFormatter"/>
+                <el-table-column prop="responName" label="责任人" align="center"></el-table-column>
                 <el-table-column prop="beginTime" label="开始时间" align="center" min-width="160"></el-table-column>
                 <el-table-column prop="endTime" label="结束时间" align="center" min-width="160"></el-table-column>
                 <el-table-column prop="status" label="状态" align="center">
                     <template #default="{row}">
-                        <el-tag :type="row.status == EnumConfig.EnumConfig.AbnomalStatus.已处理 ? 'success' : 'danger'" disable-transitions>
-                            {{ EnumConfig.EnumConfig.getEnumName(row.status, EnumConfig.EnumConfig.AbnomalStatus)}}
+                        <el-tag :type="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理 ? 'success' : 'danger'" disable-transitions>
+                            {{ EnumConfig.EnumConfig.getEnumName(row.status, EnumConfig.EnumConfig.AbnormalStatusJson)}}
                         </el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="240" align="center" fixed="right" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Update`])">
-                    <template #default="{ $index, row }">
+                    <!-- <template #default="{ $index, row }">
                         <el-button
                             type="primary"
                             icon="el-icon-edit"
@@ -128,6 +126,30 @@
                             class="ml10"
                             v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:SoftDelete`])"
                         >删除
+                        </el-button>
+                    </template> -->
+                    <template #default="{ $index, row }">
+                        <el-dropdown  
+                        split-button
+                        type="primary" 
+                        style="margin-left:10px;" 
+                        @click="handleClickEditData($index, row)" 
+                        @command="(command)=>onCommand(command,row)">
+                            编辑
+                            <template #dropdown v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`,`api${VIEW_VERSION}:System:Tenant:Delete`])">
+                                <el-dropdown-menu :visible-arrow="false" style="margin-top: 2px;width:100px;text-align:center;">
+                                    <el-dropdown-item command="handle" v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`])">处理异常</el-dropdown-item>
+                                    <el-dropdown-item command="delete" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Delete`])">删除异常</el-dropdown-item>
+                                </el-dropdown-menu>
+                            </template>
+                        </el-dropdown>
+                        <el-button
+                            type="primary"
+                            icon="el-icon-check"
+                            @click="getAbnormalDetails($index, row)"
+                            class="ml10"
+                            v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:SoftDelete`])"
+                        >详情
                         </el-button>
                     </template>
                 </el-table-column>
@@ -160,7 +182,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
                         <el-form-item label="项目编号" prop="projectNo" required>
-                            <el-select v-model="form.projectNo" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm">
+                            <el-select v-model="form.projectNo" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="dialogType == 1 ? false : true">
                             <el-option
                                 v-for="item in arrProName"
                                 :key="item.value"
@@ -172,7 +194,7 @@
                     </el-col>                    
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
                         <el-form-item label="线体" prop="lineName" required>
-                            <el-select v-model="form.lineName" placeholder="请选择线体" style="width:100%;">
+                            <el-select v-model="form.lineName" placeholder="请选择线体" style="width:100%;" :disabled="dialogType == 1 ? false : true">
                             <el-option
                                 v-for="item in arrLinesForm"
                                 :key="item.value"
@@ -211,7 +233,7 @@
                 </el-row>
                 <el-row>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="异常大类" prop="fProcess" required>
+                        <el-form-item label="异常大类" prop="type" required>
                             <el-select v-model="form.type" placeholder="请选择异常大类" style="width:100%;">
                             <el-option
                                 v-for="item in arrAbnomalType"
@@ -223,7 +245,7 @@
                         </el-form-item>
                     </el-col>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="异常小类" prop="fProcess" required>
+                        <el-form-item label="异常小类" prop="itemType" required>
                             <el-select v-model="form.itemType" placeholder="请选择异常小类" style="width:100%;">
                             <el-option
                                 v-for="item in arrAbnomalItemType"
@@ -238,7 +260,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
                         <el-form-item label="责任部门" prop="responDepart" required>
-                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;">
+                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="dialogType == 1 ? false : true">
                             <el-option
                                 v-for="item in arrResponDepart"
                                 :key="item.value"
@@ -253,11 +275,12 @@
                             <el-select 
                             v-model="form.responBy" 
                             filterable 
-                            placeholder="请输入责任人"
+                            placeholder="请输入责任人/手机号码"
                             :remote-method="remoteHandle"
                             remote
                             :clearable="true"
                             @clear="onClearDialog"
+                            :disabled="dialogType == 1 ? false : true"
                             >
                             <el-option
                                 v-for="item in arrResponBy"
@@ -276,16 +299,10 @@
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
-                    <!-- <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                        <el-form-item label="结束时间">
-                            <el-date-picker v-model="form.endTime" type="date" placeholder="选择日期" :disabledDate="disabledDate2">
-                            </el-date-picker>
-                        </el-form-item>
-                    </el-col> -->
                 </el-row>
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="异常描述" prop="description">
+                    <el-form-item label="异常描述" prop="description" required>
                         <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" />
                     </el-form-item>
                     </el-col>
@@ -299,6 +316,152 @@
             </template>
         </el-dialog>
         <!-- 添加/编辑窗口 end -->
+
+        <!-- 详情窗口 begin -->
+        <el-dialog 
+            title="异常详情" 
+            :close-on-click-modal="false"
+            :destroy-on-close="true"
+            v-model="detailsVisible"
+            width="70%"
+            >
+            <el-form
+                ref="refDetailsForm"
+                :model="form"
+                label-width="120px"
+                :inline="false"        
+            >
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="项目编号" prop="projectNo" required>
+                            <el-select v-model="form.projectNo" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
+                            <el-option
+                                v-for="item in arrProName"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>                    
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="线体" prop="lineName" required>
+                            <el-select v-model="form.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrLinesForm"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="班别" prop="classAB" required>
+                            <el-select v-model="form.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrClassAB"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="工序站点" prop="fProcess" required>
+                            <el-select v-model="form.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrFProcess"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="异常大类" prop="type" required>
+                            <el-select v-model="form.type" placeholder="请选择异常大类" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrAbnomalType"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="异常小类" prop="itemType" required>
+                            <el-select v-model="form.itemType" placeholder="请选择异常小类" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrAbnomalItemType"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="责任部门" prop="responDepart" required>
+                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrResponDepart"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="责任人" prop="responBy" required>
+                            <el-select 
+                            v-model="form.responBy" 
+                            filterable 
+                            placeholder="请输入责任人/手机号码"
+                            :remote-method="remoteHandle"
+                            remote
+                            :clearable="true"
+                            @clear="onClearDialog"
+                            :disabled="true"
+                            >
+                            <el-option
+                                v-for="item in arrResponBy"
+                                :key="item.personLiableId"
+                                :label="item.name"
+                                :value="item.personLiableId">
+                            </el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-col>  
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="开始时间" required>
+                            <el-date-picker v-model="form.beginTime" type="date" placeholder="选择日期" :disabledDate="disabledDate1" :disabled="true">
+                            </el-date-picker>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="异常描述" prop="description" required>
+                        <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" :disabled="true"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+            </el-form>
+        </el-dialog>
+        <!-- 详情窗口 end -->
    </div>
 </template>
 <script>
@@ -311,6 +474,7 @@ import EnumConfig from "../../../enum/EnumConfig"
 import EupPagination from "@/components/EupPagination.vue"
 import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
+import {abnormalGetPage, abnormalGet, abnormalAdd,abnormalBatchDelete,abnormalDelete,abnormalUpdate,getAbnormalPersonInfo} from '../../../serviceApi/Abnormal/Abnormal'
 
 var CURR_VIEW_VERSION = EnumConfig.EnumConfig.API_VIEW_VERSION.CURR_API_VIEW_VERSION;
 var VIEW_VERSION = CURR_VIEW_VERSION == 'V0' ? '' : `:S:${CURR_VIEW_VERSION}`;
@@ -323,13 +487,14 @@ export default {
    setup(props, context) {
       const refAddForm = ref(null);
       const multipleTable = ref(null);
+      const refDetailsForm = ref(null);
       const data = reactive({
         query: {                         //查询条件
             responBy:"",
             proName: "",
             lineName:"",
-            abnomalStatus:"",
-            responDepart:"",
+            abnomalStatus:0,
+            responDepart:0,
             startDate:"",
             endDate:"",
             abnormalNo:""
@@ -347,16 +512,17 @@ export default {
             lineName: "",
             classAB: "",
             fProcess: "",
-            type: "",
-            itemType: "",
+            type: 0,
+            itemType: 0,
             description: "",
             beginTime: "",
             endTime: "",
             id: "",
             createUserId:"",
             updateUserId:"",
-            responDepart: "",
+            responDepart: 0,
             responBy: "",
+            responName: "",
             status: "",
             abnormalNo: ""
         },
@@ -378,7 +544,8 @@ export default {
         addDialogFormVisible: false,         //编辑窗口是否显示
         dialogType: 0,                       //0:编辑  1：添加
         arrLinesForm: [],                    //对话框线体
-        timeoutId: null
+        timeoutId: null,
+        detailsVisible: false
       });
       onBeforeMount(() => {
       });
@@ -400,8 +567,8 @@ export default {
         //获取当前登录用户的信息
         data.useStore = useStore();
         //初始化责任部门
-        // data.arrResponDepart = EnumConfig.EnumConfig.ResponDepart.ArrResponDepart.unshift({value:0, label: "全部"});
         data.arrResponDepart = EnumConfig.EnumConfig.ResponDepart.ArrResponDepart;
+        getData();
       });
       onActivated(()=>{
       });
@@ -416,29 +583,29 @@ export default {
                 "pageSize": data.pageSize,
                 "filter.proName": data.query.proName,
                 "filter.lineName": data.query.lineName,
-                "filter.status": data.query.abnomalStatus,
+                "filter.abnomalStatus": data.query.abnomalStatus,
                 "filter.responDepart": data.query.responDepart,
                 "filter.responBy": data.query.responBy,
-                "filter.beginTime": data.query.startDate,
-                "filter.endTime": data.query.endDate,
+                "filter.startDate": data.query.startDate,
+                "filter.endDate": data.query.endDate,
                 "filter.abnormalNo": data.query.abnormalNo,
                 "dynamicFilter": data.dynamicFilter
             }
             data.loading = true;
-            // getTenantList(params).then(function(res){
-            //     if(res.code == 1){
-            //         data.pageTotal = res.data.total;//初始化列表数据总数
-            //         data.tableData = res.data.list;
-            //         //添加num序号字段
-            //         data.tableData.forEach((data, i) => {
-            //             data.num = i + 1;
-            //         });
-            //     } else {
-            //         ElMessage.error(res.msg);   
-            //     }
-            //     data.loading = false;
-            //     data.batchDelete = [];
-            // });
+            abnormalGetPage(params).then(function(res){
+                if(res.code == 1){
+                    data.pageTotal = res.data.total;//初始化列表数据总数
+                    data.tableData = res.data.list;
+                    //添加num序号字段
+                    data.tableData.forEach((data, i) => {
+                        data.num = i + 1;
+                    });
+                } else {
+                    ElMessage.error(res.msg);   
+                }
+                data.loading = false;
+                data.batchDelete = [];
+            });
         }
       /**
       * @description 对话框切换项目编号
@@ -522,14 +689,14 @@ export default {
                 return;
             }
             elConfirmDialog(ElMessageBox,'此操作将永久删除该数据, 是否继续?','提示', '', ()=>{
-                // SoftDeleteTenant(id).then(res =>{
-                //     if (res.code == 1){
-                //         ElMessage.success("删除成功");
-                //         getData();
-                //     } else {
-                //         ElMessage.error("删除失败！");
-                //     }
-                // });
+                abnormalDelete(id).then(res =>{
+                    if (res.code == 1){
+                        ElMessage.success("删除成功");
+                        getData();
+                    } else {
+                        ElMessage.error("删除失败！");
+                    }
+                });
             }, ()=>{
                 ElMessage.info("取消删除！");
             });
@@ -553,23 +720,23 @@ export default {
                 ElMessage.error("请选择要删除的数据！");
             } else {
                 var ids = data.multipleSelection.map(s =>{
-                    return s.id;
+                    return s.abnormalNo;
                 });
                 ElMessageBox.confirm('此操作将删除选中的记录, 是否继续?', '提示',{
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then(()=>{
-                    // BatchSoftDeleteTenant(ids).then(res=>{
-                    //     if (res.code == 1){
-                    //         ElMessage.success("操作成功！");
-                    //         getData();
-                    //     } else {
-                    //         ElMessage.error("操作失败！");
-                    //     }
-                    // }).catch(err=>{
-                    //     ElMessage.error(err.msg);
-                    // });
+                    abnormalBatchDelete(ids).then(res=>{
+                        if (res.code == 1){
+                            ElMessage.success("操作成功！");
+                            getData();
+                        } else {
+                            ElMessage.error("操作失败！");
+                        }
+                    }).catch(err=>{
+                        ElMessage.error(err.msg);
+                    });
                 }).catch((err)=>{
                     ElMessage.info("取消批量删除！");
                 });
@@ -597,7 +764,8 @@ export default {
                 beginTime: rowData.beginTime,
                 endTime: rowData.endTime,
                 responDepart: rowData.responDepart,
-                responBy: rowData.responBy,
+                responBy: rowData.responName ? rowData.responName : rowData.responBy,
+                responName: rowData.responName,
                 status: rowData.status,
                 id: rowData.id,
                 abnormalNo: rowData.abnormalNo
@@ -626,7 +794,7 @@ export default {
                 return;
             }
             let params = {};
-            if (dialogType == 1){//新增
+            if (data.dialogType == 1){//新增
                 params = {
                     projectNo: data.form.projectNo,
                     lineName: data.form.lineName,
@@ -636,7 +804,6 @@ export default {
                     itemType: data.form.itemType,
                     description: data.form.description,
                     beginTime: data.form.beginTime,
-                    // endTime: data.form.endTime,
                     responDepart: data.form.responDepart,
                     responBy: data.form.responBy,
                     status: EnumConfig.EnumConfig.AbnormalStatusJson.未处理,
@@ -653,31 +820,33 @@ export default {
                     itemType: data.form.itemType,
                     description: data.form.description,
                     beginTime: data.form.beginTime,
-                    // endTime: data.form.endTime,
                     abnormalNo: data.form.abnormalNo,
                     responDepart: data.form.responDepart,
                     responBy: data.form.responBy,
-                    updateUserId: data.useStore.getters.userInfo.userId
+                    updateUserId: data.useStore.getters.userInfo.userId,
+                    createUserId: data.useStore.getters.userInfo.userId,
                 };
             }
             switch(data.dialogType){
                 case 0://编辑
-                    updateTenantInfo(params).then(res =>{
+                    abnormalUpdate(params).then(res =>{
                         if(res.code == 1){
                             ElMessage.success("编辑成功");
                             data.addDialogFormVisible=false;
                             getData();
+                            data.form = {};//清空数据
                         } else {
                             ElMessage.error(res.msg);
                         }
                     });
                     break;
                 case 1://新增
-                    addTenantInfo(params).then(res =>{
+                    abnormalAdd(params).then(res =>{
                         if(res.code == 1){
                             ElMessage.success("新增成功");
                             data.addDialogFormVisible=false;
                             getData();
+                            data.form = {};//清空数据
                         } else {
                             ElMessage.error(res.msg);
                         }
@@ -686,7 +855,6 @@ export default {
                 default:
                     break;
             };
-            data.form = {};//清空数据
         }
         /**
          * @description 校验新增/编辑异常数据
@@ -703,7 +871,7 @@ export default {
                 ElMessage.warning("线体不能为空！");
                 return false;
             }
-            if (data.form.classAB == 0){
+            if (data.form.classAB == "全部" || data.form.classAB == 0){
                 ElMessage.warning("班别不能为空！");
                 return false;
             }
@@ -731,6 +899,10 @@ export default {
                 ElMessage.warning("开始时间不能为空！");
                 return false;
             }
+            if (IsNullOrEmpty(data.form.description)){
+                ElMessage.warning("异常描述不能为空！");
+                return false;
+            }
             return true;
         }
         /**
@@ -741,8 +913,13 @@ export default {
             if (IsNullOrEmpty(value)){
                 return;
             }
+            if (data.form.responDepart == EnumConfig.EnumConfig.ResponDepartJson.全部){
+                ElMessage.warning("请先选择部门！");   
+                return;
+            }
             let params = {
-                name: value
+                name: value,
+                responDepart: data.form.responDepart
             }
             if (params.name.trim() == ""){
                 data.arrResponBy = [];
@@ -753,24 +930,24 @@ export default {
                 data.timeoutId = null;
             }
             data.timeoutId = setTimeout(()=>{
-                // getUserInfo(params.name).then(function(res){
-                //     if(res.code == 1){
-                //         data.options = [];
-                //         if (res.data.user.length > 0){
-                //             res.data.user.forEach((item)=>{
-                //             data.options.push({
-                //                 personLiableId: item.personLiableId,
-                //                 name: item.name,
-                //                 phone: item.phone,
-                //                 department: item.department,
-                //                 position: item.position
-                //             });
-                //             });
-                //         }
-                //     } else {
-                //         ElMessage.error(res.msg);   
-                //     }
-                // });
+                getAbnormalPersonInfo(params).then(function(res){
+                    if(res.code == 1){
+                        data.options = [];
+                        if (res.data.length > 0){
+                            res.data.forEach((item)=>{
+                                data.arrResponBy.push({
+                                    personLiableId: item.personLiableId,
+                                    name: item.name,
+                                    phone: item.phone,
+                                    department: item.department,
+                                    position: item.position
+                                });
+                            });
+                        }
+                    } else {
+                        ElMessage.error(res.msg);   
+                    }
+                });
             }, 500);
         });
         /**
@@ -793,27 +970,90 @@ export default {
         //     }
         //     return wbout;
         // }
+        /**
+         * @description 更多操作
+         * @author weig
+         * @param {String} command 指令名称
+         * @param {Object} row 行对象数据
+         */
+        function onCommand(command, row) {
+            if (command === 'handle') {
+                handleAbnormalInfo(row?.abnormalNo);
+            } else if (command == "delete"){
+                handleClickDelete(row)
+            }
+        }
+        /**
+         * @description 处理异常信息
+         * @author weig
+         * @param {String} command 指令名称
+         * @param {Object} row 行对象数据
+         */
+        const handleAbnormalInfo = ()=>{
+
+
+        }
+        /**
+         * @description 获取异常详细信息
+         * @author weig
+         * @param {number} index 
+         * @param {Object} row 行对象数据
+         */
+        const getAbnormalDetails = (index, row)=>{
+            const rowData = JSON.parse(JSON.stringify(row));//深拷贝
+            data.form ={//初始化详情数据
+                projectNo: rowData.projectNo,
+                lineName: rowData.lineName,
+                classAB: rowData.classAB,
+                fProcess: rowData.fProcess,
+                type: rowData.type,
+                itemType: rowData.itemType,
+                description: rowData.description,
+                beginTime: rowData.beginTime,
+                endTime: rowData.endTime,
+                responDepart: rowData.responDepart,
+                responBy: rowData.responName ? rowData.responName : rowData.responBy,
+                responName: rowData.responName,
+                status: rowData.status,
+                id: rowData.id,
+                abnormalNo: rowData.abnormalNo
+            } ;
+            data.detailsVisible = true;
+        }
+        /**
+         * @description 责任部门格式化
+         * @author weig
+         * @param {Object} row 行对象数据
+         * @returns {string}
+         */
+        const responDepartFormatter = (row) =>{
+            return EnumConfig.EnumConfig.getEnumName(row.responDepart, EnumConfig.EnumConfig.ResponDepartJson);
+        }
         return {
-         ...toRefs(data),
-         changeProNameHandle,
-         disabledDate1,
-         disabledDate2,
-         handleSearch,
-         resPageData,
-         getData,
-         handleSelectionChange,
-         handleClickDelete,
-         handleClickAddData,
-         handleClickBatchDelete,
-         handleClickEditData,
-         closeDialog,
-         refAddForm,
-         multipleTable,
-         changeProNameHandleForm,
-         addDialogFormSave,
-         remoteHandle,
-         onClearDialog,
-        //  handleClickExportData
+            ...toRefs(data),
+            changeProNameHandle,
+            disabledDate1,
+            disabledDate2,
+            handleSearch,
+            resPageData,
+            getData,
+            handleSelectionChange,
+            handleClickAddData,
+            handleClickBatchDelete,
+            handleClickEditData,
+            closeDialog,
+            refAddForm,
+            refDetailsForm,
+            multipleTable,
+            changeProNameHandleForm,
+            addDialogFormSave,
+            remoteHandle,
+            onClearDialog,
+            //  handleClickExportData
+            EnumConfig,
+            onCommand,
+            getAbnormalDetails,
+            responDepartFormatter
       }
    },
 }

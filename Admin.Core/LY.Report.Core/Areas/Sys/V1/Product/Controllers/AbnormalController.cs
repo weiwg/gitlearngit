@@ -1,5 +1,6 @@
 ﻿using LY.Report.Core.Common.Input;
 using LY.Report.Core.Common.Output;
+using LY.Report.Core.Model.Product.Enum;
 using LY.Report.Core.Service.Product.Abnormals;
 using LY.Report.Core.Service.Product.Abnormals.Input;
 using Microsoft.AspNetCore.Mvc;
@@ -93,12 +94,13 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         /// <summary>
         /// 查询责任人信息
         /// </summary>
-        /// <param name="condition"></param>
+        /// <param name="name">查询条件</param>
+        /// <param name="responDepart">责任部门</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IResponseOutput> GetAbnormalPersonInfo(string condition)
+        public async Task<IResponseOutput> GetAbnormalPersonInfo(string name, ResponDepart responDepart)
         {
-            return await _productAbnormalService.GetAbnormalPerson(condition);
+            return await _productAbnormalService.GetAbnormalPerson(name, responDepart);
         }
         #endregion
 

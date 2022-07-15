@@ -135,7 +135,6 @@ export default {
         userName:this.form.userName,
         password:passwordMd5(this.form.password)
       };
-      debugger
       if (IsNullOrEmpty(params.userName)){
         ElMessage.error("登录账号不能为空！")
         return;

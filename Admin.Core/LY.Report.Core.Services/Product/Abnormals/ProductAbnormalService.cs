@@ -1,16 +1,12 @@
 ﻿using LY.Report.Core.Common.Input;
 using LY.Report.Core.Common.Output;
 using LY.Report.Core.Model.Product;
+using LY.Report.Core.Model.Product.Enum;
 using LY.Report.Core.Repository.Product.Abnormals;
 using LY.Report.Core.Service.Base.Service;
 using LY.Report.Core.Service.Product.Abnormals.Input;
 using LY.Report.Core.Service.Product.Abnormals.Output;
-using LY.Report.Core.Util.Common;
-using LY.Report.Core.Util.Tool;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace LY.Report.Core.Service.Product.Abnormals
@@ -62,6 +58,7 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 return ResponseOutput.NotOk("异常单号生成失败！");
             }
             entity.AbnormalNo = abnormalNo;
+            entity.EndTime = null;
             var id = (await _productAbnormalRepository.InsertAsync(entity)).Id;
             return ResponseOutput.Result(id.IsNotNull());
         }
@@ -133,24 +130,64 @@ namespace LY.Report.Core.Service.Product.Abnormals
             .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
             .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate);
             var result = await _productAbnormalRepository.GetOneAsync<ProductAbnormalGetOutput>(whereSelect);
-            return ResponseOutput.Data(result);
+            if (result == null)
+            {
+                return ResponseOutput.NotOk("记录不存在！");
+            }
+            var res = await _productAbnormalPersonRepository.GetOneAsync<AbnormalPerson>(result.ResponBy);
+            var res2 = new ProductAbnormalGetOutput
+            {
+                Id = result.Id,
+                AbnormalNo = result.AbnormalNo,
+                ProjectNo = result.ProjectNo,
+                LineName = result.LineName,
+                ClassAB = result.ClassAB,
+                FProcess = result.FProcess,
+                Type = result.Type,
+                ItemType = result.ItemType,
+                Description = result.Description,
+                BeginTime = result.BeginTime,
+                EndTime = result.EndTime,
+                ResponBy = result.ResponBy,
+                ResponName = res.Name,
+                ResponDepart = result.ResponDepart,
+                Status = result.Status
+            };
+            return ResponseOutput.Data(res2);
         }
         public async Task<IResponseOutput> GetPageListAsync(PageInput<ProductAbnormalGetInput> pageInput)
         {
             var input = pageInput.GetFilter();
 
-            var list = await _productAbnormalRepository.Select
-                .WhereIf(input.AbnormalNo.IsNotNull(), t => t.AbnormalNo == input.AbnormalNo)
-                .WhereIf(input.ProName.IsNotNull(), t => t.ProjectNo == input.ProName)
-                .WhereIf(input.LineName.IsNotNull(), t => t.LineName == input.LineName)
-                .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
-                .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
-                .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
-                .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate)
+            var list = await _productAbnormalRepository.Orm.Select<Abnormal, AbnormalPerson>()
+                .LeftJoin((a, ap)=> a.ResponBy== ap.PersonLiableId)
+                .WhereIf(input.AbnormalNo.IsNotNull(), (a, ap) => a.AbnormalNo == input.AbnormalNo)
+                .WhereIf(input.ProName.IsNotNull(), (a, ap) => a.ProjectNo == input.ProName)
+                .WhereIf(input.LineName.IsNotNull(), (a, ap) => a.LineName == input.LineName)
+                .WhereIf(input.AbnomalStatus > 0, (a, ap) => a.Status == input.AbnomalStatus)
+                .WhereIf(input.ResponDepart > 0, (a, ap) => a.ResponDepart == input.ResponDepart)
+                .WhereIf(input.ResponBy.IsNotNull(), (a, ap) => a.ResponBy.Contains(input.ResponBy))
+                .WhereIf(input.StartDate != null && input.EndDate != null, (a, ap) => a.CreateDate >= input.StartDate && a.CreateDate < input.EndDate)
                 .Count(out var total)
-                .OrderByDescending(true, c => c.CreateDate)
+                .OrderByDescending((a, ap) => new { CreateDate = a.CreateDate })
                 .Page(pageInput.CurrentPage, pageInput.PageSize)
-                .ToListAsync<ProductAbnormalListOutput>();
+                .ToListAsync((a, ap) => new ProductAbnormalListOutput {
+                    Id = a.Id,
+                    AbnormalNo = a.AbnormalNo,
+                    ProjectNo = a.ProjectNo,
+                    LineName = a.LineName,
+                    ClassAB = a.ClassAB,
+                    FProcess = a.FProcess,
+                    Type = a.Type,
+                    ItemType = a.ItemType,
+                    Description = a.Description,
+                    BeginTime = a.BeginTime,
+                    EndTime = a.EndTime,
+                    ResponBy = a.ResponBy,
+                    ResponName =ap.Name,
+                    ResponDepart = a.ResponDepart,
+                    Status = a.Status
+                });
 
             var data = new PageOutput<ProductAbnormalListOutput>
             {
@@ -168,11 +205,15 @@ namespace LY.Report.Core.Service.Product.Abnormals
             return ResponseOutput.Data(result);
         }
 
-        public async Task<IResponseOutput> GetAbnormalPerson(string condition)
+        public async Task<IResponseOutput> GetAbnormalPerson(string name, ResponDepart responDepart)
         {
             var whereSelect = _productAbnormalPersonRepository.Select
-            .WhereIf(condition.IsNotNull(), t => t.Name.Contains(condition) || t.Phone == condition || t.DumpPhone == condition);
+            .WhereIf(name.IsNotNull(), t => t.Name.Contains(name) || t.Phone == name || t.DumpPhone == name);
             var data = await _productAbnormalPersonRepository.GetListAsync<ProductAbnormalPersonListOutput>(whereSelect);
+            if (data != null)
+            {
+                data = data.FindAll(t => t.Department == responDepart);
+            }
             return ResponseOutput.Data(data);
         }
         #endregion
@@ -185,18 +226,17 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 return ResponseOutput.NotOk("参数错误");
             }
             int res = await _productAbnormalRepository.UpdateDiyAsync
-            .SetIf(input.ProjectNo.IsNotNull(), t => t.ProjectNo, input.ProjectNo)
-            .SetIf(input.LineName.IsNotNull(), t => t.LineName, input.LineName)
+            //.SetIf(input.ProjectNo.IsNotNull(), t => t.ProjectNo, input.ProjectNo)
+            //.SetIf(input.LineName.IsNotNull(), t => t.LineName, input.LineName)
             .SetIf(input.ClassAB.IsNotNull(), t => t.ClassAB, input.ClassAB)
             .SetIf(input.FProcess.IsNotNull(), t => t.FProcess, input.FProcess)
             .SetIf(input.Type > 0, t => t.Type, input.Type)
             .SetIf(input.ItemType > 0, t => t.ItemType, input.ItemType)
             .SetIf(input.Description.IsNotNull(), t => t.Description, input.Description)
+            //.SetIf(input.ResponBy.IsNotNull(), t => t.ResponBy, input.ResponBy)
+            //.SetIf(input.ResponDepart > 0, t => t.ResponDepart, input.ResponDepart)
             .Set(t => t.BeginTime, input.BeginTime)
-            .SetIf(input.ResponBy.IsNotNull(), t => t.ResponBy, input.ResponBy)
-            .SetIf(input.ResponDepart > 0, t => t.ResponDepart, input.ResponDepart)
-            .SetIf(input.UpdateUserId.IsNotNull(), t => t.UpdateUserId, input.UpdateUserId)
-            .Set(t => t.UpdateDate, DateTime.Now)
+            //.Set(t => t.UpdateDate, DateTime.Now)
             .Where(t => t.AbnormalNo == input.AbnormalNo)
             .ExecuteAffrowsAsync();
 

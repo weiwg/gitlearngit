@@ -1,4 +1,5 @@
 ﻿using LY.Report.Core.Common.Output;
+using LY.Report.Core.Model.Product.Enum;
 using LY.Report.Core.Service.Base.IService;
 using LY.Report.Core.Service.Product.Abnormals.Input;
 using System.Threading.Tasks;
@@ -10,8 +11,9 @@ namespace LY.Report.Core.Service.Product.Abnormals
         /// <summary>
         /// 查询责任人信息
         /// </summary>
-        /// <param name="condition">查询条件</param>
+        /// <param name="name">查询条件</param>
+        /// <param name="responDepart">责任部门</param>
         /// <returns></returns>
-        Task<IResponseOutput> GetAbnormalPerson(string condition);
+        Task<IResponseOutput> GetAbnormalPerson(string name, ResponDepart responDepart);
     }
 }

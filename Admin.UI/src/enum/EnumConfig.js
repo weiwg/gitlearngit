@@ -85,32 +85,28 @@ var EnumConfig={
     ResponDepart:{
         ArrResponDepart:[
             {value:0, label: "全部"},
-            {value:1, label: "生产部"},
-            {value:2, label: "品质部"},
-            {value:3, label: "工程部"},
-            {value:4, label: "PMC部"},
-            {value:5, label: "REL部"},
-            {value:6, label: "IE部"},
-            {value:7, label: "设备部"},
-            {value:8, label: "仓储部"},
-            {value:9, label: "厂务部"},
-            {value:10, label: "采购部"},
-            {value:11, label: "IT部"},
+            {value:1, label: "ME部"},
+            {value:2, label: "生产部"},
+            {value:3, label: "QE部"},
+            {value:4, label: "厂务部"},
+            {value:5, label: "仓库部"},
+            {value:6, label: "IQC部"},
+            {value:7, label: "REL部"},
+            {value:8, label: "PD部"},
+            {value:9, label: "IE部"}
         ]
     },
     ResponDepartJson:{
         全部: 0,
-        生产部: 1,
-        品质部: 2,
-        工程部: 3,
-        PMC部: 4,
-        REL部: 5,
-        IE部: 6,
-        设备部: 7,
-        仓储部: 8,
-        厂务部: 9,
-        采购部: 10,
-        IT部: 11
+        ME部: 1,
+        生产部: 2,
+        QE部: 3,
+        厂务部: 4,
+        仓库部: 5,
+        IQC部: 6,
+        REL部: 7,
+        PD部: 8,
+        IE部: 9
     },
     //班别
     ClassAB:{

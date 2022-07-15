@@ -2448,11 +2448,12 @@
             异常单号
             </summary>
         </member>
-        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetAbnormalPerson(System.String)">
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetAbnormalPerson(System.String,LY.Report.Core.Model.Product.Enum.ResponDepart)">
             <summary>
             查询责任人信息
             </summary>
-            <param name="condition">查询条件</param>
+            <param name="name">查询条件</param>
+            <param name="responDepart">责任部门</param>
             <returns></returns>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Id">
@@ -2513,6 +2514,11 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ResponBy">
             <summary>
             责任人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ResponName">
+            <summary>
+            责任人名称
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.ResponDepart">
@@ -4420,6 +4426,11 @@
             用户基础信息
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
         <member name="P:LY.Report.Core.Service.User.Info.Output.UserInfoBaseGetOutput.UserName">
             <summary>
             用户名
@@ -4713,6 +4724,84 @@
             <summary>
             映射配置
             </summary>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.ExecOracleQuerySqlResponseExecOracleQuerySqlResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecOracleQuerySqlResponseExecOracleQuerySqlResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecOracleQuerySqlResponseExecOracleQuerySqlResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.ExecSqlNewResponseExecSqlNewResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecSqlNewResponseExecSqlNewResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecSqlNewResponseExecSqlNewResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.ExecSqlStrResponseExecSqlStrResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecSqlStrResponseExecSqlStrResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecSqlStrResponseExecSqlStrResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.ExecFirebirdSqlResponseExecFirebirdSqlResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecFirebirdSqlResponseExecFirebirdSqlResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ExecFirebirdSqlResponseExecFirebirdSqlResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.CardType">
+            <remarks/>
+        </member>
+        <member name="F:LY.Rport.Core.Service.LytechWebService.CardType.ICCARD">
+            <remarks/>
+        </member>
+        <member name="F:LY.Rport.Core.Service.LytechWebService.CardType.JOBNUMBER">
+            <remarks/>
+        </member>
+        <member name="F:LY.Rport.Core.Service.LytechWebService.CardType.TEL">
+            <remarks/>
+        </member>
+        <member name="F:LY.Rport.Core.Service.LytechWebService.CardType.USERNAME">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.ArrayOfDataTableDataTable">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ArrayOfDataTableDataTable.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.ArrayOfDataTableDataTable.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.WMSCheckOutResponseWMSCheckOutResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.WMSCheckOutResponseWMSCheckOutResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.WMSCheckOutResponseWMSCheckOutResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:LY.Rport.Core.Service.LytechWebService.SAPSendDataToSAPAndDataSetResponseSAPSendDataToSAPAndDataSetResult">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.SAPSendDataToSAPAndDataSetResponseSAPSendDataToSAPAndDataSetResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:LY.Rport.Core.Service.LytechWebService.SAPSendDataToSAPAndDataSetResponseSAPSendDataToSAPAndDataSetResult.Any1">
+            <remarks/>
         </member>
     </members>
 </doc>

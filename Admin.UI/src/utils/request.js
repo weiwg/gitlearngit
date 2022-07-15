@@ -348,7 +348,11 @@ function refreshToken(error){
             requests = [];  //注意要清空
             return axios.request(error.config);
           } else {
-            ElMessage.error("刷新token失败,重新登录");
+            if (IsNullOrEmpty(res.msg)){
+              ElMessage.error("刷新token失败,重新登录");
+            } else {
+              ElMessage.error(res.msg);
+            }
             sessionStorage.setItem("token", "");
             router.push({ name: "Login" });
           }
