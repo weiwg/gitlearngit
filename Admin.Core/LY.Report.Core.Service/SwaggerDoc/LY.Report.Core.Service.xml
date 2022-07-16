@@ -2328,6 +2328,11 @@
             映射配置
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleUpdateInput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
         <member name="T:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalAddInput">
             <summary>
             添加
@@ -2456,6 +2461,13 @@
             <param name="responDepart">责任部门</param>
             <returns></returns>
         </member>
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.UpdateAbnormalHandle(LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleUpdateInput)">
+            <summary>
+            更新异常处理
+            </summary>
+            <param name="input">异常处理实体</param>
+            <returns></returns>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Id">
             <summary>
             Id
@@ -2529,6 +2541,21 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Status">
             <summary>
             异常状态
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Reason">
+            <summary>
+            原因分析
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.TempMeasures">
+            <summary>
+            临时对策
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.FundaMeasures">
+            <summary>
+            根本对策
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.PersonLiableId">

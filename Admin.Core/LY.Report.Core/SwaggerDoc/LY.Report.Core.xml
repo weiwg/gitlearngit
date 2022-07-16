@@ -918,6 +918,13 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.UpdateAbnormalHandle(LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleUpdateInput)">
+            <summary>
+            处理异常
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="T:LY.Report.Core.Areas.Sys.V1.Record.BaseAreaController">
             <summary>
             域控制器

@@ -3,7 +3,7 @@
  *@Author: weig
  *@Date: 2022-07-09 09:56:53
  *@LastEditors: weig
- *@LastEditTime: 2022-07-09 14:46:53
+ *@LastEditTime: 2022-07-16 13:46:53
 -->
 <template>
    <div>
@@ -104,30 +104,6 @@
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="240" align="center" fixed="right" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Update`])">
-                    <!-- <template #default="{ $index, row }">
-                        <el-button
-                            type="primary"
-                            icon="el-icon-edit"
-                            @click="handleEdit($index,row)"
-                            v-if="checkPermission([`api${VIEW_VERSION}:auth:view:update`])"
-                        >编辑
-                        </el-button>
-                        <el-button
-                            type="primary" 
-                            icon="el-icon-check" 
-                            @click="handleClickEditData($index,row)"
-                            v-if="checkPermission([`api${VIEW_VERSION}:auth:view:update`])"
-                        >处理
-                        </el-button>
-                        <el-button
-                            type="danger"
-                            icon="el-icon-delete"
-                            @click="handleClickDelete(row)"
-                            class="ml10"
-                            v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:SoftDelete`])"
-                        >删除
-                        </el-button>
-                    </template> -->
                     <template #default="{ $index, row }">
                         <el-dropdown  
                         split-button
@@ -138,8 +114,8 @@
                             编辑
                             <template #dropdown v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`,`api${VIEW_VERSION}:System:Tenant:Delete`])">
                                 <el-dropdown-menu :visible-arrow="false" style="margin-top: 2px;width:100px;text-align:center;">
-                                    <el-dropdown-item command="handle" v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`])">处理异常</el-dropdown-item>
-                                    <el-dropdown-item command="delete" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Delete`])">删除异常</el-dropdown-item>
+                                    <el-dropdown-item command="handle" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`])">处理异常</el-dropdown-item>
+                                    <el-dropdown-item command="delete" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Delete`])">删除异常</el-dropdown-item>
                                 </el-dropdown-menu>
                             </template>
                         </el-dropdown>
@@ -295,7 +271,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                         <el-form-item label="开始时间" required>
-                            <el-date-picker v-model="form.beginTime" type="date" placeholder="选择日期" :disabledDate="disabledDate1">
+                            <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期">
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
@@ -324,6 +300,7 @@
             :destroy-on-close="true"
             v-model="detailsVisible"
             width="70%"
+            @close="closeDetailsDialog"
             >
             <el-form
                 ref="refDetailsForm"
@@ -447,7 +424,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                         <el-form-item label="开始时间" required>
-                            <el-date-picker v-model="form.beginTime" type="date" placeholder="选择日期" :disabledDate="disabledDate1" :disabled="true">
+                            <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期" :disabled="true">
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
@@ -459,7 +436,175 @@
                     </el-form-item>
                     </el-col>
                 </el-row>
+                <el-row v-if="form.status == 1">
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="原因分析" prop="reason" required>
+                        <el-input v-model="form.reason" type="textarea" :rows="2" auto-complete="off" :disabled="true"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row v-if="form.status == 1">
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="临时对策" prop="tempMeasures" required>
+                        <el-input v-model="form.tempMeasures" type="textarea" :rows="2" auto-complete="off" :disabled="true"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row v-if="form.status == 1">
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="根本对策" prop="fundaMeasures" required>
+                        <el-input v-model="form.fundaMeasures" type="textarea" :rows="2" auto-complete="off" :disabled="true"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row v-if="form.status == 1">
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="结束时间" required>
+                            <el-date-picker v-model="form.endTime" type="datetime" placeholder="选择日期" :disabled="true">
+                            </el-date-picker>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
             </el-form>
+        </el-dialog>
+        <!-- 详情窗口 end -->
+
+        <!-- 处理异常窗口 begin -->
+        <el-dialog 
+            title="处理异常" 
+            :close-on-click-modal="false"
+            :destroy-on-close="true"
+            v-model="handleAbnormalVisible"
+            width="70%"
+            @close="closeHandleDialog"
+            >
+            <el-form
+                ref="refHandleForm"
+                :model="handleForm"
+                label-width="120px"
+                :inline="false"        
+            >
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="项目编号" prop="proName" required>
+                            <el-select v-model="handleForm.proName" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
+                            <el-option
+                                v-for="item in arrProName"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>                    
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="线体" prop="lineName" required>
+                            <el-select v-model="handleForm.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrLinesForm"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="班别" prop="classAB" required>
+                            <el-select v-model="handleForm.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrClassAB"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="工序站点" prop="fProcess" required>
+                            <el-select v-model="handleForm.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrFProcess"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="责任部门" prop="responDepart" required>
+                            <el-select v-model="handleForm.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
+                            <el-option
+                                v-for="item in arrResponDepart"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                            />
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                        <el-form-item label="责任人" prop="responBy" required>
+                            <el-select 
+                            v-model="handleForm.responBy" 
+                            filterable 
+                            placeholder="请输入责任人/手机号码"
+                            :remote-method="remoteHandle"
+                            remote
+                            :clearable="true"
+                            @clear="onClearDialog"
+                            :disabled="true"
+                            >
+                            <el-option
+                                v-for="item in arrResponBy"
+                                :key="item.personLiableId"
+                                :label="item.name"
+                                :value="item.personLiableId">
+                            </el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-col>  
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="原因分析" prop="reason" required>
+                        <el-input v-model="handleForm.reason" type="textarea" :rows="2" auto-complete="off"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="临时对策" prop="tempMeasures" required>
+                        <el-input v-model="handleForm.tempMeasures" type="textarea" :rows="2" auto-complete="off"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                    <el-form-item label="根本对策" prop="fundaMeasures" required>
+                        <el-input v-model="handleForm.fundaMeasures" type="textarea" :rows="2" auto-complete="off"/>
+                    </el-form-item>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="结束时间" required>
+                            <el-date-picker v-model="handleForm.endTime" type="datetime" placeholder="选择日期">
+                            </el-date-picker>
+                        </el-form-item>
+                    </el-col>
+                </el-row>
+            </el-form>
+            <template #footer>
+                <span class="dialog-footer">
+                <el-button @click="closeHandleDialog()">取 消</el-button>
+                <el-button type="primary" @click="handleDialogFormSave()">确 定</el-button>
+                </span>
+            </template>
         </el-dialog>
         <!-- 详情窗口 end -->
    </div>
@@ -474,7 +619,7 @@ import EnumConfig from "../../../enum/EnumConfig"
 import EupPagination from "@/components/EupPagination.vue"
 import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
-import {abnormalGetPage, abnormalGet, abnormalAdd,abnormalBatchDelete,abnormalDelete,abnormalUpdate,getAbnormalPersonInfo} from '../../../serviceApi/Abnormal/Abnormal'
+import {abnormalGetPage, abnormalGet, abnormalAdd,abnormalBatchDelete,abnormalDelete,abnormalUpdate,getAbnormalPersonInfo,updateAbnormalHandle} from '../../../serviceApi/Abnormal/Abnormal'
 
 var CURR_VIEW_VERSION = EnumConfig.EnumConfig.API_VIEW_VERSION.CURR_API_VIEW_VERSION;
 var VIEW_VERSION = CURR_VIEW_VERSION == 'V0' ? '' : `:S:${CURR_VIEW_VERSION}`;
@@ -488,6 +633,7 @@ export default {
       const refAddForm = ref(null);
       const multipleTable = ref(null);
       const refDetailsForm = ref(null);
+      const refHandleForm = ref(null);
       const data = reactive({
         query: {                         //查询条件
             responBy:"",
@@ -523,7 +669,7 @@ export default {
             responDepart: 0,
             responBy: "",
             responName: "",
-            status: "",
+            status: 2,
             abnormalNo: ""
         },
         idx: -1,
@@ -545,7 +691,21 @@ export default {
         dialogType: 0,                       //0:编辑  1：添加
         arrLinesForm: [],                    //对话框线体
         timeoutId: null,
-        detailsVisible: false
+        detailsVisible: false,
+        handleAbnormalVisible: false,
+        handleForm: {
+            proName: "",
+            lineName: "",
+            classAB: "",
+            fProcess: "",
+            responDepart: 0,
+            responBy: "",
+            endTime:"",
+            reason: "",
+            tempMeasures: "",
+            fundaMeasures: "",
+            abnormalNo:""
+        }
       });
       onBeforeMount(() => {
       });
@@ -637,6 +797,9 @@ export default {
             data.arrLines = data.arrLines.concat(arr);  
         }
         //日期选择范围
+        const disabledDate= (time) => {
+            return time.getTime() > Date.now();
+        }
         const disabledDate1= (time) => {
             if (!IsNullOrEmpty(data.query.endDate)) {
                 return time.getTime() > data.query.endDate;
@@ -720,7 +883,7 @@ export default {
                 ElMessage.error("请选择要删除的数据！");
             } else {
                 var ids = data.multipleSelection.map(s =>{
-                    return s.abnormalNo;
+                    return s.id;
                 });
                 ElMessageBox.confirm('此操作将删除选中的记录, 是否继续?', '提示',{
                     confirmButtonText: '确定',
@@ -779,6 +942,17 @@ export default {
         const closeDialog = ()=>{
             data.addDialogFormVisible = false;
             refAddForm.value.resetFields();//清空表单
+            //每次关闭对话框后清理表单历史数据
+            data.form= {};
+        }
+        /**
+         * @description 关闭详情对话框
+         * @author weig
+         * @param
+         */
+        const closeDetailsDialog = ()=>{
+            data.detailsVisible = false;
+            refDetailsForm.value.resetFields();//清空表单
             //每次关闭对话框后清理表单历史数据
             data.form= {};
         }
@@ -978,7 +1152,7 @@ export default {
          */
         function onCommand(command, row) {
             if (command === 'handle') {
-                handleAbnormalInfo(row?.abnormalNo);
+                handleAbnormalInfo(row);
             } else if (command == "delete"){
                 handleClickDelete(row)
             }
@@ -986,12 +1160,23 @@ export default {
         /**
          * @description 处理异常信息
          * @author weig
-         * @param {String} command 指令名称
          * @param {Object} row 行对象数据
          */
-        const handleAbnormalInfo = ()=>{
-
-
+        const handleAbnormalInfo = (row)=>{
+            data.handleAbnormalVisible = true;
+            data.handleForm ={
+                proName: row.projectNo,
+                lineName: row.lineName,
+                classAB: row.classAB,
+                fProcess: row.fProcess,
+                responDepart: row.responDepart,
+                responBy: row.responName,
+                endTime:"",
+                reason: "",
+                tempMeasures: "",
+                fundaMeasures: "",
+                abnormalNo: row.abnormalNo
+            };
         }
         /**
          * @description 获取异常详细信息
@@ -1016,7 +1201,10 @@ export default {
                 responName: rowData.responName,
                 status: rowData.status,
                 id: rowData.id,
-                abnormalNo: rowData.abnormalNo
+                abnormalNo: rowData.abnormalNo,
+                reason: rowData.reason,
+                tempMeasures: rowData.tempMeasures,
+                fundaMeasures: rowData.fundaMeasures
             } ;
             data.detailsVisible = true;
         }
@@ -1029,9 +1217,63 @@ export default {
         const responDepartFormatter = (row) =>{
             return EnumConfig.EnumConfig.getEnumName(row.responDepart, EnumConfig.EnumConfig.ResponDepartJson);
         }
+        /**
+         * @description 关闭处理异常窗口
+         * @author weig
+         */
+        const closeHandleDialog =()=>{
+            data.handleAbnormalVisible = false;
+            refHandleForm.value.resetFields();//清空表单
+            //每次关闭对话框后清理表单历史数据
+            data.handleForm= {};
+        }
+        /**
+         * @description 保存处理信息
+         * @author weig
+         * @param
+         */
+        const handleDialogFormSave = ()=>{
+            if (IsNullOrEmpty(data.handleForm.reason)){
+                ElMessage.warning("原因分析不能为空！")
+                return;
+            }
+            if (IsNullOrEmpty(data.handleForm.tempMeasures)){
+                ElMessage.warning("临时对策不能为空！")
+                return;
+            }
+            if (IsNullOrEmpty(data.handleForm.fundaMeasures)){
+                ElMessage.warning("根本对策不能为空！")
+                return;
+            }
+            if (IsNullOrEmpty(data.handleForm.endTime)){
+                ElMessage.warning("结束时间不能为空！")
+                return;
+            }
+            let params ={
+                abnormalNo: data.handleForm.abnormalNo,
+                reason: data.handleForm.reason,
+                tempMeasures: data.handleForm.tempMeasures,
+                fundaMeasures: data.handleForm.fundaMeasures,
+                endTime: data.handleForm.endTime
+            }
+            updateAbnormalHandle(params).then((res)=>{
+                if (res.code ==1){
+                    ElMessage.success(res.msg);
+                    data.handleAbnormalVisible = false; 
+                    refHandleForm.value.resetFields();
+                    data.handleForm = {};
+                    getData();
+                } else {
+                    ElMessage.error(res.msg);
+                }
+            }).catch((e)=>{
+                ElMessage.error("异常处理失败！");
+            });       
+        }
         return {
             ...toRefs(data),
             changeProNameHandle,
+            disabledDate,
             disabledDate1,
             disabledDate2,
             handleSearch,
@@ -1042,8 +1284,10 @@ export default {
             handleClickBatchDelete,
             handleClickEditData,
             closeDialog,
+            closeDetailsDialog,
             refAddForm,
             refDetailsForm,
+            refHandleForm,
             multipleTable,
             changeProNameHandleForm,
             addDialogFormSave,
@@ -1053,7 +1297,9 @@ export default {
             EnumConfig,
             onCommand,
             getAbnormalDetails,
-            responDepartFormatter
+            responDepartFormatter,
+            closeHandleDialog,
+            handleDialogFormSave
       }
    },
 }

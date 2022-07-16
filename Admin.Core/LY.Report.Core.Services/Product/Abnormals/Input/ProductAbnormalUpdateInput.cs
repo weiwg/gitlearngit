@@ -8,7 +8,7 @@ namespace LY.Report.Core.Service.Product.Abnormals.Input
         /// 异常单号
         /// </summary>
         [Display(Name = "异常单号")]
-        [Required(ErrorMessage = "请输入异常单号")]
+        [Required(ErrorMessage = "异常单号不能为空！")]
         public string AbnormalNo { get; set; }
     }
 }

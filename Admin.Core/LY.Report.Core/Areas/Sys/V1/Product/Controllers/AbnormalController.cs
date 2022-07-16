@@ -115,6 +115,16 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         {
             return await _productAbnormalService.UpdateAsync(input);
         }
+        /// <summary>
+        /// 处理异常
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IResponseOutput> UpdateAbnormalHandle(ProAbnHandleUpdateInput input)
+        {
+            return await _productAbnormalService.UpdateAbnormalHandle(input);
+        }
         #endregion
     }
 }

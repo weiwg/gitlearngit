@@ -15,5 +15,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
         /// <param name="responDepart">责任部门</param>
         /// <returns></returns>
         Task<IResponseOutput> GetAbnormalPerson(string name, ResponDepart responDepart);
+
+        /// <summary>
+        /// 更新异常处理
+        /// </summary>
+        /// <param name="input">异常处理实体</param>
+        /// <returns></returns>
+        Task<IResponseOutput> UpdateAbnormalHandle(ProAbnHandleUpdateInput input);
     }
 }

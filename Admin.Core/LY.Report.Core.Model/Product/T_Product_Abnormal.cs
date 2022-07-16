@@ -69,7 +69,7 @@ namespace LY.Report.Core.Model.Product
         /// 结束时间
         /// </summary>
         [Description("结束时间")]
-        [Column(CanUpdate = false, ServerTime = DateTimeKind.Local)]
+        [Column(CanUpdate = true)]
         public DateTime? EndTime { get; set; }
         /// <summary>
         /// 责任部门

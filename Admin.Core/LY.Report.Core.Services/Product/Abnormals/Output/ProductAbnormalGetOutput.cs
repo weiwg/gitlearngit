@@ -78,5 +78,18 @@ namespace LY.Report.Core.Service.Product.Abnormals.Output
         /// 异常状态
         /// </summary>
         public AbnormalStatus Status { get; set; }
+
+        /// <summary>
+        /// 原因分析
+        /// </summary>
+        public string Reason { get; set; }
+        /// <summary>
+        /// 临时对策
+        /// </summary>
+        public string TempMeasures { get; set; }
+        /// <summary>
+        /// 根本对策
+        /// </summary>
+        public string FundaMeasures { get; set; }
     }
 }
