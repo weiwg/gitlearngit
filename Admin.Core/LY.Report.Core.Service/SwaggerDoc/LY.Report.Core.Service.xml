@@ -2468,6 +2468,13 @@
             <param name="input">异常处理实体</param>
             <returns></returns>
         </member>
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetUnHandleAbnListAsync(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput)">
+            <summary>
+            获取异常记录
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Id">
             <summary>
             Id
@@ -2558,6 +2565,11 @@
             根本对策
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.CreateUser">
+            <summary>
+            创建人
+            </summary>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.PersonLiableId">
             <summary>
             PersonLiableId
@@ -2581,6 +2593,11 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.Position">
             <summary>
             职位
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.JobNo">
+            <summary>
+            工号
             </summary>
         </member>
         <member name="T:LY.Report.Core.Service.Product.Abnormals.MapConfig">

@@ -50,5 +50,7 @@
     "QuitUrl": "http://locwl.LY.com/Order/UserOrderList"
   },
   //是否开启定时任务
-  "IsOpenTimerJob": false
+  "IsOpenTimerJob": false,
+  //后台登录地址
+  "AdminReportUrl": "http://localhost:9000/Login"
 }

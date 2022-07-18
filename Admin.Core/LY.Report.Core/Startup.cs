@@ -416,12 +416,9 @@ namespace LY.Report.Core
             #region 定时任务
             if (_appConfig.IsOpenTimerJob)
             {
-                services.AddHostedService<TestListTimerJob>();
-                services.AddHostedService<TestTimerJob>();
-                //services.AddHostedService<PayStatusTimerJob>();
-                //services.AddHostedService<OrderStatusTimerJob>();
-                //services.AddHostedService<RedPackStatusTimerJob>();
-                //services.AddHostedService<CouponStatusTimerJob>();
+                //services.AddHostedService<TestListTimerJob>();
+                //services.AddHostedService<TestTimerJob>();
+                services.AddHostedService<AbnormalWarnTimerJob>();
             }
             #endregion
 

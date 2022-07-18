@@ -80,6 +80,11 @@
         /// </summary>
         public bool IsOpenTimerJob { get; set; } = false;
 
+        /// <summary>
+        /// 后台登录地址
+        /// </summary>
+        public string AdminReportUrl { get; set; }
+
     }
 
     /// <summary>

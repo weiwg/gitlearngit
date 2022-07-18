@@ -1615,6 +1615,16 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:LY.Report.Core.Helper.TimerJob.AbnormalWarnTimerJob">
+            <summary>
+            需在ConfigureServices注册services.AddHostedService&lt;AbnormalWarnTimerJob&gt;();
+            </summary>
+        </member>
+        <member name="M:LY.Report.Core.Helper.TimerJob.AbnormalWarnTimerJob.#ctor(LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService,Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            触发器 触发时间，间隔，执行者
+            </summary>
+        </member>
         <member name="T:LY.Report.Core.Helper.TimerJob.TestListTimerJob">
             <summary>
             需在ConfigureServices注册services.AddHostedService&lt;TestListJobTrigger&gt;();

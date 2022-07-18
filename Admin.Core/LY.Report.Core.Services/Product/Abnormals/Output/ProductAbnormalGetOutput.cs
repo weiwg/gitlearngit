@@ -91,5 +91,9 @@ namespace LY.Report.Core.Service.Product.Abnormals.Output
         /// 根本对策
         /// </summary>
         public string FundaMeasures { get; set; }
+        /// <summary>
+        /// 创建人
+        /// </summary>
+        public string CreateUser { get; set; }
     }
 }
