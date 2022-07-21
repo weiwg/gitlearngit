@@ -1,6 +1,6 @@
 {
   "urls": [ "http://locar.api.ly.com:18001" ],
-  //"urls": [ "http://locwuliu.api.LY.com:8001" ],
+  //"urls": [ "http://locwuliu.api.ly.com:8001" ],
   //"corUrls": [ "http://localhost:9000", "http://locar.ly.com", "http://locwl.admin.LY.com", "http://locwuliu.LY.com:8001", "http://locwuliu.LY.com:8002" ],
   "corUrls": [ "http://localhost:9000", "http://locar.ly.com", "http://locar.admin.ly.com", "http://locar.ly.com:8001", "http://locar.ly.com:8002" ],
   "IdentityServer": {

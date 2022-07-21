@@ -15,7 +15,7 @@ namespace LY.Report.Core.CacheRepository
         private static LYAuthConfig LYAuthConfig => ConfigHelper.Get<LYAuthConfig>("lyauthconfig", "Development") ?? new LYAuthConfig();
         #else
         private static AppConfig AppConfig = ConfigHelper.Get<AppConfig>("appconfig") ?? new AppConfig();
-        private static EupAuthConfig EupAuthConfig => ConfigHelper.Get<EupAuthConfig>("eupauthconfig") ?? new EupAuthConfig();
+        private static LYAuthConfig LYAuthConfig => ConfigHelper.Get<LYAuthConfig>("eupauthconfig") ?? new LYAuthConfig();
         #endif
 
         private static bool _isInit;

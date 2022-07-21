@@ -66,8 +66,8 @@ namespace LY.Report.Core.Helper.TimerJob
                         Rport.Core.Service.LytechWebService.lytechWebServiceSoapClient client = new Rport.Core.Service.LytechWebService.lytechWebServiceSoapClient(EndpointConfiguration.lytechWebServiceSoap);
 
                         //string userId = "10237422|10166850|10013699";
-                        //string userId = strJobNos;
-                        string userId = "10555656";
+                        string userId = strJobNos;
+                        //string userId = "10555656";
                         string strMsg = "您好\n" +
                                                     $"{EnumHelper.GetDescription(item.Type)}警告\n" +
                                                     $"工序站点：{item.FProcess}\n" +

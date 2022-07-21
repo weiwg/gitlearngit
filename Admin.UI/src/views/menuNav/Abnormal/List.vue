@@ -15,8 +15,8 @@
         <div class="container">
             <!-- 查询 -->
             <div class="handle-box">
-                <el-form :model="query" :inline="true" v-if="checkPermission([`api${VIEW_VERSION}:System:SysRegion:GetPage`])">
-                    <template v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:GetPage`])">
+                <el-form :model="query" :inline="true" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:getpage`])">
+                    <template v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:getpage`])">
                         <el-form-item label="异常单号">
                             <el-input v-model="query.abnormalNo" placeholder="异常单号" class="handle-input mr10"></el-input>
                         </el-form-item>
@@ -55,10 +55,10 @@
                             <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
                         </el-form-item>
                     </template>
-                    <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Add`])">
+                    <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:add`])">
                         <el-button type="primary" icon="el-icon-plus" @click="handleClickAddData">新增</el-button>
                     </el-form-item>
-                    <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:BatchSoftDelete`])">
+                    <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:batchdelete`])">
                         <el-button
                             type="danger"
                             icon="el-icon-delete"
@@ -103,7 +103,7 @@
                         </el-tag>
                     </template>
                 </el-table-column>
-                <el-table-column label="操作" width="240" align="center" fixed="right" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Update`])">
+                <el-table-column label="操作" width="240" align="center" fixed="right" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:update`,`api${VIEW_VERSION}:product:abnormal:get`])">
                     <template #default="{ $index, row }">
                         <el-dropdown  
                         split-button
@@ -112,10 +112,10 @@
                         @click="handleClickEditData($index, row)" 
                         @command="(command)=>onCommand(command,row)">
                             编辑
-                            <template #dropdown v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`,`api${VIEW_VERSION}:System:Tenant:Delete`])">
+                            <template #dropdown v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:update`])">
                                 <el-dropdown-menu :visible-arrow="false" style="margin-top: 2px;width:100px;text-align:center;">
-                                    <el-dropdown-item command="handle" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:auth:permission:savetenantpermissions`])">处理异常</el-dropdown-item>
-                                    <el-dropdown-item command="delete" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:Delete`])">删除异常</el-dropdown-item>
+                                    <el-dropdown-item command="handle" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:updateabnormalhandle`])">处理异常</el-dropdown-item>
+                                    <el-dropdown-item command="delete" :disabled="row.status == EnumConfig.EnumConfig.AbnormalStatusJson.已处理" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:delete`])">删除异常</el-dropdown-item>
                                 </el-dropdown-menu>
                             </template>
                         </el-dropdown>
@@ -124,7 +124,7 @@
                             icon="el-icon-check"
                             @click="getAbnormalDetails($index, row)"
                             class="ml10"
-                            v-if="checkPermission([`api${VIEW_VERSION}:System:Tenant:SoftDelete`])"
+                            v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:get`])"
                         >详情
                         </el-button>
                     </template>
@@ -613,7 +613,7 @@
 import { reactive, toRefs, onBeforeMount, onMounted,onActivated,ref } from 'vue'
 import { ElMessage,ElMessageBox } from 'element-plus'
 import {useStore} from 'vuex'
-import {elConfirmDialog, IsNullOrEmpty} from "@/common/js/comm"
+import {elConfirmDialog, IsNullOrEmpty,formatDateTime} from "@/common/js/comm"
 import EupCrumbs from "../../../components/eup-crumbs/index.vue"
 import EnumConfig from "../../../enum/EnumConfig"
 import EupPagination from "@/components/EupPagination.vue"
@@ -746,8 +746,8 @@ export default {
                 "filter.abnomalStatus": data.query.abnomalStatus,
                 "filter.responDepart": data.query.responDepart,
                 "filter.responBy": data.query.responBy,
-                "filter.startDate": data.query.startDate,
-                "filter.endDate": data.query.endDate,
+                "filter.startDate": IsNullOrEmpty(data.query.startDate) ? data.query.startDate: formatDateTime(data.query.startDate, "yyyy-MM-dd"),
+                "filter.endDate": IsNullOrEmpty(data.query.endDate) ? data.query.endDate: formatDateTime(data.query.endDate, "yyyy-MM-dd"),
                 "filter.abnormalNo": data.query.abnormalNo,
                 "dynamicFilter": data.dynamicFilter
             }
@@ -1299,7 +1299,7 @@ export default {
             getAbnormalDetails,
             responDepartFormatter,
             closeHandleDialog,
-            handleDialogFormSave
+            handleDialogFormSave,
       }
    },
 }

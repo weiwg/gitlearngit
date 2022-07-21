@@ -28,8 +28,8 @@ module.exports = {
     },
     devServer: {
       open: false,//编译完成是否打开网页
-      host: 'localhost',//指定使用地址，默认localhost,0.0.0.0代表可以被外界访问
-      port: 9000,//访问端口号  
+      host: '0.0.0.0',//指定使用地址，默认localhost,0.0.0.0代表可以被外界访问
+      port: 9010,//访问端口号  
       proxy: {//设置代理
         '/geoip': {
           target: 'https://ip.seeip.org',
@@ -64,20 +64,21 @@ module.exports = {
           }
         },
         '/Api': {
-          // target: 'http://locwl.api.eonup.com:18001', //本地
-          // target: 'http://wuliu.api.eonup.com:8001', //测试
-          // target: 'http://wuliu.api.eonup.com', //正式
           target: process.env.VUE_APP_BASE_API,
           changeOrigin: true,
           ws: true,
+          // pathRewrite: {
+          //   '^/Api': "/",
+          // }
+  
         },
         '/img': {
-          // target: 'http://locwl.api.eonup.com:18001',//本地
-          // target: 'http://wuliu.api.eonup.com:8001', //测试
-          // target: 'http://wuliu.api.eonup.com', //正式
           target: process.env.VUE_APP_BASE_API,
           changeOrigin: true,
           ws: true,
+          // pathRewrite: {
+          //   '^/img': "/",
+          // }
         },
       }
     },

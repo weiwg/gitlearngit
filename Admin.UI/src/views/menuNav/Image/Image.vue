@@ -111,9 +111,8 @@
 <script>
 import { reactive, onBeforeMount, onMounted } from 'vue'
 import EupPagination from "../../../components/EupPagination.vue"
-import {GetListGetPageList,ImageSoftDelete,ImageBatchSoftDelete} from "@/serviceApi/Image/Image"
+import {GetListGetPageList,ImageSoftDelete,ImageBatchSoftDelete,postimg} from "@/serviceApi/Image/Image"
 import { ElMessage,ElMessageBox} from 'element-plus'
-import {postimg} from "@/serviceApi/Image/Image"
 import {elConfirmDialog} from "@/common/js/comm"
 import EupCrumbs from "../../../components/eup-crumbs/index.vue"
 import EnumConfig from "@/enum/EnumConfig"

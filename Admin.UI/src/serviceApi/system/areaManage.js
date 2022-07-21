@@ -11,11 +11,11 @@ import EnumConfig from '../../enum/EnumConfig'
 var CURR_API_VERSION = EnumConfig.EnumConfig.API_VIEW_VERSION.CURR_API_VIEW_VERSION;
 var API_VERSION = CURR_API_VERSION == 'V0' ? '' : `/S/${CURR_API_VERSION}`;
 
-//获取地区配置
+//分页查询
 export const getAreaList = (params)=>{
     return request.apiGet(`/api${API_VERSION}/System/SysRegion/GetPage`, params);
 }
-//查询单条信息
+//单条查询
 export const getAreaInfo = (params)=>{
     return request.apiGet(`/api${API_VERSION}/System/SysRegion/Get?id=`+params);
 }

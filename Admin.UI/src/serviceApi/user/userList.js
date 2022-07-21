@@ -23,10 +23,6 @@ export const updateUserInfo = (params)=>{
 export const resetPassword = (params)=>{
     return request.apiPut(`/Api${API_VERSION}/User/UserInfo/ResetSysPassword`, params);
 }
-//重置支付密码
-export const resetSysPayPassword = (params)=>{
-    return request.apiPut(`/Api${API_VERSION}/User/UserInfo/ResetSysPayPassword`, params);
-}
 //重置手机
 export const ResetPhone = (params)=>{
     return request.apiPut(`/api${API_VERSION}/User/UserInfo/ResetPhone`, params);

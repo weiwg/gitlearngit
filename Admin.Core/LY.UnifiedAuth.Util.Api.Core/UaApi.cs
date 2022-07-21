@@ -22,7 +22,7 @@ namespace LY.UnifiedAuth.Util.Api.Core
         #if DEBUG
         private static LYAuthConfig LYAuthConfig => ApiConfigHelper.Get<LYAuthConfig>("lyauthconfig", "Development") ?? new LYAuthConfig();
         #else
-        private static EupAuthConfig EupAuthConfig => ApiConfigHelper.Get<EupAuthConfig>("eupauthconfig") ?? new EupAuthConfig();
+        private static LYAuthConfig LYAuthConfig => ApiConfigHelper.Get<LYAuthConfig>("eupauthconfig") ?? new LYAuthConfig();
         #endif
 
         #region

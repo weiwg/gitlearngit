@@ -1,12 +1,19 @@
 {
   //Api地址
-  "urls": [ "https://wuliu.api.LY.com" ],
+  //"urls": [ "https://locar.api.ly.com" ],
+  "urls": [ "https://10.108.110.41:9002" ],
   //跨域地址
-  "corUrls": [ "https://wuliu.ly.com", "https://wuliu.admin.ly.com" ],
+  "corUrls": [
+    "https://locar.ly.com",
+    "https://locar.admin.ly.com",
+    "https://localhost:9002",
+    "https://localhost:9000",
+    "*"
+  ],
   //租户
   "tenant": false,
   //Swagger文档
-  "swagger": false,
+  "swagger": true,
   //统一认证授权服务器
   "IdentityServer": {
     //启用

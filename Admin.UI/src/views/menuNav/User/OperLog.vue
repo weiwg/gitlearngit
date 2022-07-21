@@ -35,11 +35,11 @@
                 <el-table-column prop="elapsedMilliseconds" label="耗时（毫秒）"  min-width="110" align="center"></el-table-column>
                 <el-table-column prop="status" label="操作状态" min-width="80" align="center">
                 <template #default="{row}">
-                  <el-tagW
+                  <el-tag
                     :type="row.status ? 'success' : 'danger'"
                     disable-transitions
                   >{{ row.status ? '成功' : '失败' }}
-                  </el-tagW>
+                  </el-tag>
                 </template>
                 </el-table-column>
                 <el-table-column prop="msg" label="操作消息" min-width="120" align="center"></el-table-column>

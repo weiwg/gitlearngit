@@ -12,7 +12,7 @@ import EnumConfig from '../../enum/EnumConfig'
 var CURR_API_VERSION = EnumConfig.EnumConfig.API_VIEW_VERSION.CURR_API_VIEW_VERSION;
 var API_VERSION = CURR_API_VERSION == 'V0' ? '' : `/S/${CURR_API_VERSION}`;
 
-//登录日志
+//分页查询
 export const getLoginLogPage = (params)=>{
     return request.apiGet(`/api${API_VERSION}/Record/RecordLogin/GetPage`, params);
 }

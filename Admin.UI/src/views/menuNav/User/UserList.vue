@@ -15,7 +15,7 @@
           ref="state.query"
           :model="state.query"
           :inline="true"
-          v-if="checkPermission([`api${state.VIEW_VERSION}:User:UserInfo:GetPage`])"
+          v-if="checkPermission([`api${state.VIEW_VERSION}:user:userinfo:getpage`])"
         >
           <!-- <el-form-item>
                         <eup-search :fields="state.fields" @click="onSearch" />
@@ -180,11 +180,6 @@
               >重置登录密码</el-button
             >
           </el-form-item>
-          <el-form-item label="支付密码">
-            <el-button type="success" @click="handleClickPayPassword"
-              >重置支付密码</el-button
-            >
-          </el-form-item>
           <el-form-item label="邮箱">
             <el-input v-model="state.form.email" :disabled="true" style="margin-right: 8px; width: 70%;"></el-input>
               <el-button type="success" @click="handleClickResetemail">重置邮箱</el-button>
@@ -257,45 +252,6 @@
       <template #footer>
         <span class="dialog-footer">
           <el-button type="primary" @click="handleClickSavePassword"
-            >确 定</el-button
-          >
-        </span>
-      </template>
-    </el-dialog>
-    <!-- 编辑支付密码弹出框 -->
-    <el-dialog
-      title="重置支付密码"
-      v-model="state.editPayPassword"
-      width="30%"
-      :close-on-click-modal="false"
-    >
-      <el-form
-        ref="state.PWEidtInfo"
-        :model="state.PWEiPayPassword"
-        label-width="70px"
-      >
-        <el-form-item label="新密码">
-          <el-input
-            placeholder="请输入密码"
-            v-model="state.PWEiPayPassword.newPassword"
-            maxlength="6"
-            show-password
-            oninput="value=value.replace(/[^0-9.]/g,'')"
-          ></el-input>
-        </el-form-item>
-        <el-form-item label="确认密码">
-          <el-input
-            placeholder="请输入密码"
-            v-model="state.PWEiPayPassword.confirmPassword"
-            maxlength="6"
-            show-password
-            oninput="value=value.replace(/[^0-9.]/g,'')"
-          ></el-input>
-        </el-form-item>
-      </el-form>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button type="primary" @click="handleClickSavePayPassword"
             >确 定</el-button
           >
         </span>
@@ -413,8 +369,7 @@ import {
   updateUserInfo,
   resetPassword,
   ResetPhone,
-  ResetEmail,
-  resetSysPayPassword,
+  ResetEmail
 } from "@/serviceApi/user/userList";
 import { postimg } from "@/serviceApi/Image/Image";
 import { passwordMd5 } from "@/utils/password.js";
@@ -476,7 +431,6 @@ export default {
       detailsVisible: false,
       dynamicFilter: {},
       hideUpload: false,
-      editPayPassword: false,
     });
     onMounted(() => {
       getData();
@@ -705,45 +659,9 @@ export default {
       state.editPhome = true;
       state.PWEidtPhome.Phome = "";
     };
-    const handleClickPayPassword = () => {
-      state.editPayPassword = true;
-      //每次打开对话窗时都重新初始化
-      state.PWEiPayPassword.newPassword = "";
-      state.PWEiPayPassword.confirmPassword = "";
-      state.PWEiPayPassword.userId = state.form.userId;
-    };
-    const handleClickSavePayPassword = () => {
-      
-      if (state.PWEiPayPassword.newPassword != state.PWEiPayPassword.confirmPassword) {
-        return ElMessage.error("两次密码输入不一致");
-      }
-      if (/^(\d)\1{2}(\d)\2{2}$|^(\d)\1{5}$|^(?!(^\d{6}$))/.test(state.PWEiPayPassword.newPassword)) {
-        return ElMessage.error("新密码格式错误,请输入6位不连续的数字");
-      }
-      let str = '0123456789_9876543210';
-      if(str.indexOf(state.PWEiPayPassword.confirmPassword) > -1){
-         return ElMessage.error("密码不能设置太简单");
-      }
-      var params = {
-        userId: state.PWEiPayPassword.userId,
-        newPassword: passwordMd5(state.PWEiPayPassword.confirmPassword),
-      };
-  resetSysPayPassword(params).then((res) => {
-          if(res.code==1){
-            state.editPayPassword = false;
-          ElMessage.success(res.msg);
-          getData();
-          }
-          else{
-            ElMessage.error(res.msg);
-          }
-      });
-    };
     return {
       state,
       handleSelectionChange,
-      handleClickPayPassword,
-      handleClickSavePayPassword,
       handleClickSaveEmail,
       handleClickResetphone,
       handleClickResetemail,

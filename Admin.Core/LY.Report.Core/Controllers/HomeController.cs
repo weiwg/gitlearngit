@@ -34,13 +34,13 @@ namespace LY.Report.Core.Controllers
 
         public void InitUnifiedAuthServer()
         {
-            #if DEBUG
-            LYAuthConfig eupAuthConfig = ConfigHelper.Get<LYAuthConfig>("eupauthconfig", "Development") ?? new LYAuthConfig();
-            #else
-            EupAuthConfig eupAuthConfig = ConfigHelper.Get<EupAuthConfig>("eupauthconfig") ?? new EupAuthConfig();
+#if DEBUG
+            LYAuthConfig lyAuthConfig = ConfigHelper.Get<LYAuthConfig>("eupauthconfig", "Development") ?? new LYAuthConfig();
+#else
+            LYAuthConfig lyAuthConfig = ConfigHelper.Get<LYAuthConfig>("lyauthconfig") ?? new LYAuthConfig();
             #endif
 
-            if (eupAuthConfig.IsUseLYApi)
+            if (lyAuthConfig.IsUseLYApi)
             {
                 ApiTokenHelper.GetApiAccessToken(true);
                 GlobalHelper.ResetAllParamConfig();

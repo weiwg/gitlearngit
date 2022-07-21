@@ -11,10 +11,12 @@ import EnumConfig from '../enum/EnumConfig'
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8';
 axios.defaults.headers['Cache-Control'] = 'no-cache';
 axios.defaults.headers['Pragma'] = 'no-cache';
+axios.defaults.headers['Pragma'] = 'no-cache';
+// axios.defaults.headers["Access-Control-Allow-Origin"]="*";
 
 const requestAxios = axios.create({
   // baseURL: 'http://localhost:9000', //开发
-  baseURL: '', //发布测试
+  baseURL: '',//process.env.VUE_APP_BASE_API, //发布测试
   timeout: 2000000 
 });
 
