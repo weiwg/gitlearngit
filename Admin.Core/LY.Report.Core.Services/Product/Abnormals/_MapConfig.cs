@@ -16,6 +16,7 @@ namespace LY.Report.Core.Service.Product.Abnormals
             CreateMap<ProductAbnormalUpdateInput, Abnormal>();
             CreateMap<Abnormal, ProductAbnormalListOutput>();
             CreateMap<ProAbnHandleUpdateInput, Abnormal>();
+            CreateMap<ProAbnHandleTimeUpdateInput, Abnormal>();
         }
     }
 }

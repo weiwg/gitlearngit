@@ -1296,7 +1296,7 @@
         </member>
         <member name="P:LY.Report.Core.Model.Product.Abnormal.FundaMeasures">
             <summary>
-            根本对策
+            长期对策
             </summary>
         </member>
         <member name="P:LY.Report.Core.Model.Product.Abnormal.Status">

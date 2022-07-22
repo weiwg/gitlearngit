@@ -52,5 +52,5 @@
   //是否开启定时任务
   "IsOpenTimerJob": false,
   //后台登录地址
-  "AdminReportUrl": "http://localhost:9000/Login"
+  "AdminReportUrl": "http://10.108.120.40:9000/Login"
 }

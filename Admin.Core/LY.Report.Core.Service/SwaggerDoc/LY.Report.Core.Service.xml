@@ -2328,6 +2328,16 @@
             映射配置
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleTimeUpdateInput.AbnormalNo">
+            <summary>
+            异常单号
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleTimeUpdateInput.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleUpdateInput.AbnormalNo">
             <summary>
             异常单号
@@ -2448,6 +2458,11 @@
             结束日期
             </summary>
         </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput.FProcess">
+            <summary>
+            工站
+            </summary>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalUpdateInput.AbnormalNo">
             <summary>
             异常单号
@@ -2471,6 +2486,13 @@
         <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetUnHandleAbnListAsync(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalGetInput)">
             <summary>
             获取异常记录
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.UpdateAbnormalHandleTimeAsync(LY.Report.Core.Service.Product.Abnormals.Input.ProAbnHandleTimeUpdateInput)">
+            <summary>
+            更新异常信息处理时间
             </summary>
             <param name="input"></param>
             <returns></returns>
@@ -2568,6 +2590,11 @@
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.CreateUser">
             <summary>
             创建人
+            </summary>
+        </member>
+        <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.CreateUserId">
+            <summary>
+            创建人Id
             </summary>
         </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalPersonListOutput.PersonLiableId">

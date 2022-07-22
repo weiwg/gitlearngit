@@ -21,7 +21,7 @@ namespace LY.Report.Core.Helper.TimerJob
         /// <summary>
         /// 触发器 触发时间，间隔，执行者
         /// </summary>
-        public AbnormalWarnTimerJob(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(5), new AbnormalWarnJobExcutor(productAbnormalService, env))
+        public AbnormalWarnTimerJob(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(15), new AbnormalWarnJobExcutor(productAbnormalService, env))
         {
         }
       
@@ -68,17 +68,17 @@ namespace LY.Report.Core.Helper.TimerJob
                         //string userId = "10237422|10166850|10013699";
                         string userId = strJobNos;
                         //string userId = "10555656";
-                        string strMsg = "您好\n" +
-                                                    $"{EnumHelper.GetDescription(item.Type)}警告\n" +
-                                                    $"工序站点：{item.FProcess}\n" +
-                                                    $"异常类型：{EnumHelper.GetDescription(item.ItemType)}\n" +
-                                                    $"异常单据号：{item.AbnormalNo}\n" +
-                                                    $"创建人：{item.CreateUser}\n" +
-                                                    $"开始时间：{item.BeginTime}\n" +
-                                                    $"指定责任人：{item.ResponName}\n" +
-                                                    $"异常描述：{item.Description}\n" +
-                                                    $"存在时间：{(DateTime.Now - item.BeginTime).TotalMinutes.ToString("0.00")}分钟,请跟进处理！\n" +
-                                                    $"异常处理连接：{_appConfig.AdminReportUrl}";
+                        string strMsg = $"{EnumHelper.GetDescription(item.Type)}警告\n" +
+                            $"工序站点：{item.FProcess}\n" +
+                            $"异常类型：{EnumHelper.GetDescription(item.ItemType)}\n" +
+                            $"异常单据号：{item.AbnormalNo}\n" +
+                            $"线别：{item.ProjectNo} {item.LineName}" +
+                            $"创建人：{item.CreateUser}\n" +
+                            $"开始时间：{item.BeginTime}\n" +
+                            $"指定责任人：{item.ResponName}\n" +
+                            $"异常描述：{item.Description}\n" +
+                            $"异常存在时间：{(DateTime.Now - item.BeginTime).TotalMinutes.ToString("0.00")}分钟,请跟进处理！\n" +
+                            $"异常处理连接：{_appConfig.AdminReportUrl}";
                         if (userId.Length > 0)
                         {
                             //var res = client.setDingDTalkAsync(userId, strMsg);

@@ -1,7 +1,7 @@
 {
   //Api地址
   //"urls": [ "https://locar.api.ly.com" ],
-  "urls": [ "https://10.108.110.41:9002" ],
+  "urls": [ "https://10.108.120.40:9001" ],
   //跨域地址
   "corUrls": [
     "https://locar.ly.com",
@@ -88,5 +88,5 @@
   //是否开启定时任务
   "IsOpenTimerJob": false,
   //后台登录地址
-  "AdminReportUrl": "http://localhost:9000/Login"
+  "AdminReportUrl": "http://10.108.120.40:9000/Login"
 }

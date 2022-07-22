@@ -432,4 +432,59 @@ export function elConfirmDialog (t,content, title, type, sureAction,cancelAction
     });
 }
 
+/**
+ * 时间比较,如果dateTime1>dateTime2,返回true;反之返回false
+ * @description 时间比较，如果dateTime1>dateTime2,返回true,反之返回false
+ * @author Weig
+ * @param {string} dateTime1  时间1，字符串时间格式
+ * @param {string} dateTime2  时间2，字符串时间格式
+ * @returns {boolean}
+ */
+ export function dateTimeCompare(dateTime1, dateTime2) {
+    if (dateTime1 && dateTime2) {
+        if (getExploreName() == "Safari") {
+            dateTime1 = dateTime1.replace(new RegExp("-", "gm"), "/");
+            dateTime2 = dateTime2.replace(new RegExp("-", "gm"), "/");
+        }
+        if (Date.parse(dateTime1) >= Date.parse(dateTime2)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * 获取浏览器名称
+ * @description 获取浏览器名称
+ * @author Weig
+ * @returns {string}
+ * */
+ export function getExploreName() {
+    var userAgent = navigator.userAgent;
+    if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
+        return 'Opera';
+    }
+    else if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1) {
+        return 'IE';
+    }
+    else if (userAgent.indexOf("Edge") > -1) {
+        return 'Edge';
+    }
+    else if (userAgent.indexOf("Firefox") > -1) {
+        return 'Firefox';
+    }
+    else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") == -1) {
+        return 'Safari';
+    }
+    else if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1) {
+        return 'Chrome';
+    }
+    else if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        return 'IE>=11';
+    }
+    else {
+        return 'Unkonwn';
+    }
+}
+
 

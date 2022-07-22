@@ -95,5 +95,10 @@ namespace LY.Report.Core.Service.Product.Abnormals.Output
         /// 创建人
         /// </summary>
         public string CreateUser { get; set; }
+
+        /// <summary>
+        /// 创建人Id
+        /// </summary>
+        public string CreateUserId { get; set; }
     }
 }

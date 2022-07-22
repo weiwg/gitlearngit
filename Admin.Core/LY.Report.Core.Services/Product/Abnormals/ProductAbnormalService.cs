@@ -10,7 +10,7 @@ using LY.Report.Core.Service.Product.Abnormals.Output;
 using System; 
 using System.Threading.Tasks;
 
-namespace LY.Report.Core.Service.Product.Abnormals
+namespace LY.Report.Core.Service.Product.Abnormals 
 {
     public class ProductAbnormalService : BaseService, IProductAbnormalService
     {
@@ -110,11 +110,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
         {
             var whereSelect = _productAbnormalRepository.Select
             .WhereIf(input.AbnormalNo.IsNotNull(), t => t.AbnormalNo == input.AbnormalNo)
-            .WhereIf(input.ProName.IsNotNull() && input.ProName != "0", t => t.ProjectNo == input.ProName)
-            .WhereIf(input.LineName.IsNotNull() && input.LineName != "0", t => t.LineName == input.LineName)
+            .WhereIf(input.ProName.IsNotNull() && input.ProName != "0" && input.ProName != "全部", t => t.ProjectNo == input.ProName)
+            .WhereIf(input.LineName.IsNotNull() && input.LineName != "0" && input.LineName != "全部", t => t.LineName == input.LineName)
             .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
             .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
             .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
+            .WhereIf(input.FProcess.IsNotNull(), t => t.FProcess.Contains(input.FProcess))
             .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate);
             var data = await _productAbnormalRepository.GetListAsync<ProductAbnormalListOutput>(whereSelect);
             return ResponseOutput.Data(data);
@@ -128,11 +129,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
         {
             var whereSelect = _productAbnormalRepository.Select
             .WhereIf(input.AbnormalNo.IsNotNull(), t => t.AbnormalNo == input.AbnormalNo)
-            .WhereIf(input.ProName.IsNotNull() && input.ProName != "0", t => t.ProjectNo == input.ProName)
-            .WhereIf(input.LineName.IsNotNull() && input.LineName != "0", t => t.LineName == input.LineName)
+            .WhereIf(input.ProName.IsNotNull() && input.ProName != "0" && input.ProName != "全部", t => t.ProjectNo == input.ProName)
+            .WhereIf(input.LineName.IsNotNull() && input.LineName != "0" && input.LineName != "全部", t => t.LineName == input.LineName)
             .WhereIf(input.AbnomalStatus > 0, t => t.Status == input.AbnomalStatus)
             .WhereIf(input.ResponDepart > 0, t => t.ResponDepart == input.ResponDepart)
             .WhereIf(input.ResponBy.IsNotNull(), t => t.ResponBy.Contains(input.ResponBy))
+            .WhereIf(input.FProcess.IsNotNull(), t => t.FProcess.Contains(input.FProcess))
             .WhereIf(input.StartDate != null && input.EndDate != null, t => t.CreateDate >= input.StartDate && t.CreateDate < input.EndDate);
             var result = await _productAbnormalRepository.GetOneAsync<ProductAbnormalGetOutput>(whereSelect);
             if (result == null)
@@ -171,11 +173,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 .LeftJoin((a, ap, u)=> a.ResponBy== ap.PersonLiableId)
                 .LeftJoin((a, ap, u)=> a.CreateUserId == u.UserId)
                 .WhereIf(input.AbnormalNo.IsNotNull(), (a, ap, u) => a.AbnormalNo == input.AbnormalNo)
-                .WhereIf(input.ProName.IsNotNull() && input.ProName != "0", (a, ap, u) => a.ProjectNo == input.ProName)
-                .WhereIf(input.LineName.IsNotNull() && input.LineName != "0", (a, ap, u) => a.LineName == input.LineName)
+                .WhereIf(input.ProName.IsNotNull() && input.ProName != "0" && input.ProName != "全部", (a, ap, u) => a.ProjectNo == input.ProName)
+                .WhereIf(input.LineName.IsNotNull() && input.LineName != "0" && input.LineName != "全部", (a, ap, u) => a.LineName == input.LineName)
                 .WhereIf(input.AbnomalStatus > 0, (a, ap, u) => a.Status == input.AbnomalStatus)
                 .WhereIf(input.ResponDepart > 0, (a, ap, u) => a.ResponDepart == input.ResponDepart)
                 .WhereIf(input.ResponBy.IsNotNull(), (a, ap, u) => a.ResponBy.Contains(input.ResponBy))
+                .WhereIf(input.FProcess.IsNotNull() && input.FProcess != "0" && input.FProcess != "全部", (a, ap, u) => a.FProcess.Contains(input.FProcess))
                 .WhereIf(input.StartDate != null && input.EndDate != null, (a, ap, u) => a.CreateDate >= input.StartDate && a.CreateDate < input.EndDate)
                 .Count(out var total)
                 .OrderByDescending((a, ap, u) => new { CreateDate = a.CreateDate })
@@ -199,7 +202,8 @@ namespace LY.Report.Core.Service.Product.Abnormals
                     Reason = a.Reason,
                     TempMeasures = a.TempMeasures,
                     FundaMeasures = a.FundaMeasures,
-                    CreateUser = u.NickName
+                    CreateUser = u.NickName,
+                    CreateUserId = u.UserId
                 });
 
             var data = new PageOutput<ProductAbnormalListOutput>
@@ -265,7 +269,8 @@ namespace LY.Report.Core.Service.Product.Abnormals
                     Reason = a.Reason,
                     TempMeasures = a.TempMeasures,
                     FundaMeasures = a.FundaMeasures,
-                    CreateUser = u.NickName
+                    CreateUser = u.NickName,
+                    CreateUserId = u.UserId
                 });
             return ResponseOutput.Data(list);
         }
@@ -336,6 +341,22 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 return ResponseOutput.NotOk("异常处理失败");
             }
             return ResponseOutput.Ok("异常处理成功");
+        }
+
+        public async Task<IResponseOutput> UpdateAbnormalHandleTimeAsync(ProAbnHandleTimeUpdateInput input)
+        {
+            var entity = await _productAbnormalRepository.GetOneAsync(t => t.AbnormalNo == input.AbnormalNo);
+            if (string.IsNullOrEmpty(entity.AbnormalNo))
+            {
+                return ResponseOutput.NotOk("异常记录数据不存在！");
+            }
+            Mapper.Map(input, entity);
+            int res = await _productAbnormalRepository.UpdateAsync(entity);
+            if (res <= 0)
+            {
+                return ResponseOutput.NotOk("修改异常结束时间失败");
+            }
+            return ResponseOutput.Ok("修改异常结束时间成功");
         }
         #endregion
     }

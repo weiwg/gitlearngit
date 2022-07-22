@@ -96,9 +96,9 @@ namespace LY.Report.Core.Model.Product
         [Column(StringLength = 500)]
         public string TempMeasures { get; set; }
         /// <summary>
-        /// 根本对策
+        /// 长期对策
         /// </summary>
-        [Description("根本对策")]
+        [Description("长期对策")]
         [Column(StringLength = 500)]
         public string FundaMeasures { get; set; }
         /// <summary>

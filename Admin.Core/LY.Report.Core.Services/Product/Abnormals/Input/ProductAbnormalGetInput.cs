@@ -46,5 +46,10 @@ namespace LY.Report.Core.Service.Product.Abnormals.Input
         /// 结束日期
         /// </summary>
         public DateTime? EndDate { get; set; }
+
+        /// <summary>
+        /// 工站
+        /// </summary>
+        public string FProcess { get; set; }
     }
 }

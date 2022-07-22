@@ -29,5 +29,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
         /// <param name="input"></param>
         /// <returns></returns>
         Task<IResponseOutput> GetUnHandleAbnListAsync(ProductAbnormalGetInput input);
+
+        /// <summary>
+        /// 更新异常信息处理时间
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<IResponseOutput> UpdateAbnormalHandleTimeAsync(ProAbnHandleTimeUpdateInput input);
     }
 }
