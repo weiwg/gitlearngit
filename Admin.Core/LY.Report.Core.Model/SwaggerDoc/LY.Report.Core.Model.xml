@@ -1124,19 +1124,54 @@
             小类(机器故障/物料异常/停电等)
             </summary>
         </member>
-        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.MechanicalFailure">
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Material">
             <summary>
-            机械故障
+            物料问题
             </summary>
         </member>
-        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.MaterialAbnormality">
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Equipment">
             <summary>
-            物料异常
+            设备问题
             </summary>
         </member>
-        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.PowerFailure">
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Mould">
             <summary>
-            停电
+            模具问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Process">
+            <summary>
+            制程问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Test">
+            <summary>
+            测试问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.SFC">
+            <summary>
+            SFC问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Power">
+            <summary>
+            电力问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Network">
+            <summary>
+            网络问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.CompressedGas">
+            <summary>
+            压缩气问题
+            </summary>
+        </member>
+        <member name="F:LY.Report.Core.Model.Product.Enum.AbnormalItemType.Other">
+            <summary>
+            其他问题
             </summary>
         </member>
         <member name="T:LY.Report.Core.Model.Product.Enum.ProNameType">

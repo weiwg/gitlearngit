@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 namespace LY.Report.Core.Helper
 {
     /// <summary>
-    /// Api帮助类
+    /// 定时任务帮助类
     /// </summary>
     public abstract class TimerJobHelper : IHostedService, IDisposable
     {

@@ -419,11 +419,13 @@ namespace LY.Report.Core
                 //services.AddHostedService<TestListTimerJob>();
                 //services.AddHostedService<TestTimerJob>();
                 services.AddHostedService<AbnormalWarnTimerJob>();
+                services.AddHostedService<AbnormalWarnTimerJobDingDingGroup>();
+                services.AddHostedService<AbnormalWarnTimerJobDingDGroupDayDetails>();
             }
             #endregion
 
             //注册消息队列
-            services.AddMqAsync(_env);
+            //services.AddMqAsync(_env);
 
             //阻止NLog接收状态消息
             services.Configure<ConsoleLifetimeOptions>(opts => opts.SuppressStatusMessages = true);

@@ -20,9 +20,6 @@
                         <el-form-item label="异常单号">
                             <el-input v-model="query.abnormalNo" placeholder="异常单号" class="handle-input mr10"></el-input>
                         </el-form-item>
-                        <el-form-item label="责任人">
-                            <el-input v-model="query.responBy" placeholder="责任人" class="handle-input mr10"></el-input>
-                        </el-form-item>
                         <el-form-item label="项目名称">
                             <el-select v-model="query.proName" placeholder="项目名称" class="handle-select mr10" @change="changeProNameHandle">
                                 <el-option v-for="item in arrProName" :key="item.value" :label="item.label" :value="item.value"></el-option>
@@ -36,6 +33,24 @@
                         <el-form-item label="责任部门">
                             <el-select v-model="query.responDepart" placeholder="责任部门" class="handle-select mr10">
                                 <el-option v-for="item in arrResponDepart" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="责任人">
+                            <!-- <el-input v-model="query.responBy" placeholder="责任人" class="handle-input mr10"></el-input> -->
+                            <el-select 
+                            v-model="query.responBy" 
+                            filterable 
+                            placeholder="请输入责任人/手机号码"
+                            :remote-method="remoteHandle"
+                            remote
+                            :clearable="true"
+                            >
+                                <el-option
+                                    v-for="item in arrResponBy"
+                                    :key="item.personLiableId"
+                                    :label="item.name"
+                                    :value="item.personLiableId">
+                                </el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="工站">
@@ -203,13 +218,26 @@
                     </el-col>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
                         <el-form-item label="工序站点" prop="fProcess" required>
-                            <el-select v-model="form.fProcess" placeholder="请选择工序站点" style="width:100%;">
+                            <!-- <el-select v-model="form.fProcess" placeholder="请选择工序站点" style="width:100%;">
                             <el-option
                                 v-for="item in arrFProcess"
                                 :key="item.value"
                                 :label="item.label"
                                 :value="item.value"
                             />
+                            </el-select> -->
+                            <el-select 
+                            v-model="form.fProcess" 
+                            filterable 
+                            placeholder="请选择工序站点"
+                            >
+                                <el-option
+                                v-for="item in arrFProcess"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value"
+                                >
+                                </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
@@ -286,7 +314,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                     <el-form-item label="异常描述" prop="description" required>
-                        <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" />
+                        <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" placeholder="请输入异常描述！"/>
                     </el-form-item>
                     </el-col>
                 </el-row>
@@ -376,21 +404,21 @@
                                 </el-form-item>
                             </el-col>
                         </el-row>
-                        <el-row>
+                        <el-row v-if="formDetails.status">
                             <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
                                 <el-form-item label="原因分析" prop="reason"  label-width="100px">
                                 <input v-model="formDetails.reason" class="inputin" :disabled="true" />
                                 </el-form-item>
                             </el-col>
                         </el-row>
-                        <el-row>
+                        <el-row v-if="formDetails.status">
                             <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
                                 <el-form-item label="临时对策" prop="tempMeasures"  label-width="100px">
                                 <input v-model="formDetails.tempMeasures" class="inputin" :disabled="true" />
                                 </el-form-item>
                             </el-col>
                         </el-row>
-                        <el-row>
+                        <el-row v-if="formDetails.status">
                             <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
                                 <el-form-item label="长期对策" prop="fundaMeasures"  label-width="100px">
                                 <input v-model="formDetails.fundaMeasures" class="inputin" :disabled="true" />
@@ -506,21 +534,21 @@
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                     <el-form-item label="原因分析" prop="reason" required>
-                        <el-input v-model="handleForm.reason" type="textarea" :rows="2" auto-complete="off"/>
+                        <el-input v-model="handleForm.reason" type="textarea" :rows="2" auto-complete="off" placeholder="请填写原因分析！" />
                     </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                     <el-form-item label="临时对策" prop="tempMeasures" required>
-                        <el-input v-model="handleForm.tempMeasures" type="textarea" :rows="2" auto-complete="off"/>
+                        <el-input v-model="handleForm.tempMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写临时对策！"/>
                     </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="根本对策" prop="fundaMeasures" required>
-                        <el-input v-model="handleForm.fundaMeasures" type="textarea" :rows="2" auto-complete="off"/>
+                    <el-form-item label="长期对策" prop="fundaMeasures" required>
+                        <el-input v-model="handleForm.fundaMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写长期对策！"/>
                     </el-form-item>
                     </el-col>
                 </el-row>
@@ -794,7 +822,6 @@ export default {
          * @param
          */
         function getData (){
-            debugger
             var params = {
                 "currentPage": data.pageIndex,
                 "pageSize": data.pageSize,
@@ -1155,13 +1182,13 @@ export default {
             if (IsNullOrEmpty(value)){
                 return;
             }
-            if (data.form.responDepart == EnumConfig.EnumConfig.ResponDepartJson.全部){
+            if ((data.form.responDepart == EnumConfig.EnumConfig.ResponDepartJson.全部 && data.addDialogFormVisible==true) || data.query.responDepart == EnumConfig.EnumConfig.ResponDepartJson.全部){
                 ElMessage.warning("请先选择部门！");   
                 return;
             }
             let params = {
                 name: value,
-                responDepart: data.form.responDepart
+                responDepart: data.addDialogFormVisible ? data.form.responDepart : data.query.responDepart
             }
             if (params.name.trim() == ""){
                 data.arrResponBy = [];
@@ -1345,7 +1372,7 @@ export default {
                 return;
             }
             if (IsNullOrEmpty(data.handleForm.fundaMeasures)){
-                ElMessage.warning("根本对策不能为空！")
+                ElMessage.warning("长期对策不能为空！")
                 return;
             }
             // if (IsNullOrEmpty(data.handleForm.endTime)){
@@ -1419,6 +1446,7 @@ export default {
             }
             return false;
         }
+        
         return {
             ...toRefs(data),
             changeProNameHandle,

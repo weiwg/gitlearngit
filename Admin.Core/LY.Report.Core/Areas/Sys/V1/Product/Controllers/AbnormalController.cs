@@ -1,9 +1,11 @@
 ﻿using LY.Report.Core.Common.Input;
 using LY.Report.Core.Common.Output;
+using LY.Report.Core.Helper.TimerJob;
 using LY.Report.Core.Model.Product.Enum;
 using LY.Report.Core.Service.Product.Abnormals;
 using LY.Report.Core.Service.Product.Abnormals.Input;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
 
 namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
@@ -14,10 +16,14 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
     public class AbnormalController : BaseAreaController
     {
         private readonly IProductAbnormalService _productAbnormalService;
+        private readonly AbnormalWarnJobDingDingGroupExcutor _abnormalWarnJobDingDingGroupExcutor;
+        private readonly AbnormalWarnJobExcutor _abnormalWarnJobExcutor;
 
-        public AbnormalController(IProductAbnormalService productAbnormalService)
+        public AbnormalController(IProductAbnormalService productAbnormalService, IHostEnvironment env)
         {
             _productAbnormalService = productAbnormalService;
+            _abnormalWarnJobDingDingGroupExcutor = new AbnormalWarnJobDingDingGroupExcutor(productAbnormalService, env);
+            _abnormalWarnJobExcutor = new AbnormalWarnJobExcutor(productAbnormalService, env);
         }
 
         #region 新增
@@ -29,7 +35,13 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         [HttpPost]
         public async Task<IResponseOutput> Add(ProductAbnormalAddInput input)
         {
-            return await _productAbnormalService.AddAsync(input);
+            var result = await _productAbnormalService.AddAsync(input);
+            if (result.Success)
+            {
+                _abnormalWarnJobExcutor.StartJob();
+                _abnormalWarnJobDingDingGroupExcutor.StartJob();
+            }
+            return result;
         }
         #endregion
 

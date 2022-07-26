@@ -25,19 +25,54 @@ namespace LY.Report.Core.Model.Product.Enum
     public enum AbnormalItemType
     {
         /// <summary>
-        /// 机械故障
+        /// 物料问题
         /// </summary>
-        [Description("机械故障")]
-        MechanicalFailure = 10,
+        [Description("物料问题")]
+        Material = 10,
         /// <summary>
-        /// 物料异常
+        /// 设备问题
         /// </summary>
-        [Description("物料异常")]
-        MaterialAbnormality = 11,
+        [Description("设备问题")]
+        Equipment = 11,
         /// <summary>
-        /// 停电
+        /// 模具问题
         /// </summary>
-        [Description("停电")]
-        PowerFailure = 12
+        [Description("模具问题")]
+        Mould = 12,
+        /// <summary>
+        /// 制程问题
+        /// </summary>
+        [Description("制程问题")]
+        Process = 13,
+        /// <summary>
+        /// 测试问题
+        /// </summary>
+        [Description("测试问题")]
+        Test = 14,
+        /// <summary>
+        /// SFC问题
+        /// </summary>
+        [Description("SFC问题")]
+        SFC = 15,
+        /// <summary>
+        /// 电力问题
+        /// </summary>
+        [Description("电力问题")]
+        Power = 16,
+        /// <summary>
+        /// 网络问题
+        /// </summary>
+        [Description("网络问题")]
+        Network = 17,
+        /// <summary>
+        /// 压缩气问题
+        /// </summary>
+        [Description("压缩气问题")]
+        CompressedGas = 18,
+        /// <summary>
+        /// 其他问题
+        /// </summary>
+        [Description("其他问题")]
+        Other = 19
     }
 }
