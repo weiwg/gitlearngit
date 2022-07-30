@@ -254,9 +254,16 @@ var EnumConfig={
     AbnormalItemType:{
         arrAbnormalItemType:[
             {value:0, label: "全部"},
-            {value:10, label: "机械故障"},
-            {value:11, label: "物料异常"},
-            {value:12, label: "停电"},
+            {value:10, label: "物料问题"},
+            {value:11, label: "设备问题"},
+            {value:12, label: "模具问题"},
+            {value:13, label: "制程问题"},
+            {value:14, label: "测试问题"},
+            {value:15, label: "SFC问题"},
+            {value:16, label: "电力问题"},
+            {value:17, label: "网络问题"},
+            {value:18, label: "压缩气问题"},
+            {value:19, label: "其他问题"},
         ]
     },
     AbnormalItemTypeJson:{

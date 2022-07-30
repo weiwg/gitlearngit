@@ -274,6 +274,14 @@ namespace LY.Report.Core.Service.Product.Abnormals
                 });
             return ResponseOutput.Data(list);
         }
+
+        public async Task<IResponseOutput> GetResponByListByDepart(ResponDepart responDepart)
+        {
+            var whereSelect = _productAbnormalPersonRepository.Select
+            .WhereIf(responDepart > 0, t => t.Department == responDepart);
+            var data = await _productAbnormalPersonRepository.GetListAsync<ProductAbnormalPersonListOutput>(whereSelect);
+            return ResponseOutput.Data(data);
+        }
         #endregion
 
         #region 修改

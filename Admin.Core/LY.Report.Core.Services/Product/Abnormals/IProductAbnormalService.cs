@@ -36,5 +36,12 @@ namespace LY.Report.Core.Service.Product.Abnormals
         /// <param name="input"></param>
         /// <returns></returns>
         Task<IResponseOutput> UpdateAbnormalHandleTimeAsync(ProAbnHandleTimeUpdateInput input);
+
+        /// <summary>
+        /// 查询某个部门下的异常责任人成员
+        /// </summary>
+        /// <param name="input">部门</param>
+        /// <returns></returns>
+        Task<IResponseOutput> GetResponByListByDepart(ResponDepart input);
     }
 }

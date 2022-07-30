@@ -31,7 +31,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item label="责任部门">
-                            <el-select v-model="query.responDepart" placeholder="责任部门" class="handle-select mr10">
+                            <el-select v-model="query.responDepart" placeholder="责任部门" class="handle-select mr10" @change="changeQueryDepartHandle">
                                 <el-option v-for="item in arrResponDepart" :key="item.value" :label="item.label" :value="item.value"></el-option>
                             </el-select>
                         </el-form-item>
@@ -39,11 +39,7 @@
                             <!-- <el-input v-model="query.responBy" placeholder="责任人" class="handle-input mr10"></el-input> -->
                             <el-select 
                             v-model="query.responBy" 
-                            filterable 
-                            placeholder="请输入责任人/手机号码"
-                            :remote-method="remoteHandle"
-                            remote
-                            :clearable="true"
+                            placeholder="请选择责任人"
                             >
                                 <el-option
                                     v-for="item in arrResponBy"
@@ -271,7 +267,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
                         <el-form-item label="责任部门" prop="responDepart" required>
-                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="dialogType == 1 ? false : true">
+                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="dialogType == 1 ? false : true" @change="changeEditDepartHandle">
                             <el-option
                                 v-for="item in arrResponDepart"
                                 :key="item.value"
@@ -285,12 +281,7 @@
                         <el-form-item label="责任人" prop="responBy" required>
                             <el-select 
                             v-model="form.responBy" 
-                            filterable 
-                            placeholder="请输入责任人/手机号码"
-                            :remote-method="remoteHandle"
-                            remote
-                            :clearable="true"
-                            @clear="onClearDialog"
+                            placeholder="请选择责任人"
                             :disabled="dialogType == 1 ? false : true"
                             >
                             <el-option
@@ -306,7 +297,7 @@
                 <el-row>
                     <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
                         <el-form-item label="开始时间" required>
-                            <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期">
+                            <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期" :disabledDate="disabledDate3">
                             </el-date-picker>
                         </el-form-item>
                     </el-col>
@@ -699,7 +690,7 @@ import EupPagination from "@/components/EupPagination.vue"
 import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
 import {abnormalGetPage, abnormalGet, abnormalAdd,abnormalBatchDelete,abnormalDelete,abnormalUpdate,
-getAbnormalPersonInfo,updateAbnormalHandle,UpdateAbnormalHandleTime} from '../../../serviceApi/Abnormal/Abnormal'
+getAbnormalPersonInfo,updateAbnormalHandle,UpdateAbnormalHandleTime,GetResponByListByDepart} from '../../../serviceApi/Abnormal/Abnormal'
 var CURR_VIEW_VERSION = EnumConfig.EnumConfig.API_VIEW_VERSION.CURR_API_VIEW_VERSION;
 var VIEW_VERSION = CURR_VIEW_VERSION == 'V0' ? '' : `:S:${CURR_VIEW_VERSION}`;
 export default {
@@ -897,6 +888,19 @@ export default {
             }
             return time.getTime() > Date.now();
         }
+        /**
+         * 只能选择今天
+         * @param {*} time 
+         */
+        const disabledDate3 =(time) =>{
+            // return time.getTime() > Date.now() || time.getTime() < Date.now()
+            //自然白班
+            if (Date.now > new Date(formatDateTime(new Date(), "yyyy-MM-dd " +"08:00")).getTime() && Date.now < new Date(formatDateTime(new Date(), "yyyy-MM-dd " +"20:00")).getTime()){
+                return time.getTime() > new Date(formatDateTime(new Date(), "yyyy-MM-dd " +"08:00" )).getTime() || time.getTime() < new Date(formatDateTime(new Date(), "yyyy-MM-dd " +"20:00")).getTime();
+            } else{
+                return time.getTime() > new Date(formatDateTime(new Date(), "yyyy-MM-dd " +"20:00" )).getTime() || time.getTime() < new Date(formatDateTime(new Date(Date.now() + 86400000), "yyyy-MM-dd " + "08:00")).getTime();
+            }
+        }
         
         /**
          * @description 搜索查询
@@ -957,6 +961,7 @@ export default {
             data.addDialogFormVisible = true;
             data.dialogTitle = '新增异常';
             data.dialogType = 1;
+            data.form.beginTime = formatDateTime(new Date(), "yyyy-MM-dd HH:mm:ss");
         }
         /**
          * @description 批量删除
@@ -1446,6 +1451,50 @@ export default {
             }
             return false;
         }
+        /**
+         * @description 查询部门切换
+         * @author weig
+         * @param {number} value 部门
+        */
+        const changeQueryDepartHandle = (value)=>{
+            if (value == 0){
+                data.arrResponBy = [];
+            }
+            var params = {
+                responDepart: value
+            }
+            GetResponByListByDepart(params).then((res)=>{
+                if (res.code ==1){
+                    data.arrResponBy = res.data;
+                } else {
+                    ElMessage.error(res.msg);
+                }
+            }).catch((e)=>{
+                ElMessage.error("获取责任人失败！");
+            });  
+        }
+        /**
+         * @description 编辑部门切换
+         * @author weig
+         * @param {number} value 部门
+        */
+        const changeEditDepartHandle = (value)=>{
+            if (value == 0){
+                data.arrResponBy = [];
+            }
+            var params = {
+                responDepart: value
+            }
+            GetResponByListByDepart(params).then((res)=>{
+                if (res.code ==1){
+                    data.arrResponBy = res.data;
+                } else {
+                    ElMessage.error(res.msg);
+                }
+            }).catch((e)=>{
+                ElMessage.error("获取责任人失败！");
+            });  
+        }
         
         return {
             ...toRefs(data),
@@ -1453,6 +1502,7 @@ export default {
             disabledDate,
             disabledDate1,
             disabledDate2,
+            disabledDate3,
             handleSearch,
             resPageData,
             getData,
@@ -1480,7 +1530,9 @@ export default {
             closeHandleDialog,
             handleDialogFormSave,
             handleTimeDialogFormSave,
-            cmdDisabledFunc
+            cmdDisabledFunc,
+            changeQueryDepartHandle,
+            changeEditDepartHandle
       }
    },
 }

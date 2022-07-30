@@ -114,6 +114,16 @@ namespace LY.Report.Core.Areas.Sys.V1.Product.Controllers
         {
             return await _productAbnormalService.GetAbnormalPerson(name, responDepart);
         }
+        /// <summary>
+        /// 查询某个部门下的异常责任人成员
+        /// </summary>
+        /// <param name="responDepart">部门</param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IResponseOutput> GetResponByListByDepart(ResponDepart responDepart)
+        {
+            return await _productAbnormalService.GetResponByListByDepart(responDepart);
+        }
         #endregion
 
         #region 修改

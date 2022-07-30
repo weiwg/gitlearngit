@@ -2497,6 +2497,13 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:LY.Report.Core.Service.Product.Abnormals.IProductAbnormalService.GetResponByListByDepart(LY.Report.Core.Model.Product.Enum.ResponDepart)">
+            <summary>
+            查询某个部门下的异常责任人成员
+            </summary>
+            <param name="input">部门</param>
+            <returns></returns>
+        </member>
         <member name="P:LY.Report.Core.Service.Product.Abnormals.Output.ProductAbnormalGetOutput.Id">
             <summary>
             Id

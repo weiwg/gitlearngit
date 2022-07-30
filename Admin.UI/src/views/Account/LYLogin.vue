@@ -66,7 +66,7 @@
             @success="onCaptchaSuccess"
           /> -->
 
-          <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox>
+          <!-- <el-checkbox v-model="checked" class="remember">记住密码</el-checkbox> -->
           <el-form-item style="width:100%;">
             <el-button
               type="primary"
@@ -96,8 +96,8 @@ export default {
   data() {
     return {
       form: {
-        userName: 'administrator',
-        password: 'lyzxcv.1234',
+        userName: 'admin',
+        password: '123456',
         verifyCode: '',
         verifyCodeKey: '',
         passwordKey: ''

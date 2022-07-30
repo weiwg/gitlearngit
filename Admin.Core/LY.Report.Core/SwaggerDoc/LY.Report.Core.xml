@@ -911,6 +911,13 @@
             <param name="responDepart">责任部门</param>
             <returns></returns>
         </member>
+        <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.GetResponByListByDepart(LY.Report.Core.Model.Product.Enum.ResponDepart)">
+            <summary>
+            查询某个部门下的异常责任人成员
+            </summary>
+            <param name="responDepart">部门</param>
+            <returns></returns>
+        </member>
         <member name="M:LY.Report.Core.Areas.Sys.V1.Product.Controllers.AbnormalController.Update(LY.Report.Core.Service.Product.Abnormals.Input.ProductAbnormalUpdateInput)">
             <summary>
             修改

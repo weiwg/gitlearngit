@@ -82,7 +82,7 @@ namespace LY.Report.Core.Helper.TimerJob
                             $"开始时间：{item.BeginTime}\n" +
                             $"指定责任人：{item.ResponName}\n" +
                             $"异常描述：{item.Description}\n" +
-                            $"异常存在时间：{(DateTime.Now - item.BeginTime).TotalMinutes.ToString("0.00")}分钟,请跟进处理！\n" +
+                            $"异常存在时间：{(DateTime.Now - item.BeginTime).TotalMinutes.ToString("0.0")}分钟,请跟进处理！\n" +
                             $"异常处理链接：{_appConfig.AdminReportUrl}";
                         if (userId.Length > 0)
                         {
