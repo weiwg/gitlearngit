@@ -18,8 +18,9 @@ namespace LY.Report.Core.Helper.TimerJob
     /// </summary>
     public class AbnormalWarnTimerJobDingDingGroup : TimerJobHelper
     {
+        static private readonly AppConfig _appConfig = ConfigHelper.Get<AppConfig>("appconfig", "") ?? new AppConfig();
         //群组钉钉消息触发器 触发时间，间隔，执行者
-        public AbnormalWarnTimerJobDingDingGroup(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(720), new AbnormalWarnJobDingDingGroupExcutor(productAbnormalService, env))
+        public AbnormalWarnTimerJobDingDingGroup(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(_appConfig.ABDDGroupInfoTimeSpan), new AbnormalWarnJobDingDingGroupExcutor(productAbnormalService, env))
         {
 
         }
@@ -39,7 +40,7 @@ namespace LY.Report.Core.Helper.TimerJob
             _appConfig = ConfigHelper.Get<AppConfig>("appconfig", env.EnvironmentName) ?? new AppConfig();
         }
 
-        public void StartJob()
+        public async void StartJob()
         {
             _logger.Info("执行钉钉群组消息发送任务");
             try
@@ -73,7 +74,7 @@ namespace LY.Report.Core.Helper.TimerJob
                             $"异常存在时间：{(DateTime.Now - item.BeginTime).TotalMinutes.ToString("0.0")}分钟,请跟进处理！\n\n" +
                             $"异常处理链接：{_appConfig.AdminReportUrl}";
 
-                        var strRes = client2.sendGroupDingTalkAsync("chat7d52a322d17c6b0f9985e79512a88249", $"{ EnumHelper.GetDescription(item.Type)}警告", strMsg2);
+                        var strRes = await client2.sendGroupDingTalkAsync("chat7d52a322d17c6b0f9985e79512a88249", $"{ EnumHelper.GetDescription(item.Type)}警告", strMsg2);
                         //返回值 {"errcode":0,"errmsg":"ok","messageId":"dfb4ed75ed253be68ba0534272dcc7a0","invalidparty":"","invaliduser":""}
                         _logger.Info("钉钉群组消息发送返回结果:" + strRes);
                         #endregion

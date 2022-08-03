@@ -84,7 +84,23 @@
         /// 后台登录地址
         /// </summary>
         public string AdminReportUrl { get; set; }
-
+        /// <summary>
+        /// 每天异常汇总报告生成时间
+        /// </summary>
+        public string AbnormalDetailsReportTimer { get; set; }
+        
+        /// <summary>
+        /// 钉钉异常信息群组推送间隔时间
+        /// </summary>
+        public int ABDDGroupInfoTimeSpan { get; set; }
+        /// <summary>
+        /// 钉钉异常信息个人通知推送间隔时间
+        /// </summary>
+        public int ABDDPersonInfoTimeSpan { get; set; }
+        /// <summary>
+        /// 钉钉异常信息群组每天总结推送间隔时间
+        /// </summary>
+        public int ABDDGroupDetailsInfoTimeSpan { get; set; }
     }
 
     /// <summary>

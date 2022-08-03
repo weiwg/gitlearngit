@@ -15,7 +15,7 @@ import './assets/css/icon.css'
 
 
 const app = createApp(App);
-installElementPlusETC(app)
+installElementPlusETC(app);
 app
     .use(store)
     .use(router)

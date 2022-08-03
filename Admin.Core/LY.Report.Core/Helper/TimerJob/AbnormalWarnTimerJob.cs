@@ -9,6 +9,7 @@ using LY.Report.Core.Util.Tool;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using static LY.Rport.Core.Service.LytechWebService.lytechWebServiceSoapClient;
 
 namespace LY.Report.Core.Helper.TimerJob
@@ -18,10 +19,11 @@ namespace LY.Report.Core.Helper.TimerJob
     /// </summary>
     public class AbnormalWarnTimerJob : TimerJobHelper
     {
+        static private readonly AppConfig _appConfig = ConfigHelper.Get<AppConfig>("appconfig", "") ?? new AppConfig();
         /// <summary>
         /// 个人钉钉通知触发器 触发时间，间隔，执行者
         /// </summary>
-        public AbnormalWarnTimerJob(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(240), new AbnormalWarnJobExcutor(productAbnormalService, env))
+        public AbnormalWarnTimerJob(IProductAbnormalService productAbnormalService, IHostEnvironment env) : base(TimeSpan.Zero, TimeSpan.FromMinutes(_appConfig.ABDDPersonInfoTimeSpan), new AbnormalWarnJobExcutor(productAbnormalService, env))
         {
 
         }
@@ -41,7 +43,7 @@ namespace LY.Report.Core.Helper.TimerJob
             _appConfig = ConfigHelper.Get<AppConfig>("appconfig", env.EnvironmentName) ?? new AppConfig();
         }
 
-        public void StartJob()
+        public async void StartJob()
         {
             _logger.Info("执行个人钉钉通知任务");
             try
@@ -71,6 +73,7 @@ namespace LY.Report.Core.Helper.TimerJob
                         Rport.Core.Service.LytechWebService.lytechWebServiceSoapClient client = new Rport.Core.Service.LytechWebService.lytechWebServiceSoapClient(EndpointConfiguration.lytechWebServiceSoap);
 
                         //string userId = "10237422|10166850|10013699";
+                        //string userId = strJobNos + "|10555656";
                         string userId = strJobNos;
                         //string userId = "10555656";
                         string strMsg = $"{EnumHelper.GetDescription(item.Type)}警告\n" +
@@ -87,7 +90,7 @@ namespace LY.Report.Core.Helper.TimerJob
                         if (userId.Length > 0)
                         {
                             //var res = client.setDingDTalkAsync(userId, strMsg);
-                            var strRes = client.setDingDTalkAsync(userId, strMsg); //发送通知
+                            var strRes = await client.setDingDTalkAsync(userId, strMsg); //发送通知
                             _logger.Info("个人钉钉通知返回结果:" + strRes);
                             //res.Wait(15);
                         }

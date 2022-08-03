@@ -88,5 +88,13 @@
   //是否开启定时任务
   "IsOpenTimerJob": true,
   //后台登录地址
-  "AdminReportUrl": "http://10.108.120.40:9000/Login"
+  "AdminReportUrl": "http://10.108.120.40:9000/Login",
+  //每天异常汇总报告生成时间
+  "AbnormalDetailsReportTimer": "23:59",
+  //钉钉异常信息群组推送间隔时间
+  "ABDDGroupInfoTimeSpan": 180,
+  //钉钉异常信息个人通知推送间隔时间
+  "ABDDPersonInfoTimeSpan": 180,
+  //钉钉异常信息群组每天总结推送间隔时间
+  "ABDDGroupDetailsInfoTimeSpan": 1440
 }

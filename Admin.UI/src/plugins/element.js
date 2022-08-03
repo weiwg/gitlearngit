@@ -14,6 +14,8 @@ import localeZH from 'element-plus/lib/locale/lang/zh-cn'
 import localeEN from 'element-plus/lib/locale/lang/en'
 import messages from '../utils/i18n'
 import dire_permission from '../directive/index'
+import install from '../directive/el-dragDialog/index'
+// import drag_dialog from '../directive/el-dragDialog/directive'
 import checkPermissionMixin from  '@/mixin'
 // console.log(msg)
 
@@ -39,7 +41,9 @@ export default (app) => {
   dire_permission(app);
    //混入查看权限方法
   checkPermissionMixin(app);
+  //对话框拖拽
+  install.install(app);
 
   app.use(ElementPlus, { locale:localeZH })
-    .use(i18n);
+    .use(i18n)
 }

@@ -16,6 +16,7 @@
             <!-- 查询 -->
             <div class="handle-box">
                 <el-form :model="query" :inline="true" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:getpage`])">
+                <!-- <el-form :model="query" :inline="true" v-permission="[`api${VIEW_VERSION}:product:abnormal:getpage12121`]"> -->
                     <template v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:getpage`])">
                         <el-form-item label="异常单号">
                             <el-input v-model="query.abnormalNo" placeholder="异常单号" class="handle-input mr10"></el-input>
@@ -71,7 +72,8 @@
                             <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
                         </el-form-item>
                     </template>
-                    <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:add`])">
+                    <!-- <el-form-item v-permission="[`api${VIEW_VERSION}:product:abnormal:add`]" v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:add`])"> -->
+                    <el-form-item v-permission="[`api${VIEW_VERSION}:product:abnormal:add`]">
                         <el-button type="primary" icon="el-icon-plus" @click="handleClickAddData">新增</el-button>
                     </el-form-item>
                     <el-form-item v-if="checkPermission([`api${VIEW_VERSION}:product:abnormal:batchdelete`])">
@@ -161,532 +163,578 @@
         </div>
         <!-- 内容区域 end -->
         <!-- 添加/编辑窗口 begin -->
-        <el-dialog 
-        :title="dialogTitle"
-        v-model="addDialogFormVisible"
-        :close-on-click-modal="false"
-        width="60%"
-        @close="closeDialog">
-            <el-form
-                ref="refAddForm"
-                :model="form"
-                label-width="120px"
-                :inline="false"        
-            >
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="项目编号" prop="projectNo" required>
-                            <el-select v-model="form.projectNo" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="dialogType == 1 ? false : true">
-                            <el-option
-                                v-for="item in arrProName"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>                    
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="线体" prop="lineName" required>
-                            <el-select v-model="form.lineName" placeholder="请选择线体" style="width:100%;" :disabled="dialogType == 1 ? false : true">
-                            <el-option
-                                v-for="item in arrLinesForm"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="班别" prop="classAB" required>
-                            <el-select v-model="form.classAB" placeholder="请选择班别" style="width:100%;">
-                            <el-option
-                                v-for="item in arrClassAB"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="工序站点" prop="fProcess" required>
-                            <!-- <el-select v-model="form.fProcess" placeholder="请选择工序站点" style="width:100%;">
-                            <el-option
-                                v-for="item in arrFProcess"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select> -->
-                            <el-select 
-                            v-model="form.fProcess" 
-                            filterable 
-                            placeholder="请选择工序站点"
-                            >
-                                <el-option
-                                v-for="item in arrFProcess"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                                >
-                                </el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="异常大类" prop="type" required>
-                            <el-select v-model="form.type" placeholder="请选择异常大类" style="width:100%;">
-                            <el-option
-                                v-for="item in arrAbnomalType"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="异常小类" prop="itemType" required>
-                            <el-select v-model="form.itemType" placeholder="请选择异常小类" style="width:100%;">
-                            <el-option
-                                v-for="item in arrAbnomalItemType"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任部门" prop="responDepart" required>
-                            <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="dialogType == 1 ? false : true" @change="changeEditDepartHandle">
-                            <el-option
-                                v-for="item in arrResponDepart"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任人" prop="responBy" required>
-                            <el-select 
-                            v-model="form.responBy" 
-                            placeholder="请选择责任人"
-                            :disabled="dialogType == 1 ? false : true"
-                            >
-                            <el-option
-                                v-for="item in arrResponBy"
-                                :key="item.personLiableId"
-                                :label="item.name"
-                                :value="item.personLiableId">
-                            </el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-col>  
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                        <el-form-item label="开始时间" required>
-                            <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期" :disabledDate="disabledDate3">
-                            </el-date-picker>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="异常描述" prop="description" required>
-                        <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" placeholder="请输入异常描述！"/>
-                    </el-form-item>
-                    </el-col>
-                </el-row>
-            </el-form>
-            <template #footer>
-                <span class="dialog-footer">
-                <el-button @click="closeDialog()">取 消</el-button>
-                <el-button type="primary" @click="addDialogFormSave()">确 定</el-button>
-                </span>
-            </template>
-        </el-dialog>
-        <!-- 添加/编辑窗口 end -->
-
-        <!-- 详情窗口 begin -->
-        <el-dialog 
-            title="异常详情" 
+        <div v-elDragDialog>
+            <el-dialog       
+            :title="dialogTitle"
+            v-model="addDialogFormVisible"
             :close-on-click-modal="false"
-            :destroy-on-close="true"
-            v-model="detailsVisible"
-            width="70%"
-            @close="closeDetailsDialog"
-            >
-              <div class="home-container">
+            width="60%"
+            @close="closeDialog"
+            :fullscreen="dialogFull">
                 <el-form
-                    ref="refDetailsForm"
-                    :model="formDetails"
-                    label-width="80px"
+                    ref="refAddForm"
+                    :model="form"
+                    label-width="120px"
                     :inline="false"        
                 >
-                    <!-- <el-divider content-position="left"><h3>详情信息</h3> -->
-                        <el-row>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="项目编号" prop="projectNo"  label-width="100px">
-                                <input v-model="formDetails.projectNo" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="线体" prop="lineName"  label-width="100px">
-                                <input v-model="formDetails.lineName" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="班别" prop="classAB"  label-width="100px">
-                                <input v-model="formDetails.classAB" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="工序站点" prop="fProcess"  label-width="100px">
-                                <input v-model="formDetails.fProcess" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="异常大类" prop="type"  label-width="100px">
-                                <input v-model="formDetails.type" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="异常小类" prop="itemType"  label-width="100px">
-                                <input v-model="formDetails.itemType" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="责任部门" prop="responDepart"  label-width="100px">
-                                <input v-model="formDetails.responDepart" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="责任人" prop="responBy"  label-width="100px">
-                                <input v-model="formDetails.responName" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="开始时间" prop="beginTime"  label-width="100px">
-                                <input v-model="formDetails.beginTime" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="结束时间" prop="endTime"  label-width="100px">
-                                <input v-model="formDetails.endTime" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row>
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="异常描述" prop="description"  label-width="100px">
-                                <input v-model="formDetails.description" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row v-if="formDetails.status">
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="原因分析" prop="reason"  label-width="100px">
-                                <input v-model="formDetails.reason" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row v-if="formDetails.status">
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="临时对策" prop="tempMeasures"  label-width="100px">
-                                <input v-model="formDetails.tempMeasures" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row v-if="formDetails.status">
-                            <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
-                                <el-form-item label="长期对策" prop="fundaMeasures"  label-width="100px">
-                                <input v-model="formDetails.fundaMeasures" class="inputin" :disabled="true" />
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                    <!-- </el-divider> -->
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="项目编号" prop="projectNo" required>
+                                <el-select v-model="form.projectNo" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="dialogType == 1 ? false : true">
+                                <el-option
+                                    v-for="item in arrProName"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>                    
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="线体" prop="lineName" required>
+                                <el-select v-model="form.lineName" placeholder="请选择线体" style="width:100%;" :disabled="dialogType == 1 ? false : true">
+                                <el-option
+                                    v-for="item in arrLinesForm"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="班别" prop="classAB" required>
+                                <el-select v-model="form.classAB" placeholder="请选择班别" style="width:100%;">
+                                <el-option
+                                    v-for="item in arrClassAB"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="工序站点" prop="fProcess" required>
+                                <!-- <el-select v-model="form.fProcess" placeholder="请选择工序站点" style="width:100%;">
+                                <el-option
+                                    v-for="item in arrFProcess"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select> -->
+                                <el-select 
+                                v-model="form.fProcess" 
+                                filterable 
+                                placeholder="请选择工序站点"
+                                >
+                                    <el-option
+                                    v-for="item in arrFProcess"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                    >
+                                    </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="异常大类" prop="type" required>
+                                <el-select v-model="form.type" placeholder="请选择异常大类" style="width:100%;">
+                                <el-option
+                                    v-for="item in arrAbnomalType"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="异常小类" prop="itemType" required>
+                                <el-select v-model="form.itemType" placeholder="请选择异常小类" style="width:100%;">
+                                <el-option
+                                    v-for="item in arrAbnomalItemType"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任部门" prop="responDepart" required>
+                                <el-select v-model="form.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="dialogType == 1 ? false : true" @change="changeEditDepartHandle">
+                                <el-option
+                                    v-for="item in arrResponDepart"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任人" prop="responBy" required>
+                                <el-select 
+                                v-model="form.responBy" 
+                                placeholder="请选择责任人"
+                                :disabled="dialogType == 1 ? false : true"
+                                >
+                                <el-option
+                                    v-for="item in arrResponBy"
+                                    :key="item.personLiableId"
+                                    :label="item.name"
+                                    :value="item.personLiableId">
+                                </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>  
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                            <el-form-item label="开始时间" required>
+                                <el-date-picker v-model="form.beginTime" type="datetime" placeholder="选择日期" :disabledDate="disabledDate3">
+                                </el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="异常描述" prop="description" required>
+                            <el-input v-model="form.description" type="textarea" :rows="2" auto-complete="off" placeholder="请输入异常描述！"/>
+                        </el-form-item>
+                        </el-col>
+                    </el-row>
                 </el-form>
-              </div>
-        </el-dialog>
-        <!-- 详情窗口 end -->
-
-        <!-- 处理异常窗口 begin -->
-        <el-dialog 
-            title="处理异常" 
-            :close-on-click-modal="false"
-            :destroy-on-close="true"
-            v-model="handleAbnormalVisible"
-            width="70%"
-            @close="closeHandleDialog"
-            >
-            <el-form
-                ref="refHandleForm"
-                :model="handleForm"
-                label-width="120px"
-                :inline="false"        
-            >
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="项目编号" prop="proName" required>
-                            <el-select v-model="handleForm.proName" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
-                            <el-option
-                                v-for="item in arrProName"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>                    
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="线体" prop="lineName" required>
-                            <el-select v-model="handleForm.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrLinesForm"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="班别" prop="classAB" required>
-                            <el-select v-model="handleForm.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrClassAB"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="工序站点" prop="fProcess" required>
-                            <el-select v-model="handleForm.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrFProcess"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任部门" prop="responDepart" required>
-                            <el-select v-model="handleForm.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrResponDepart"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任人" prop="responBy" required>
-                            <el-select 
-                            v-model="handleForm.responBy" 
-                            filterable 
-                            placeholder="请输入责任人/手机号码"
-                            :remote-method="remoteHandle"
-                            remote
-                            :clearable="true"
-                            @clear="onClearDialog"
-                            :disabled="true"
-                            >
-                            <el-option
-                                v-for="item in arrResponBy"
-                                :key="item.personLiableId"
-                                :label="item.name"
-                                :value="item.personLiableId">
-                            </el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-col>  
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="原因分析" prop="reason" required>
-                        <el-input v-model="handleForm.reason" type="textarea" :rows="2" auto-complete="off" placeholder="请填写原因分析！" />
-                    </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="临时对策" prop="tempMeasures" required>
-                        <el-input v-model="handleForm.tempMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写临时对策！"/>
-                    </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                    <el-form-item label="长期对策" prop="fundaMeasures" required>
-                        <el-input v-model="handleForm.fundaMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写长期对策！"/>
-                    </el-form-item>
-                    </el-col>
-                </el-row>
-                <!-- <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                        <el-form-item label="结束时间" required>
-                            <el-date-picker v-model="handleForm.endTime" type="datetime" placeholder="选择日期">
-                            </el-date-picker>
-                        </el-form-item>
-                    </el-col>
-                </el-row> -->
-            </el-form>
-            <template #footer>
-                <span class="dialog-footer">
-                <el-button @click="closeHandleDialog()">取 消</el-button>
-                <el-button type="primary" @click="handleDialogFormSave()">确 定</el-button>
-                </span>
-            </template>
-        </el-dialog>
+                <template #title>
+                    <div class="avue-crud__dialog__header">
+                        <span class="el-dialog__title">
+                        <span style="display:inline-block;width:3px;height:20px;margin-right:5px; float: left;margin-top:2px"></span>
+                        {{dialogTitle}}
+                        </span>
+                        <div class="avue-crud__dialog__menu" @click="dialogFull? dialogFull=false: dialogFull=true">
+                            <i class="el-icon-full-screen" title="全屏" v-if="!dialogFull"></i>
+                            <i class="el-icon-copy-document" title="缩小" v-else></i>
+                        </div>
+                    </div>
+                </template>
+                <template #footer>
+                    <span class="dialog-footer">
+                    <el-button @click="closeDialog()">取 消</el-button>
+                    <el-button type="primary" @click="addDialogFormSave()">确 定</el-button>
+                    </span>
+                </template>
+            </el-dialog>
+        </div>
+        <!-- 添加/编辑窗口 end -->
+        <!-- 详情窗口 begin -->
+        <div v-elDragDialog>
+            <el-dialog 
+                title="异常详情" 
+                :close-on-click-modal="false"
+                :destroy-on-close="true"
+                v-model="detailsVisible"
+                width="70%"
+                @close="closeDetailsDialog"
+                >
+                <div class="home-container">
+                    <el-form
+                        ref="refDetailsForm"
+                        :model="formDetails"
+                        label-width="80px"
+                        :inline="false"        
+                    >
+                        <!-- <el-divider content-position="left"><h3>详情信息</h3> -->
+                            <el-row>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="项目编号" prop="projectNo"  label-width="100px">
+                                    <input v-model="formDetails.projectNo" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="线体" prop="lineName"  label-width="100px">
+                                    <input v-model="formDetails.lineName" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="班别" prop="classAB"  label-width="100px">
+                                    <input v-model="formDetails.classAB" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="工序站点" prop="fProcess"  label-width="100px">
+                                    <input v-model="formDetails.fProcess" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="异常大类" prop="type"  label-width="100px">
+                                    <input v-model="formDetails.type" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="异常小类" prop="itemType"  label-width="100px">
+                                    <input v-model="formDetails.itemType" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="责任部门" prop="responDepart"  label-width="100px">
+                                    <input v-model="formDetails.responDepart" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="责任人" prop="responBy"  label-width="100px">
+                                    <input v-model="formDetails.responName" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="开始时间" prop="beginTime"  label-width="100px">
+                                    <input v-model="formDetails.beginTime" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="结束时间" prop="endTime"  label-width="100px">
+                                    <input v-model="formDetails.endTime" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row>
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="异常描述" prop="description"  label-width="100px">
+                                    <input v-model="formDetails.description" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row v-if="formDetails.status">
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="原因分析" prop="reason"  label-width="100px">
+                                    <input v-model="formDetails.reason" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row v-if="formDetails.status">
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="临时对策" prop="tempMeasures"  label-width="100px">
+                                    <input v-model="formDetails.tempMeasures" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                            <el-row v-if="formDetails.status">
+                                <el-col :xs="24" :sm="24" :md="12" :lg="8" :xl="6">
+                                    <el-form-item label="长期对策" prop="fundaMeasures"  label-width="100px">
+                                    <input v-model="formDetails.fundaMeasures" class="inputin" :disabled="true" />
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        <!-- </el-divider> -->
+                    </el-form>
+                </div>
+            </el-dialog>
+        </div>
         <!-- 详情窗口 end -->
         <!-- 处理异常窗口 begin -->
-        <el-dialog 
-            title="编辑异常结束时间" 
-            :close-on-click-modal="false"
-            :destroy-on-close="true"
-            v-model="handleTimeAbnormalVisible"
-            width="50%"
-            @close="closeHandleTimeDialog"
-            >
-            <el-form
-                ref="refHandleTimeForm"
-                :model="handleTimeForm"
-                label-width="120px"
-                :inline="false"        
-            >
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="项目编号" prop="proName" required>
-                            <el-select v-model="handleTimeForm.proName" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
-                            <el-option
-                                v-for="item in arrProName"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
+        <div v-elDragDialog>
+            <el-dialog 
+                title="处理异常" 
+                :close-on-click-modal="false"
+                :destroy-on-close="true"
+                v-model="handleAbnormalVisible"
+                width="70%"
+                @close="closeHandleDialog"
+                :fullscreen="dialogFull"
+                >
+                <el-form
+                    ref="refHandleForm"
+                    :model="handleForm"
+                    label-width="120px"
+                    :inline="false"        
+                >
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="项目编号" prop="proName" required>
+                                <el-select v-model="handleForm.proName" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
+                                <el-option
+                                    v-for="item in arrProName"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>                    
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="线体" prop="lineName" required>
+                                <el-select v-model="handleForm.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrLinesForm"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="班别" prop="classAB" required>
+                                <el-select v-model="handleForm.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrClassAB"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="工序站点" prop="fProcess" required>
+                                <el-select v-model="handleForm.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrFProcess"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任部门" prop="responDepart" required>
+                                <el-select v-model="handleForm.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrResponDepart"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任人" prop="responBy" required>
+                                <el-select 
+                                v-model="handleForm.responBy" 
+                                filterable 
+                                placeholder="请输入责任人/手机号码"
+                                :remote-method="remoteHandle"
+                                remote
+                                :clearable="true"
+                                @clear="onClearDialog"
+                                :disabled="true"
+                                >
+                                <el-option
+                                    v-for="item in arrResponBy"
+                                    :key="item.personLiableId"
+                                    :label="item.name"
+                                    :value="item.personLiableId">
+                                </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>  
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="原因分析" prop="reason" required>
+                            <el-input v-model="handleForm.reason" type="textarea" :rows="2" auto-complete="off" placeholder="请填写原因分析！" />
                         </el-form-item>
-                    </el-col>                    
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="线体" prop="lineName" required>
-                            <el-select v-model="handleTimeForm.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrLinesForm"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="临时对策" prop="tempMeasures" required>
+                            <el-input v-model="handleForm.tempMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写临时对策！"/>
                         </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="班别" prop="classAB" required>
-                            <el-select v-model="handleTimeForm.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrClassAB"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                        <el-form-item label="长期对策" prop="fundaMeasures" required>
+                            <el-input v-model="handleForm.fundaMeasures" type="textarea" :rows="2" auto-complete="off" placeholder="请填写长期对策！"/>
                         </el-form-item>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="工序站点" prop="fProcess" required>
-                            <el-select v-model="handleTimeForm.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrFProcess"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任部门" prop="responDepart" required>
-                            <el-select v-model="handleTimeForm.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
-                            <el-option
-                                v-for="item in arrResponDepart"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value"
-                            />
-                            </el-select>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-                        <el-form-item label="责任人" prop="responBy" required>
-                            <el-select 
-                            v-model="handleTimeForm.responBy" 
-                            filterable 
-                            placeholder="请输入责任人/手机号码"
-                            :remote-method="remoteHandle"
-                            remote
-                            :clearable="true"
-                            @clear="onClearDialog"
-                            :disabled="true"
-                            >
-                            <el-option
-                                v-for="item in arrResponBy"
-                                :key="item.personLiableId"
-                                :label="item.name"
-                                :value="item.personLiableId">
-                            </el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-col>  
-                </el-row>
-                <el-row>
-                    <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-                        <el-form-item label="结束时间" required>
-                            <el-date-picker v-model="handleTimeForm.endTime" type="datetime" placeholder="选择日期" format="YYYY-MM-DD HH:mm:ss">
-                            </el-date-picker>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-            </el-form>
-            <template #footer>
-                <span class="dialog-footer">
-                <el-button @click="closeHandleTimeDialog()">取 消</el-button>
-                <el-button type="primary" @click="handleTimeDialogFormSave()">确 定</el-button>
-                </span>
-            </template>
-        </el-dialog>
+                        </el-col>
+                    </el-row>
+                    <!-- <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                            <el-form-item label="结束时间" required>
+                                <el-date-picker v-model="handleForm.endTime" type="datetime" placeholder="选择日期">
+                                </el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                    </el-row> -->
+                </el-form>
+                <template #title>
+                    <div class="avue-crud__dialog__header">
+                        <span class="el-dialog__title">
+                        <span style="display:inline-block;width:3px;height:20px;margin-right:5px; float: left;margin-top:2px"></span>
+                        {{dialogTitle}}
+                        </span>
+                        <div class="avue-crud__dialog__menu" @click="dialogFull? dialogFull=false: dialogFull=true">
+                            <i class="el-icon-full-screen" title="全屏" v-if="!dialogFull"></i>
+                            <i class="el-icon-copy-document" title="缩小" v-else></i>
+                        </div>
+                    </div>
+                </template>
+                <template #footer>
+                    <span class="dialog-footer">
+                    <el-button @click="closeHandleDialog()">取 消</el-button>
+                    <el-button type="primary" @click="handleDialogFormSave()">确 定</el-button>
+                    </span>
+                </template>
+            </el-dialog>
+        </div>
+        <!-- 详情窗口 end -->
+        <!-- 处理异常窗口 begin -->
+        <div v-elDragDialog>
+            <el-dialog 
+                title="编辑异常结束时间" 
+                :close-on-click-modal="false"
+                :destroy-on-close="true"
+                v-model="handleTimeAbnormalVisible"
+                width="50%"
+                @close="closeHandleTimeDialog"
+                :fullscreen="dialogFull"
+                >
+                <el-form
+                    ref="refHandleTimeForm"
+                    :model="handleTimeForm"
+                    label-width="120px"
+                    :inline="false"        
+                >
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="项目编号" prop="proName" required>
+                                <el-select v-model="handleTimeForm.proName" placeholder="请选择项目编号" style="width:100%;" @change="changeProNameHandleForm" :disabled="true">
+                                <el-option
+                                    v-for="item in arrProName"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>                    
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="线体" prop="lineName" required>
+                                <el-select v-model="handleTimeForm.lineName" placeholder="请选择线体" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrLinesForm"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="班别" prop="classAB" required>
+                                <el-select v-model="handleTimeForm.classAB" placeholder="请选择班别" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrClassAB"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="工序站点" prop="fProcess" required>
+                                <el-select v-model="handleTimeForm.fProcess" placeholder="请选择工序站点" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrFProcess"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任部门" prop="responDepart" required>
+                                <el-select v-model="handleTimeForm.responDepart" placeholder="请选择责任部门" style="width:100%;" :disabled="true">
+                                <el-option
+                                    v-for="item in arrResponDepart"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value"
+                                />
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
+                            <el-form-item label="责任人" prop="responBy" required>
+                                <el-select 
+                                v-model="handleTimeForm.responBy" 
+                                filterable 
+                                placeholder="请输入责任人/手机号码"
+                                :remote-method="remoteHandle"
+                                remote
+                                :clearable="true"
+                                @clear="onClearDialog"
+                                :disabled="true"
+                                >
+                                <el-option
+                                    v-for="item in arrResponBy"
+                                    :key="item.personLiableId"
+                                    :label="item.name"
+                                    :value="item.personLiableId">
+                                </el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>  
+                    </el-row>
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
+                            <el-form-item label="结束时间" required>
+                                <el-date-picker v-model="handleTimeForm.endTime" type="datetime" placeholder="选择日期" format="YYYY-MM-DD HH:mm:ss">
+                                </el-date-picker>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                </el-form>
+                <template #title>
+                    <div class="avue-crud__dialog__header">
+                        <span class="el-dialog__title">
+                        <span style="display:inline-block;width:3px;height:20px;margin-right:5px; float: left;margin-top:2px"></span>
+                        {{dialogTitle}}
+                        </span>
+                        <div class="avue-crud__dialog__menu" @click="dialogFull? dialogFull=false: dialogFull=true">
+                            <i class="el-icon-full-screen" title="全屏" v-if="!dialogFull"></i>
+                            <i class="el-icon-copy-document" title="缩小" v-else></i>
+                        </div>
+                    </div>
+                </template>
+                <template #footer>
+                    <span class="dialog-footer">
+                    <el-button @click="closeHandleTimeDialog()">取 消</el-button>
+                    <el-button type="primary" @click="handleTimeDialogFormSave()">确 定</el-button>
+                    </span>
+                </template>
+            </el-dialog>
+        </div>
         <!-- 详情窗口 end -->
    </div>
 </template>
 <script>
-import { reactive, toRefs, onBeforeMount, onMounted,onActivated,ref } from 'vue'
-import { ElMessage,ElMessageBox } from 'element-plus'
-import {useStore} from 'vuex'
-import {elConfirmDialog, IsNullOrEmpty,formatDateTime, dateTimeCompare} from "@/common/js/comm"
+import { reactive, toRefs, onBeforeMount, onMounted, onActivated, ref } from 'vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { useStore } from 'vuex'
+import { elConfirmDialog, IsNullOrEmpty, formatDateTime, dateTimeCompare } from "@/common/js/comm"
 import EupCrumbs from "../../../components/eup-crumbs/index.vue"
 import EnumConfig from "../../../enum/EnumConfig"
 import EupPagination from "@/components/EupPagination.vue"
+// import elDragDialog from "@/directive/el-dragDialog";
 import FileSaver from 'file-saver'
 import XLSX from 'xlsx'
 import {abnormalGetPage, abnormalGet, abnormalAdd,abnormalBatchDelete,abnormalDelete,abnormalUpdate,
@@ -780,7 +828,8 @@ export default {
             abnormalNo:""
         },
         formDetails: {},
-        handleTimeForm:{}
+        handleTimeForm:{},
+        dialogFull: false, //是否为全屏 Dialog
       });
       onBeforeMount(() => {
       });
@@ -1044,6 +1093,7 @@ export default {
             refAddForm.value.resetFields();//清空表单
             //每次关闭对话框后清理表单历史数据
             data.form= {};
+            data.dialogFull = false;
         }
         /**
          * @description 关闭详情对话框
@@ -1055,6 +1105,7 @@ export default {
             refDetailsForm.value.resetFields();//清空表单
             //每次关闭对话框后清理表单历史数据
             data.form= {};
+            data.dialogFull = false;
         }
         /**
          * @description 保存
@@ -1351,6 +1402,7 @@ export default {
             refHandleForm.value.resetFields();//清空表单
             //每次关闭对话框后清理表单历史数据
             data.handleForm= {};
+            data.dialogFull = false;
         }
         /**
          * @description 关闭处理异常窗口
@@ -1361,6 +1413,7 @@ export default {
             refHandleTimeForm.value.resetFields();//清空表单
             //每次关闭对话框后清理表单历史数据
             data.handleTimeForm= {};
+            data.dialogFull = false;
         }
         /**
          * @description 保存处理信息

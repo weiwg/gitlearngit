@@ -15,7 +15,7 @@ import checkPermission from '@/utils/permission/permission'
  */
 export default (app) =>{
   app.directive('permission', {
-    bind(el, binding) {
+    mounted(el, binding) {
       let permission;
       let disabled;
       if (Object.prototype.toString.call(binding.value) === '[object Object]') {
@@ -36,6 +36,6 @@ export default (app) =>{
         }
       }
     }
-  })
+  });
 }
 
